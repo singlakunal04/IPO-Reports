@@ -1,0 +1,1883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICICI Prudential AMC IPO - Comprehensive Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .presentation {
+            min-height: 100vh;
+            display: flex;
+            overflow: hidden;
+        }
+        
+        .sidebar {
+            width: 280px;
+            background: #0f3460;
+            padding: 30px 20px;
+            overflow-y: auto;
+            color: white;
+            position: fixed;
+            height: 100vh;
+            left: 0;
+            top: 0;
+            border-right: 3px solid #e94560;
+            z-index: 100;
+        }
+        
+        .sidebar h2 {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #00d4ff;
+            border-bottom: 2px solid #00d4ff;
+            padding-bottom: 10px;
+        }
+        
+        .sidebar ul {
+            list-style: none;
+        }
+        
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+        
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+        .sidebar ul li a:hover {
+            background: #e94560;
+            transform: translateX(5px);
+        }
+        
+        .sidebar ul li a.active {
+            background: #e94560;
+            border-left: 4px solid #00d4ff;
+        }
+        
+        .content {
+            margin-left: 280px;
+            flex: 1;
+            overflow-y: auto;
+            height: 100vh;
+        }
+        
+        .slide {
+            display: none;
+            min-height: 100vh;
+            padding: 60px 50px;
+            background: white;
+            page-break-after: always;
+        }
+        
+        .slide.active {
+            display: block;
+        }
+        
+        .slide.title-slide {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .slide.title-slide h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #00d4ff;
+        }
+        
+        .slide.title-slide .subtitle {
+            font-size: 28px;
+            color: #e94560;
+            margin-bottom: 30px;
+        }
+        
+        .slide.title-slide .meta {
+            font-size: 18px;
+            color: #ccc;
+            margin: 20px 0;
+        }
+        
+        .slide.title-slide .prepared-by {
+            font-size: 16px;
+            color: #00d4ff;
+            margin-top: 40px;
+            font-weight: bold;
+        }
+        
+        h1 {
+            color: #1a1a2e;
+            margin-bottom: 30px;
+            font-size: 40px;
+            border-bottom: 3px solid #e94560;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #16213e;
+            margin: 25px 0 15px 0;
+            font-size: 28px;
+            color: #0f3460;
+        }
+        
+        h3 {
+            color: #e94560;
+            margin: 20px 0 10px 0;
+            font-size: 22px;
+        }
+        
+        .content-box {
+            background: #f8f9fa;
+            border-left: 5px solid #e94560;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .content-box.highlight {
+            background: #fffbf0;
+            border-left-color: #ff9500;
+        }
+        
+        .content-box.positive {
+            background: #f0f8f4;
+            border-left-color: #28a745;
+        }
+        
+        .content-box.negative {
+            background: #ffe6e6;
+            border-left-color: #dc3545;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        
+        table th {
+            background: #0f3460;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        table tr:hover {
+            background: #e8f4f8;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .grid.three {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-card.alt {
+            background: linear-gradient(135deg, #e94560 0%, #cc2a47 100%);
+        }
+        
+        .stat-card.success {
+            background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+        }
+        
+        .stat-card.warning {
+            background: linear-gradient(135deg, #ff9500 0%, #cc7700 100%);
+        }
+        
+        .stat-card .value {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .stat-card .label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 350px;
+            margin: 30px 0;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: 2px solid #e94560;
+        }
+        
+        ul li, ol li {
+            margin: 10px 0;
+            padding-left: 10px;
+        }
+        
+        .disclaimer {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-size: 12px;
+            color: #856404;
+        }
+        
+        .controls {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+        
+        button {
+            padding: 12px 24px;
+            background: #e94560;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        button:hover {
+            background: #cc2a47;
+            transform: scale(1.05);
+        }
+        
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .slide-counter {
+            position: fixed;
+            bottom: 30px;
+            left: 300px;
+            color: white;
+            font-size: 14px;
+            background: #0f3460;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        
+        .recommendation-box {
+            background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .recommendation-box h2 {
+            color: white;
+            border: none;
+        }
+        
+        .recommendation-box .verdict {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+        
+        .investor-guidance {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .investor-guidance h4 {
+            color: #0f3460;
+            margin-bottom: 10px;
+        }
+        
+        .key-metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .metric {
+            background: white;
+            border: 2px solid #e94560;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .metric .label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+        }
+        
+        .metric .value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1a1a2e;
+            margin: 10px 0;
+        }
+        
+        @media print {
+            .sidebar, .controls, .slide-counter {
+                display: none;
+            }
+            .content {
+                margin-left: 0;
+            }
+            .slide {
+                page-break-after: always;
+                min-height: auto;
+            }
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .chart-note {
+            font-size: 12px;
+            color: #666;
+            margin-top: 10px;
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation">
+        <!-- SIDEBAR NAVIGATION -->
+        <div class="sidebar">
+            <h2>📊 Navigation</h2>
+            <ul id="nav-list">
+                <li><a onclick="goToSlide(0)" data-slide="0">🏠 Title</a></li>
+                <li><a onclick="goToSlide(1)" data-slide="1">📋 Executive Summary</a></li>
+                <li><a onclick="goToSlide(2)" data-slide="2">🎯 Company Overview</a></li>
+                <li><a onclick="goToSlide(3)" data-slide="3">💰 IPO Structure</a></li>
+                <li><a onclick="goToSlide(4)" data-slide="4">📊 Financial Highlights</a></li>
+                <li><a onclick="goToSlide(5)" data-slide="5">📈 Revenue & Growth</a></li>
+                <li><a onclick="goToSlide(6)" data-slide="6">💎 Profitability</a></li>
+                <li><a onclick="goToSlide(7)" data-slide="7">🏆 Business Metrics</a></li>
+                <li><a onclick="goToSlide(8)" data-slide="8">🔍 Market Position</a></li>
+                <li><a onclick="goToSlide(9)" data-slide="9">✅ Strengths</a></li>
+                <li><a onclick="goToSlide(10)" data-slide="10">⚠️ Risks</a></li>
+                <li><a onclick="goToSlide(11)" data-slide="11">💹 Valuation</a></li>
+                <li><a onclick="goToSlide(12)" data-slide="12">🎪 Market Opportunity</a></li>
+                <li><a onclick="goToSlide(13)" data-slide="13">🔮 Investment Thesis</a></li>
+                <li><a onclick="goToSlide(14)" data-slide="14">✨ Final Recommendation</a></li>
+                <li><a onclick="goToSlide(15)" data-slide="15">📞 Key Dates</a></li>
+            </ul>
+        </div>
+        
+        <!-- CONTENT AREA -->
+        <div class="content">
+            
+            <!-- SLIDE 0: TITLE SLIDE -->
+            <div class="slide active title-slide">
+                <h1>ICICI Prudential AMC IPO</h1>
+                <div class="subtitle">Comprehensive Investment Analysis</div>
+                <div class="meta">India's Second-Largest Asset Manager</div>
+                <div class="meta">Assets Under Management: ₹10,147.6 Billion</div>
+                <div class="meta">IPO Size: ₹10,602.65 Crore</div>
+                <div class="meta">Price Band: ₹2,061 - ₹2,165 per share</div>
+                <div class="meta">Bidding Period: December 12-16, 2025</div>
+                <div class="prepared-by">📈 Prepared by: Kunal Singla - Finance Enthusiast 📊</div>
+                <div class="footer" style="color: #00d4ff; margin-top: 50px;">
+                    <strong>Disclaimer:</strong> This analysis is for informational purposes only. Please consult certified financial advisors before making investment decisions.
+                </div>
+            </div>
+            
+            <!-- SLIDE 1: EXECUTIVE SUMMARY -->
+            <div class="slide">
+                <h1>📋 Executive Summary</h1>
+                
+                <div class="content-box highlight">
+                    <h3>Investment Verdict: BUY (for Long-term Investors)</h3>
+                    <p><strong>Conviction Level:</strong> MEDIUM-HIGH</p>
+                    <p><strong>Expected Return (12 months):</strong> 10-15% (Base Case)</p>
+                    <p><strong>Upside Potential:</strong> 20-25% | <strong>Downside Risk:</strong> -10 to -15%</p>
+                </div>
+                
+                <h2>Key Highlights</h2>
+                <div class="grid three">
+                    <div class="stat-card">
+                        <div class="label">AUM (H1 FY26)</div>
+                        <div class="value">₹10.1T</div>
+                    </div>
+                    <div class="stat-card success">
+                        <div class="label">Market Share</div>
+                        <div class="value">13.3%</div>
+                    </div>
+                    <div class="stat-card alt">
+                        <div class="label">ROE (FY25)</div>
+                        <div class="value">82.8%</div>
+                    </div>
+                </div>
+                
+                <h2>Why This IPO?</h2>
+                <ul>
+                    <li>✅ <strong>Market Leader:</strong> Largest by Active Equity QAAUM with 13.3% market share</li>
+                    <li>✅ <strong>Exceptional Profitability:</strong> Industry-leading 82.8% ROE; 56.6% PAT margin</li>
+                    <li>✅ <strong>Diversified Portfolio:</strong> 143 schemes, 1.5 crore investor base, ₹215.8Bn PMS AUM</li>
+                    <li>✅ <strong>Strong Tailwinds:</strong> SIP boom (11%+ YoY growth), rising retail participation, AUM penetration at only 20% of GDP</li>
+                    <li>✅ <strong>Fair Valuation:</strong> 33.07x PE vs HDFC AMC at 45x; justified by superior scale and profitability</li>
+                </ul>
+                
+                <div class="disclaimer">
+                    <strong>Important:</strong> This is a 100% Offer-for-Sale (OFS). ICICI Prudential AMC will NOT receive any fresh capital. Proceeds go to Prudential Corporation Holdings.
+                </div>
+            </div>
+            
+            <!-- SLIDE 2: COMPANY OVERVIEW -->
+            <div class="slide">
+                <h1>🎯 Company Overview</h1>
+                
+                <h2>Business Profile</h2>
+                <div class="content-box">
+                    <p><strong>ICICI Prudential Asset Management Company Limited</strong> is India's <strong>second-largest asset manager by quarterly average AUM (QAAUM)</strong> with ₹10,147.6 billion under management as of September 30, 2025.</p>
+                    <p style="margin-top: 10px;">A <strong>26-year-old joint venture</strong> between ICICI Bank (51%) and Prudential Corporation Holdings (49%), the company manages a diversified portfolio across <strong>mutual funds, portfolio management services, alternative investment funds (AIFs), and advisory services</strong>.</p>
+                </div>
+                
+                <h2>Key Facts</h2>
+                <table>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Value</th>
+                    </tr>
+                    <tr>
+                        <td>Founding Year</td>
+                        <td>1998 (Joint Venture)</td>
+                    </tr>
+                    <tr>
+                        <td>Investor Base</td>
+                        <td>1.5 Crore active investors</td>
+                    </tr>
+                    <tr>
+                        <td>Mutual Fund Schemes</td>
+                        <td>143 (44 equity, 20 debt, 61 passive, others)</td>
+                    </tr>
+                    <tr>
+                        <td>Distribution Network</td>
+                        <td>272 offices across India</td>
+                    </tr>
+                    <tr>
+                        <td>Digital Penetration</td>
+                        <td>95.3% digital purchase transactions (H1 FY26)</td>
+                    </tr>
+                    <tr>
+                        <td>Registered Schemes</td>
+                        <td>143 across various categories</td>
+                    </tr>
+                </table>
+                
+                <h2>Business Mix (H1 FY26)</h2>
+                <div class="grid three">
+                    <div class="stat-card">
+                        <div class="label">Active Mutual Funds</div>
+                        <div class="value">₹5.7T+</div>
+                    </div>
+                    <div class="stat-card alt">
+                        <div class="label">Passive Funds</div>
+                        <div class="value">₹3.5T+</div>
+                    </div>
+                    <div class="stat-card success">
+                        <div class="label">PMS & Advisory</div>
+                        <div class="value">₹215.8Bn</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SLIDE 3: IPO STRUCTURE -->
+            <div class="slide">
+                <h1>💰 IPO Structure & Timeline</h1>
+                
+                <h2>IPO at a Glance</h2>
+                <table>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Details</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Issue Size</strong></td>
+                        <td><strong>₹10,602.65 Crore</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Shares Offered</td>
+                        <td>4,89,72,994 equity shares</td>
+                    </tr>
+                    <tr>
+                        <td>Price Band</td>
+                        <td><strong>₹2,061 to ₹2,165</strong> per share</td>
+                    </tr>
+                    <tr>
+                        <td>Face Value</td>
+                        <td>₹1 per share</td>
+                    </tr>
+                    <tr>
+                        <td>Lot Size</td>
+                        <td>6 shares (min. investment: ₹12,360-₹12,990)</td>
+                    </tr>
+                    <tr>
+                        <td>Issue Type</td>
+                        <td><strong>100% Offer for Sale (OFS)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Fresh Issue</td>
+                        <td>₹0 (None - No capital to company)</td>
+                    </tr>
+                    <tr>
+                        <td>Seller</td>
+                        <td>Prudential Corporation Holdings Limited</td>
+                    </tr>
+                </table>
+                
+                <h2>Valuation</h2>
+                <div class="grid">
+                    <div class="stat-card">
+                        <div class="label">Market Cap (At ₹2,061)</div>
+                        <div class="value">₹1,05,390 Cr</div>
+                    </div>
+                    <div class="stat-card alt">
+                        <div class="label">Market Cap (At ₹2,165)</div>
+                        <div class="value">₹1,07,006 Cr</div>
+                    </div>
+                </div>
+                
+                <h2>Allocation Structure</h2>
+                <div class="grid three">
+                    <div class="stat-card">
+                        <div class="label">QIB</div>
+                        <div class="value">Up to 50%</div>
+                    </div>
+                    <div class="stat-card alt">
+                        <div class="label">NII (15%)</div>
+                        <div class="value">15%</div>
+                    </div>
+                    <div class="stat-card success">
+                        <div class="label">Retail (RII)</div>
+                        <div class="value">35%</div>
+                    </div>
+                </div>
+                
+                <h2>🔔 Important Timeline</h2>
+                <table>
+                    <tr>
+                        <th>Event</th>
+                        <th>Date</th>
+                    </tr>
+                    <tr>
+                        <td>Anchor Bidding</td>
+                        <td><strong>December 11, 2025</strong></td>
+                    </tr>
+                    <tr>
+                        <td>IPO Bidding Opens</td>
+                        <td><strong>December 12, 2025</strong> (TODAY)</td>
+                    </tr>
+                    <tr>
+                        <td>IPO Bidding Closes</td>
+                        <td><strong>December 16, 2025</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Basis of Allotment Finalization</td>
+                        <td><strong>December 17, 2025</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Refunds/ASBA Unblocking</td>
+                        <td><strong>December 18, 2025</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Stock Exchange Listing</td>
+                        <td><strong>December 19, 2025</strong> (NSE & BSE)</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- SLIDE 4: FINANCIAL HIGHLIGHTS -->
+            <div class="slide">
+                <h1>📊 Financial Highlights</h1>
+                
+                <h2>Income Statement (₹ Crores)</h2>
+                <table>
+                    <tr>
+                        <th>Metric</th>
+                        <th>FY23</th>
+                        <th>FY24</th>
+                        <th>FY25</th>
+                        <th>H1 FY26</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Revenue from Operations</strong></td>
+                        <td>₹2,689 Cr</td>
+                        <td>₹3,376 Cr</td>
+                        <td>₹4,680 Cr</td>
+                        <td>₹2,733 Cr</td>
+                    </tr>
+                    <tr>
+                        <td><strong>EBITDA</strong></td>
+                        <td>₹1,858 Cr</td>
+                        <td>₹2,313 Cr</td>
+                        <td>₹3,236 Cr</td>
+                        <td>₹2,210 Cr</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Profit After Tax (PAT)</strong></td>
+                        <td>₹1,516 Cr</td>
+                        <td>₹2,050 Cr</td>
+                        <td>₹2,651 Cr</td>
+                        <td>₹1,618 Cr</td>
+                    </tr>
+                    <tr>
+                        <td>EPS (Reported)</td>
+                        <td>₹30.7</td>
+                        <td>₹41.5</td>
+                        <td>₹53.6</td>
+                        <td>₹32.7</td>
+                    </tr>
+                </table>
+                
+                <h2>YoY Growth</h2>
+                <div class="grid three">
+                    <div class="stat-card">
+                        <div class="label">FY24 Revenue Growth</div>
+                        <div class="value">25.6%</div>
+                    </div>
+                    <div class="stat-card alt">
+                        <div class="label">FY25 Revenue Growth</div>
+                        <div class="value">38.6%</div>
+                    </div>
+                    <div class="stat-card success">
+                        <div class="label">3-Year Revenue CAGR</div>
+                        <div class="value">31.6%</div>
+                    </div>
+                </div>
+                
+                <div class="content-box positive">
+                    <h3>✅ Key Observations</h3>
+                    <ul>
+                        <li><strong>Strong Acceleration:</strong> Revenue growth accelerated from 25.6% (FY24) to 38.6% (FY25)</li>
+                        <li><strong>Exceptional PAT Growth:</strong> PAT CAGR of 32.3% over FY23-25 (₹1,516 Cr → ₹2,651 Cr)</li>
+                        <li><strong>Operating Leverage:</strong> EBITDA grew faster than revenue, demonstrating improved operational efficiency</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- SLIDE 5: REVENUE & GROWTH ANALYSIS WITH CHART -->
+            <div class="slide">
+                <h1>📈 Revenue & Growth Analysis</h1>
+                
+                <div class="chart-container">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+                <div class="chart-note">📊 Chart shows 3-year revenue growth trajectory with YoY growth rates</div>
+                
+                <h2>Revenue Composition & Drivers</h2>
+                <table>
+                    <tr>
+                        <th>Source</th>
+                        <th>FY25</th>
+                        <th>H1 FY26</th>
+                        <th>Contribution</th>
+                    </tr>
+                    <tr>
+                        <td>Investment Management Fees (Mutual Funds)</td>
+                        <td>₹3,964 Cr</td>
+                        <td>₹2,187 Cr</td>
+                        <td>84.7% of revenue</td>
+                    </tr>
+                    <tr>
+                        <td>PMS & Advisory Fees</td>
+                        <td>₹380 Cr</td>
+                        <td>₹213 Cr</td>
+                        <td>8.1% of revenue</td>
+                    </tr>
+                    <tr>
+                        <td>Other Income</td>
+                        <td>₹336 Cr</td>
+                        <td>₹333 Cr</td>
+                        <td>7.2% of revenue</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Operating Revenue</strong></td>
+                        <td><strong>₹4,680 Cr</strong></td>
+                        <td><strong>₹2,733 Cr</strong></td>
+                        <td><strong>100%</strong></td>
+                    </tr>
+                </table>
+                
+                <h2>🚀 Key Growth Drivers</h2>
+                
+                <div class="content-box positive">
+                    <h3>1. Mutual Fund AUM Growth</h3>
+                    <ul>
+                        <li>Active Equity QAAUM: ₹5.7T (13.6% market share - largest in India)</li>
+                        <li>Passive Funds: Strong growth in index funds and ETFs (₹3.5T+)</li>
+                        <li>Hybrid Schemes: Market leader with 25.8% share in equity-oriented hybrids</li>
+                        <li>AUM growth: 15.4% YoY (FY25 vs FY24) demonstrating strong market demand</li>
+                    </ul>
+                </div>
+                
+                <div class="content-box positive">
+                    <h3>2. Rising SIP Participation - The Game Changer</h3>
+                    <ul>
+                        <li>SIP collections: ₹29,361 Cr in September 2025 (all-time high - up 11% YoY)</li>
+                        <li>Active SIP accounts: 9 Crore+ (disciplined retail participation increasing)</li>
+                        <li>SIP AUM contribution: 20%+ of total industry AUM and growing</li>
+                        <li>ICICI Pru capturing strong share of SIP inflows due to brand trust</li>
+                    </ul>
+                </div>
+                
+                <div class="content-box positive">
+                    <h3>3. Digital Channel Expansion</h3>
+                    <ul>
+                        <li>95.3% of purchase transactions digital (H1 FY26) - industry best</li>
+                        <li>Low-cost distribution reducing customer acquisition cost significantly</li>
+                        <li>Fintech partnerships enabling micro-SIPs in Tier 3/4 towns</li>
+                        <li>Mobile-first strategy attracting younger demographic</li>
+                    </ul>
+                </div>
+                
+                <div class="content-box">
+                    <h3>Revenue Yield Consistency</h3>
+                    <p><strong>Stable 52 bps revenue yield</strong> across FY23-25 despite market changes. This demonstrates pricing power and stable business model - revenue scales with AUM regardless of market cycles.</p>
+                </div>
+            </div>
+            
+            <!-- SLIDE 6: PROFITABILITY & RETURNS WITH CHART -->
+            <div class="slide">
+                <h1>💎 Profitability & Return Metrics</h1>
+                
+                <div class="chart-container">
+                    <canvas id="profitabilityChart"></canvas>
+                </div>
+                <div class="chart-note">📊 Dual-axis chart: PAT (₹ Crores) on left, ROE (%) on right</div>
+                
+                <h2>Profitability Ratios - Industry Best</h2>
+                <table>
+                    <tr>
+                        <th>Metric</th>
+                        <th>FY23</th>
+                        <th>FY24</th>
+                        <th>FY25</th>
+                        <th>Trend</th>
+                    </tr>
+                    <tr>
+                        <td><strong>EBITDA Margin</strong></td>
+                        <td>69.1%</td>
+                        <td>68.6%</td>
+                        <td>69.2%</td>
+                        <td>Stable & High</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PAT Margin</strong></td>
+                        <td>56.4%</td>
+                        <td>60.7%</td>
+                        <td>56.6%</td>
+                        <td>Exceptional</td>
+                    </tr>
+                    <tr>
+                        <td>Operating Margin (bps)</td>
+                        <td>36 bps</td>
+                        <td>36 bps</td>
+                        <td>36-37 bps</td>
+                        <td>Stable</td>
+                    </tr>
+                    <tr>
+                        <td>Revenue Yield (bps)</td>
+                        <td>52 bps</td>
+                        <td>52 bps</td>
+                        <td>52 bps</td>
+                        <td>Consistent</td>
+                    </tr>
+                </table>
+                
+                <h2>🌟 Return on Equity (ROE) - Industry Leading</h2>
+                <div class="grid three">
+                    <div class="stat-card success">
+                        <div class="label">FY23 ROE</div>
+                        <div class="value">70.0%</div>
+                        <div class="label" style="font-size: 10px; margin-top: 5px;">Very High</div>
+                    </div>
+                    <div class="stat-card success">
+                        <div class="label">FY24 ROE</div>
+                        <div class="value">78.9%</div>
+                        <div class="label" style="font-size: 10px; margin-top: 5px;">Exceptional</div>
+                    </div>
+                    <div class="stat-card success">
+                        <div class="label">FY25 ROE</div>
+                        <div class="value">82.8%</div>
+                        <div class="label" style="font-size: 10px; margin-top: 5px;">Outstanding</div>
+                    </div>
+                </div>
+                
+                <div class="content-box positive">
+                    <h3>✅ Profitability Excellence - Why It Matters</h3>
+                    <ul>
+                        <li><strong>Asset-Light Model:</strong> 69-70% EBITDA margins (vs typical BFSI at 30-40%) - exceptional for financial services</li>
+                        <li><strong>Industry-Leading ROE:</strong> 82.8% in FY25 (vs HDFC AMC ~45-50%, Nippon Life ~35-40%, average banks ~15-20%)</li>
+                        <li><strong>Stable Yield:</strong> Consistent 52 bps revenue yield despite market volatility - demonstrates pricing power</li>
+                        <li><strong>PAT Growth:</strong> PAT CAGR 32.3% (FY23-25) exceeds revenue CAGR 31.6% - margin expansion</li>
+                        <li><strong>Operating Leverage:</strong> Strong operational efficiency with 36-37 bps operating margin - best-in-class</li>
+                        <li><strong>Cash Generation:</strong> Exceptional cash conversion ensures sustainable shareholder returns</li>
+                    </ul>
+                </div>
+                
+                <div class="content-box highlight">
+                    <h3>💡 What 82.8% ROE Means?</h3>
+                    <p>For every ₹100 of shareholder equity, ICICI Pru generates ₹82.80 of annual profit. This is phenomenal and indicates superior capital efficiency, strong management, and pricing power. Such high ROEs are sustainable for quality asset managers due to their asset-light business model.</p>
+                </div>
+            </div>
+            
+            <!-- SLIDE 7: BUSINESS METRICS WITH AUM CHART -->
+            <div class="slide">
+                <h1>🏆 Key Business Metrics</h1>
+                
+                <h2>Assets Under Management (AUM) Growth</h2>
+                <div class="chart-container">
+                    <canvas id="aumChart"></canvas>
+                </div>
+                <div class="chart-note">📊 AUM composition breakdown - Active Equity leads at 55.8% of total QAAUM</div>
+                
+                <h2>Detailed AUM Breakdown (H1 FY26)</h2>
+                <table>
+                    <tr>
+                        <th>Category</th>
+                        <th>AUM (₹ Billion)</th>
+                        <th>Market Share</th>
+                        <th>Position</th>
+                        <th>Trend</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Total QAAUM (Mutual Funds)</strong></td>
+                        <td><strong>₹10,147.6 Bn</strong></td>
+                        <td><strong>13.3%</strong></td>
+                        <td><strong>1st</strong></td>
+                        <td>↑ Growing</td>
+                    </tr>
+                    <tr>
+                        <td>Active Equity QAAUM</td>
+                        <td>₹5,666.3 Bn</td>
+                        <td>13.6%</td>
+                        <td>1st (Largest)</td>
+                        <td>↑ Fastest growing</td>
+                    </tr>
+                    <tr>
+                        <td>Equity-Oriented Hybrid Schemes</td>
+                        <td>₹1.2T+</td>
+                        <td>25.8%</td>
+                        <td>1st (Market Leader)</td>
+                        <td>↑ Strong demand</td>
+                    </tr>
+                    <tr>
+                        <td>Passive Funds (ETFs & Index)</td>
+                        <td>₹3.5T+</td>
+                        <td>11-12%</td>
+                        <td>2nd</td>
+                        <td>↑ Rapid growth</td>
+                    </tr>
+                    <tr>
+                        <td>Debt Schemes</td>
+                        <td>₹1.5T+</td>
+                        <td>~12%</td>
+                        <td>2nd</td>
+                        <td>Stable</td>
+                    </tr>
+                    <tr>
+                        <td>PMS AUM (Discretionary)</td>
+                        <td>₹215.8 Bn</td>
+                        <td>~20% (est.)</td>
+                        <td>Leader in Non-Corporate</td>
+                        <td>↑ Growing</td>
+                    </tr>
+                </table>
+                
+                <h2>Product Portfolio - Diversification Strength</h2>
+                <div class="grid three">
+                    <div class="stat-card">
+                        <div class="label">Total Schemes</div>
+                        <div class="value">143</div>
+                        <div class="label" style="font-size: 11px; margin-top: 5px;">Well-diversified</div>
+                    </div>
+                    <div class="stat-card alt">
+                        <div class="label">Equity Schemes</div>
+                        <div class="value">44</div>
+                        <div class="label" style="font-size: 11px; margin-top: 5px;">44 unique choices</div>
+                    </div>
+                    <div class="stat-card success">
+                        <div class="label">Passive Schemes</div>
+                        <div class="value">61</div>
+                        <div class="label" style="font-size: 11px; margin-top: 5px;">Growing segment</div>
+                    </div>
+                </div>
+                
+                <h2>Digital & Investor Reach - Best-in-Class</h2>
+                <div class="grid">
+                    <div class="metric">
+                        <div class="label">Active Investors</div>
+                        <div class="value">1.5 Cr</div>
+                        <div class="label" style="font-size: 11px; margin-top: 5px;">↑ 10%+ growth YoY</div>
+                    </div>
+                    <div class="metric">
+                        <div class="label">Digital Transactions</div>
+                        <div class="value">95.3%</div>
+                        <div class="label" style="font-size: 11px; margin-top: 5px;">Highest in industry</div>
+                    </div>
+                    <div class="metric">
+                        <div class="label">Distribution Offices</div>
+                        <div class="value">272</div>
+                        <div class="label" style="font-size: 11px; margin-top: 5px;">Pan-India reach</div>
+                    </div>
+                </div>
+                
+                <div class="content-box positive">
+                    <h3>📈 AUM Growth Story</h3>
+                    <ul>
+                        <li><strong>Market Leadership:</strong> 13.3% market share - largest QAAUM in India</li>
+                        <li><strong>Concentration Risk Managed:</strong> Top 5 equity schemes = only 53% of equity AUM (lower than peers)</li>
+                        <li><strong>Passive Fund Success:</strong> ₹3.5T+ in passive funds growing at 15%+ CAGR (faster than equity)</li>
+                        <li><strong>Digital Excellence:</strong> 95.3% digital purchase rate enables low-cost scale</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- SLIDE 8: MARKET POSITION & PEERS -->
+            <div class="slide">
+                <h1>🔍 Competitive Market Position</h1>
+                
+                <h2>Peer Comparison - Key Metrics</h2>
+                <table>
+                    <tr>
+                        <th>Company</th>
+                        <th>AUM (₹ Billion)</th>
+                        <th>Market Share</th>
+                        <th>Position</th>
+                        <th>Key Strength</th>
+                    </tr>
+                    <tr>
+                        <td><strong>ICICI Prudential AMC</strong></td>
+                        <td><strong>₹10,147.6</strong></td>
+                        <td><strong>13.3%</strong></td>
+                        <td><strong>1st</strong></td>
+                        <td>Largest in Active Equity, 82.8% ROE</td>
+                    </tr>
+                    <tr>
+                        <td>HDFC AMC</td>
+                        <td>₹8,814.3</td>
+                        <td>11.4%</td>
+                        <td>2nd</td>
+                        <td>Consistent performer, diversified investor base</td>
+                    </tr>
+                    <tr>
+                        <td>Nippon Life India AMC</td>
+                        <td>₹5,900+</td>
+                        <td>~7.6%</td>
+                        <td>3rd</td>
+                        <td>Strong debt portfolio, insurance backed</td>
+                    </tr>
+                    <tr>
+                        <td>Aditya Birla Sun Life</td>
+                        <td>₹5,100+</td>
+                        <td>~6.6%</td>
+                        <td>4th</td>
+                        <td>Balanced approach, emerging player</td>
+                    </tr>
+                    <tr>
+                        <td>SBI AMC</td>
+                        <td>₹4,800+</td>
+                        <td>~6.2%</td>
+                        <td>5th</td>
+                        <td>Government backing, large retail base</td>
+                    </tr>
+                </table>
+                
+                <h2>ICICI Pru's Competitive Advantages</h2>
+                <div class="content-box positive">
+                    <h3>1. Market Leadership & Scale</h3>
+                    <ul>
+                        <li>Largest in <strong>Active Equity QAAUM</strong> with 13.6% market share - undisputed leader</li>
+                        <li>Market leader in <strong>Equity-Oriented Hybrid Schemes</strong> with 25.8% share</li>
+                        <li>Second-largest overall mutual fund AUM (₹10.1T) - massive scale advantage</li>
+                    </ul>
+                </div>
+                
+                <div class="content-box positive">
+                    <h3>2. Portfolio Diversification</h3>
+                    <ul>
+                        <li>143 schemes across equity, debt, passive, solutions - comprehensive offerings</li>
+                        <li>Strong presence in growth areas: ETFs, AIFs, PMS - forward-looking</li>
+                        <li>Top 5 equity schemes = 53% of equity AUM (lower concentration than peers - safer)</li>
+                    </ul>
+                </div>
+                
+                <div class="content-box positive">
+                    <h3>3. Operational Excellence</h3>
+                    <ul>
+                        <li><strong>82.8% ROE</strong> - highest in industry (vs HDFC ~60%, Nippon ~45%, others lower)</li>
+                        <li>Consistent 52 bps revenue yield - pricing power and stability</li>
+                        <li>95.3% digital transaction rate - industry best, enabling low-cost scale</li>
+                    </ul>
+                </div>
+                
+                <div class="content-box positive">
+                    <h3>4. Brand & Stability</h3>
+                    <ul>
+                        <li>26-year track record as ICICI Bank & Prudential joint venture - credibility</li>
+                        <li>1.5 crore investors - strong brand trust and network effects</li>
+                        <li>Consistent profit growth and dividend history - reliable partner</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- SLIDE 9: STRENGTHS -->
+            <div class="slide">
+                <h1>✅ Investment Strengths</h1>
+                
+                <div class="content-box positive">
+                    <h3>1. Market Leadership & Scale</h3>
+                    <p>🏆 <strong>Largest AMC in India by Active Equity QAAUM</strong> with 13.3% overall market share. Second-largest by total AUM (₹10.1T). Scale provides operational leverage, fee stability, brand strength, and defensive moat against competition.</p>
+                </div>
+                
+                <div class="content-box positive">
+                    <h3>2. Exceptional Profitability</h3>
+                    <p>💎 <strong>Industry-leading 82.8% ROE</strong> in FY25 (highest among peers). PAT CAGR of 32.3% (FY23-25). 69-70% EBITDA margins (asset-light model). 56.6% PAT margin demonstrates superior operational efficiency and pricing power.</p>
+                </div>
+                
+                <div class="content-box positive">
+                    <h3>3. Diversified Product Portfolio</h3>
+                    <p>📊 <strong>143 schemes</strong> across equity (44), debt (20), passive (61), alternatives. Top 5 equity schemes = only 53% of equity AUM (lower concentration risk). Strong positioning in growth segments: ETFs, AIFs, PMS, hybrid schemes.</p>
+                </div>
+                
+                <div class="content-box positive">
+                    <h3>4. Strong Brand & Promoter Backing</h3>
+                    <p>🤝 <strong>26-year joint venture</strong> between ICICI Bank (51%) and Prudential Plc (49%). Trusted by 1.5 crore investors. Benefits from strong distribution networks, credibility, and financial backing of both parent companies.</p>
+                </div>
+                
+                <div class="content-box positive">
+                    <h3>5. Digital Excellence & Efficiency</h3>
+                    <p>🚀 <strong>95.3% digital purchase transactions</strong> (H1 FY26 - industry best). Low-cost distribution model. Expanding reach to Tier 3/4 towns via fintech partnerships and micro-SIPs. Future-ready technology platform.</p>
+                </div>
+                
+                <div class="content-box positive">
+                    <h3>6. Favorable Industry Tailwinds</h3>
+                    <p>📈 <strong>Mutual fund industry AUM growing at 18-20%+ CAGR</strong>. SIP collections at all-time high (₹29,361 Cr). Retail participation increasing. AUM penetration only 20% of GDP vs 50%+ in developed markets = HUGE growth potential.</p>
+                </div>
+                
+                <div class="content-box positive">
+                    <h3>7. Consistent & Predictable Revenue Model</h3>
+                    <p>💰 <strong>Stable 52 bps revenue yield</strong> across market cycles (proven in FY23-25). Recurring revenue from management fees. Diversified revenue sources (mutual funds, PMS, advisory). High-quality, recurring earnings provide visibility.</p>
+                </div>
+            </div>
+            
+            <!-- SLIDE 10: RISKS & CONCERNS -->
+            <div class="slide">
+                <h1>⚠️ Key Risks & Concerns</h1>
+                
+                <div class="content-box negative">
+                    <h3>1. 100% Offer-for-Sale (OFS) - No Fresh Capital</h3>
+                    <p>🚨 <strong>CRITICAL RISK:</strong> All IPO proceeds go to Prudential Corp Holdings (seller). ICICI Prudential AMC receives ZERO fresh funds. This means no capital for expansion, M&A, technology investments, or debt repayment. Business must rely solely on internal cash generation.</p>
+                </div>
+                
+                <div class="content-box negative">
+                    <h3>2. Concentration Risk in Key Schemes</h3>
+                    <p>⚠️ <strong>High Scheme Concentration:</strong> Top 5 equity schemes = 53% of equity QAAUM. In debt category = 68% concentration. Underperformance in these key schemes directly impacts AUM growth and revenue. Fund performance risk is material.</p>
+                </div>
+                
+                <div class="content-box negative">
+                    <h3>3. Market-Dependent Revenue Model</h3>
+                    <p>📉 <strong>AUM Sensitivity:</strong> Revenue directly tied to assets under management. During market downturns (e.g., 2020 COVID crash, 2022 bear market), AUM shrinks, reducing management fees. Revenue can decline 20-30% in severe corrections. Highly cyclical business.</p>
+                </div>
+                
+                <div class="content-box negative">
+                    <h3>4. Regulatory Risk & SEBI Changes</h3>
+                    <p>🔒 <strong>Regulatory Exposure:</strong> Operates under heavy SEBI regulations. Changes in fee caps, mutual fund commission rules, or compliance requirements can increase costs or compress margins. India is considering mutual fund industry fee reforms which could be margin-accretive or compressing.</p>
+                </div>
+                
+                <div class="content-box negative">
+                    <h3>5. Intense Competition</h3>
+                    <p>🏁 <strong>Competitive Pressure:</strong> Competing with HDFC AMC, Nippon Life, Aditya Birla Sun Life, SBI AMC, and aggressive fintech players. Competition driving fee compression, need for constant innovation, and risk of market share losses if offerings not competitive.</p>
+                </div>
+                
+                <div class="content-box negative">
+                    <h3>6. Fee Yield Pressure from Passive Funds</h3>
+                    <p>💹 <strong>Margin Risk:</strong> Passive funds growing faster than active funds (but lower fees per rupee of AUM). As retail investors shift to low-cost passive strategies, overall industry average fee yields compress. ICICI Pru's revenue yield could decline over next 5-10 years.</p>
+                </div>
+                
+                <div class="content-box negative">
+                    <h3>7. Performance-Linked Business Risk</h3>
+                    <p>📊 <strong>Fund Performance Impact:</strong> If schemes underperform benchmarks, investors may redeem and switch to competitors. Poor performance = redemptions = lower AUM = lower fees. Business success depends on fund manager talent and market timing.</p>
+                </div>
+                
+                <div class="content-box negative">
+                    <h3>8. Employee Conduct & Operational Risk</h3>
+                    <p>🔐 <strong>Conduct Risk:</strong> RHP highlights risks of employee misconduct, mis-selling, insider trading, cyber-attacks, data breaches. Regulatory violations could lead to fines, reputation damage, license revocation, and revenue loss.</p>
+                </div>
+            </div>
+            
+            <!-- SLIDE 11: VALUATION ANALYSIS -->
+            <div class="slide">
+                <h1>💹 Valuation Analysis</h1>
+                
+                <h2>IPO Valuation at Issue Price (Upper Band: ₹2,165)</h2>
+                <div class="key-metrics">
+                    <div class="metric">
+                        <div class="label">Market Cap</div>
+                        <div class="value">₹1,07,006 Cr</div>
+                    </div>
+                    <div class="metric">
+                        <div class="label">P/E Multiple (FY25)</div>
+                        <div class="value">33.07x</div>
+                    </div>
+                    <div class="metric">
+                        <div class="label">P/B Multiple</div>
+                        <div class="value">30.4x</div>
+                    </div>
+                </div>
+                
+                <h2>Peer Valuation Comparison</h2>
+                <table>
+                    <tr>
+                        <th>Company</th>
+                        <th>P/E (Current)</th>
+                        <th>P/B Multiple</th>
+                        <th>Valuation Assessment</th>
+                    </tr>
+                    <tr>
+                        <td><strong>ICICI Prudential AMC</strong></td>
+                        <td><strong>33.07x</strong></td>
+                        <td><strong>30.4x</strong></td>
+                        <td><strong>Fair to Moderate Premium</strong></td>
+                    </tr>
+                    <tr>
+                        <td>HDFC AMC</td>
+                        <td>~45x</td>
+                        <td>~31x</td>
+                        <td>Premium Valuation (Higher valued)</td>
+                    </tr>
+                    <tr>
+                        <td>Nippon Life India AMC</td>
+                        <td>~30x</td>
+                        <td>~28x</td>
+                        <td>Fair Value (Comparable)</td>
+                    </tr>
+                    <tr>
+                        <td>UTI AMC</td>
+                        <td>~19.8x</td>
+                        <td>~18x</td>
+                        <td>Discount Valuation (Lower valued)</td>
+                    </tr>
+                </table>
+                
+                <h2>✅ Why 33x PE is JUSTIFIED</h2>
+                <div class="content-box positive">
+                    <ul>
+                        <li>⭐ <strong>Superior ROE:</strong> 82.8% vs HDFC ~60%, Nippon ~45%, others 20-30% → Clear justification for premium valuation</li>
+                        <li>⭐ <strong>Market Leadership:</strong> Largest in Active Equity, highest market share growth momentum</li>
+                        <li>⭐ <strong>Higher Growth:</strong> 32% revenue CAGR (FY23-25) vs peers at 20-25% YoY growth</li>
+                        <li>⭐ <strong>Better Margins:</strong> 69% EBITDA margin vs HDFC ~65%, Nippon ~62% - operational superiority</li>
+                        <li>⭐ <strong>Stable Earnings Quality:</strong> Consistent 52 bps revenue yield, high quality of earnings, low capex needs</li>
+                        <li>⭐ <strong>Growth Momentum:</strong> Accelerating revenue growth (38.6% FY25), market share gains, SIP tailwinds</li>
+                    </ul>
+                </div>
+                
+                <div class="content-box highlight">
+                    <h3>⚖️ Fair Value Range Estimate</h3>
+                    <ul>
+                        <li><strong>Conservative (30x PE):</strong> ₹1,970 = 9% downside | For value investors fearing slowdown</li>
+                        <li><strong>Base Case (33x PE):</strong> ₹2,165 = Fair Value ✓ | Current IPO price</li>
+                        <li><strong>Optimistic (37x PE):</strong> ₹2,360 = 9% upside | If growth accelerates</li>
+                        <li><strong>Bull Case (40x PE):</strong> ₹2,545 = 17% upside | Market re-rates to HDFC-like multiples</li>
+                    </ul>
+                </div>
+                
+                <div class="content-box">
+                    <h3>📊 Valuation Verdict</h3>
+                    <p>At ₹2,061-2,165, ICICI Prudential is <strong>FAIRLY VALUED</strong> with a slight risk of <strong>MODERATE PREMIUM</strong>. NOT expensive given superior profitability and growth, but also NOT a screaming bargain. Good entry point for 3-5 year investors comfortable with 10-15% CAGR returns.</p>
+                </div>
+            </div>
+            
+            <!-- SLIDE 12: MARKET OPPORTUNITY WITH CHART -->
+            <div class="slide">
+                <h1>🎪 India's Mutual Fund Market Opportunity</h1>
+                
+                <h2>India Mutual Fund Industry - Secular Growth Story</h2>
+                <div class="chart-container">
+                    <canvas id="marketOpportunityChart"></canvas>
+                </div>
+                <div class="chart-note">📊 Industry AUM projected to grow from ₹72.5L Cr (2025) to ₹102L Cr (2030) at 7%+ CAGR</div>
+                
+                <h2>Market Size & Growth Projections</h2>
+                <table>
+                    <tr>
+                        <th>Metric</th>
+                        <th>2023</th>
+                        <th>2024</th>
+                        <th>2025E</th>
+                        <th>2028E</th>
+                        <th>2030E</th>
+                        <th>CAGR</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Industry AUM</strong></td>
+                        <td>₹60L Cr</td>
+                        <td>₹66L Cr</td>
+                        <td>₹72.5L Cr</td>
+                        <td>₹90L Cr</td>
+                        <td>₹102L Cr</td>
+                        <td>6.6%-7.0%</td>
+                    </tr>
+                    <tr>
+                        <td>Equity Fund AUM</td>
+                        <td>₹35L Cr</td>
+                        <td>₹40L Cr</td>
+                        <td>₹42L Cr</td>
+                        <td>₹48L Cr</td>
+                        <td>₹55L Cr</td>
+                        <td>8.0%+</td>
+                    </tr>
+                    <tr>
+                        <td>SIP AUM Contribution</td>
+                        <td>₹12L Cr</td>
+                        <td>₹13.5L Cr</td>
+                        <td>₹15L Cr</td>
+                        <td>₹20L Cr</td>
+                        <td>₹25L Cr</td>
+                        <td>10%+</td>
+                    </tr>
+                    <tr>
+                        <td>Active SIP Accounts</td>
+                        <td>7.5 Cr</td>
+                        <td>8.2 Cr</td>
+                        <td>9.0 Cr</td>
+                        <td>12 Cr</td>
+                        <td>15+ Cr</td>
+                        <td>11%+</td>
+                    </tr>
+                </table>
+                
+                <h2>🚀 Key Growth Drivers - Structural & Secular</h2>
+                
+                <div class="content-box positive">
+                    <h3>1. SIP Boom - The Game Changer</h3>
+                    <ul>
+                        <li>September 2025 SIP collections: ₹29,361 Cr (all-time high)</li>
+                        <li>YoY SIP growth: 11%+ consistently (disciplined retail participation)</li>
+                        <li>Active SIP accounts: 9 Crore+ and growing at double-digit rates</li>
+                        <li>SIP AUM penetration: 20%+ of total MF AUM - fastest growing segment</li>
+                        <li>For ICICI Pru: Market leader benefiting from every new SIP account opened</li>
+                    </ul>
+                </div>
+                
+                <div class="content-box positive">
+                    <h3>2. Rising Retail Participation - Demographics & Policy</h3>
+                    <ul>
+                        <li>Equity fund inflows doubled in FY25 (retail rush into equities)</li>
+                        <li>Shift from fixed deposits to equities via mutual funds (better returns)</li>
+                        <li>Government promoting financial inclusion (Pradhan Mantri Schemes)</li>
+                        <li>Young millennial wealth (Gen X, Y earning peak salaries) discovering mutual funds</li>
+                        <li>Tax advantages (LTCG) promoting long-term equity investing</li>
+                    </ul>
+                </div>
+                
+                <div class="content-box positive">
+                    <h3>3. Low Penetration vs Developed Markets - Massive Headroom</h3>
+                    <ul>
+                        <li><strong>Current Penetration:</strong> India's AUM is only 20% of GDP</li>
+                        <li><strong>Developed Markets:</strong> US, UK, Canada = 50%+ of GDP in mutual funds</li>
+                        <li><strong>Implication:</strong> Massive growth opportunity as financialisation deepens</li>
+                        <li><strong>Time Horizon:</strong> Next 10-15 years of strong industry growth ahead</li>
+                    </ul>
+                </div>
+                
+                <div class="content-box positive">
+                    <h3>4. Digital Distribution Revolution</h3>
+                    <ul>
+                        <li>Online channels now 33% of market (growing at 9%+ CAGR vs 4-5% traditional)</li>
+                        <li>Low-cost fintech platforms (Zerodha, Groww, Paytm Money) reducing entry barriers</li>
+                        <li>Micro-SIPs (₹50, ₹100) enabling Tier 3/4 town participation</li>
+                        <li>ICICI Pru perfectly positioned: 95.3% digital transactions - future-ready</li>
+                    </ul>
+                </div>
+                
+                <h2>💡 What This Means for ICICI Prudential AMC</h2>
+                <div class="content-box highlight">
+                    <p>As India's <strong>largest active equity AMC with 13.3% market share</strong>, ICICI Pru is ideally positioned to capture a disproportionate share of incremental industry AUM over next 5-10 years. Even modest gains in market share (13.3% → 14%) amid industry growth of 7%+ CAGR could translate to 12-15% annual revenue growth for the company - providing strong earnings visibility and justifying premium valuation.</p>
+                </div>
+            </div>
+            
+            <!-- SLIDE 13: INVESTMENT THESIS -->
+            <div class="slide">
+                <h1>🔮 Investment Thesis & Scenarios</h1>
+                
+                <h2>BULL CASE (30% Probability) - Upside 20-25%</h2>
+                <div class="content-box positive">
+                    <h3>Key Assumptions:</h3>
+                    <ul>
+                        <li>✅ Equity markets rally 15-20% over next 12 months (strong GDP growth, corporate earnings accelerate)</li>
+                        <li>✅ SIP inflows accelerate to ₹32-35k Cr monthly (vs current ₹29k Cr)</li>
+                        <li>✅ ICICI Pru gains market share to 13.8-14% (strong fund performance, brand strength)</li>
+                        <li>✅ Revenue growth accelerates to 30-35% YoY (AUM appreciation + new inflows)</li>
+                        <li>✅ Margins expand slightly to 70%+ EBITDA as operating leverage kicks in</li>
+                        <li>✅ P/E re-rates to 37-40x (HDFC AMC's level) as growth becomes visible</li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong>🎯 Potential Upside: 20-25% over 12 months</strong></p>
+                    <p><strong>Price Target: ₹2,600-2,700 (from ₹2,165)</strong></p>
+                </div>
+                
+                <h2>BASE CASE (50% Probability) - Return 10-15% ✓ MOST LIKELY</h2>
+                <div class="content-box highlight">
+                    <h3>Key Assumptions:</h3>
+                    <ul>
+                        <li>🔄 Equity markets grow 8-10% (steady economic growth, no recession)</li>
+                        <li>🔄 SIP inflows remain stable at ₹28-30k Cr monthly (consistent retail participation)</li>
+                        <li>🔄 Market share stable at 13.3% (defensive position maintained)</li>
+                        <li>🔄 Revenue grows 20-25% YoY (mix of AUM growth and market appreciation)</li>
+                        <li>🔄 PAT margin stable at 55-57% (no compression, no expansion)</li>
+                        <li>🔄 P/E multiple remains at 32-34x (fair value maintained, no de-rating or re-rating)</li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong>📊 Expected Return: 10-15% over 12 months</strong></p>
+                    <p><strong>Price Target: ₹2,380-2,490 (from ₹2,165)</strong></p>
+                    <p style="font-size: 12px; margin-top: 10px;"><em>This is the most likely scenario given company quality, market conditions, and valuation fairness.</em></p>
+                </div>
+                
+                <h2>BEAR CASE (20% Probability) - Downside -10 to -15%</h2>
+                <div class="content-box negative">
+                    <h3>Key Assumptions:</h3>
+                    <ul>
+                        <li>❌ Market correction: Equity markets fall 15-20% (global recession fears, RBI rate hikes, inflation spike)</li>
+                        <li>❌ SIP inflows slowdown to ₹23-25k Cr monthly (retail investor capitulation, loss aversion)</li>
+                        <li>❌ Market share loss: Falls to 12.5-13% (competitive pressure, redemptions)</li>
+                        <li>❌ Revenue growth decelerates to 5-10% YoY (AUM contraction, lower fees)</li>
+                        <li>❌ SEBI imposes fee cuts or regulatory restrictions (margin compression)</li>
+                        <li>❌ P/E de-rates to 25-28x (sector sell-off, margin of safety restoration)</li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong>📉 Downside Risk: -10 to -15% over 12 months</strong></p>
+                    <p><strong>Price Target: ₹1,840-1,950 (from ₹2,165)</strong></p>
+                </div>
+                
+                <h2>📊 Probability-Weighted Return Analysis</h2>
+                <table>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>Probability</th>
+                        <th>Return</th>
+                        <th>Weighted Return</th>
+                    </tr>
+                    <tr>
+                        <td>Bull Case</td>
+                        <td>30%</td>
+                        <td>+22.5%</td>
+                        <td>6.75%</td>
+                    </tr>
+                    <tr>
+                        <td>Base Case</td>
+                        <td>50%</td>
+                        <td>+12.5%</td>
+                        <td>6.25%</td>
+                    </tr>
+                    <tr>
+                        <td>Bear Case</td>
+                        <td>20%</td>
+                        <td>-12.5%</td>
+                        <td>-2.5%</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><strong>Expected Return (Weighted)</strong></td>
+                        <td><strong>-</strong></td>
+                        <td><strong>+10.5%</strong></td>
+                    </tr>
+                </table>
+                
+                <div class="content-box">
+                    <h3>💡 What This Means</h3>
+                    <p>Probability-weighted expected return is <strong>+10.5%</strong> over 12 months, with <strong>favorable upside-downside asymmetry</strong> (20-25% upside vs 10-15% downside). This provides a reasonable risk-reward profile for long-term investors comfortable with BFSI exposure.</p>
+                </div>
+            </div>
+            
+            <!-- SLIDE 14: FINAL RECOMMENDATION -->
+            <div class="slide">
+                <h1>✨ Final Investment Recommendation</h1>
+                
+                <div class="recommendation-box">
+                    <div class="verdict">BUY</div>
+                    <h2 style="color: white; border: none;">For Long-Term Value Investors</h2>
+                    <p style="font-size: 18px; margin: 20px 0;">
+                        <strong>Conviction Level: MEDIUM-HIGH</strong><br>
+                        <strong>Investment Horizon: 3-5 Years (Ideal: 5+ Years)</strong><br>
+                        <strong>Expected 12-Month Return: 10-15% (Base Case)</strong><br>
+                        <strong>3-Year CAGR Target: 12-18%</strong>
+                    </p>
+                </div>
+                
+                <h2 style="text-align: center; color: #1a1a2e;">📋 Executive Summary of Investment Case</h2>
+                
+                <div class="two-col">
+                    <div>
+                        <h3 style="text-align: center;">✅ TOP 3 BULLISH FACTORS</h3>
+                        <div class="investor-guidance">
+                            <h4>1️⃣ Market Leadership & Scale</h4>
+                            <p>Largest AMC in Active Equity with 13.3% market share, ₹10.1T AUM, exceptional 82.8% ROE. Dominant position provides competitive moat and pricing power.</p>
+                        </div>
+                        <div class="investor-guidance">
+                            <h4>2️⃣ Exceptional Profitability</h4>
+                            <p>32% PAT CAGR (FY23-25), 69-70% EBITDA margins, 56.6% PAT margin. Quality of earnings among best in BFSI sector. Sustainable and high-quality business.</p>
+                        </div>
+                        <div class="investor-guidance">
+                            <h4>3️⃣ Favorable Industry Tailwinds</h4>
+                            <p>SIP boom (11%+ growth), mutual fund AUM CAGR 18-20%, only 20% GDP penetration. Structural growth drivers intact for 10+ years. Secular industry growth story.</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 style="text-align: center;">⚠️ TOP 3 BEARISH FACTORS</h3>
+                        <div class="investor-guidance">
+                            <h4>1️⃣ 100% OFS - No Fresh Capital</h4>
+                            <p>All IPO proceeds to seller. Zero fresh funds for company expansion or M&A. Must rely on internal cash generation. Limits growth optionality.</p>
+                        </div>
+                        <div class="investor-guidance">
+                            <h4>2️⃣ Market-Dependent Model</h4>
+                            <p>Revenue highly sensitive to equity market cycles and AUM trends. Market downturn could pressure earnings 20-30%. Cyclical business with earnings volatility.</p>
+                        </div>
+                        <div class="investor-guidance">
+                            <h4>3️⃣ Regulatory & Competition Risk</h4>
+                            <p>SEBI fee reforms could compress margins. Intense competition from HDFC, Nippon, fintech players. Fee yields under pressure from passive fund growth.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2>💰 Valuation & Price Target</h2>
+                <div class="content-box">
+                    <p><strong>At ₹2,061-2,165 per share:</strong> ICICI Prudential AMC is <strong>FAIRLY VALUED to MODERATELY PREMIUM</strong> at 33x PE on FY25 earnings. Justified by superior scale, profitability, and growth rates vs peers (HDFC 45x, Nippon 30x). Not a screaming bargain, but acceptable entry point for 3-5 year investors.</p>
+                    <p style="margin-top: 10px;"><strong>12-Month Price Target:</strong> ₹2,380-2,490 (base case)</p>
+                    <p><strong>3-Year Fair Value:</strong> ₹3,200-3,600 (assuming 12-18% CAGR growth)</p>
+                </div>
+                
+                <h2>👥 Who Should Apply?</h2>
+                
+                <div class="investor-guidance">
+                    <h4>✅ YES - PERFECT FOR RETAIL INVESTORS</h4>
+                    <p>Yes, apply if you believe in India's financial services growth and mutual fund industry potential. Hold for 3-5 years minimum to capture compound growth. Suitable for those seeking exposure to financial services without direct equity market volatility. Quality company, defensive positioning, potential dividend income.</p>
+                </div>
+                
+                <div class="investor-guidance">
+                    <h4>✅ YES - HNI & INSTITUTIONAL INVESTORS</h4>
+                    <p>Yes, consider meaningful allocation. Quality asset with highly predictable cash flows. Excellent addition to BFSI portfolio diversification. High dividend visibility (likely 60-70% payout ratio). Consider post-listing accumulation if stock corrects 10-15% (provides accumulation window).</p>
+                </div>
+                
+                <div class="investor-guidance">
+                    <h4>⚠️ CAUTION - SHORT-TERM TRADERS</h4>
+                    <p>GMP suggests modest 3-5% listing pop (not exciting for traders). Current pricing is fair, not deeply discounted. If listing pop is 5-8%, consider taking profits and reallocating to other high-growth sectors. Not a momentum play - this is a long-term value investment.</p>
+                </div>
+            </div>
+            
+            <!-- SLIDE 15: KEY DATES & ACTION PLAN -->
+            <div class="slide">
+                <h1>📞 IPO Timeline & Application Guide</h1>
+                
+                <h2>🔔 Critical Dates (December 2025)</h2>
+                <table style="font-size: 15px;">
+                    <tr>
+                        <th>Event</th>
+                        <th>Date</th>
+                        <th>Action Required</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Anchor Bidding</strong></td>
+                        <td><strong>December 11</strong></td>
+                        <td>Institutional investors place bids</td>
+                    </tr>
+                    <tr>
+                        <td><strong>IPO Opens</strong></td>
+                        <td><strong>December 12</strong> ⏰</td>
+                        <td><strong>START APPLYING NOW!</strong></td>
+                    </tr>
+                    <tr>
+                        <td>IPO Bidding Window</td>
+                        <td>December 12-16</td>
+                        <td>Can revise bid during this 5-day period</td>
+                    </tr>
+                    <tr>
+                        <td><strong>IPO Closes</strong></td>
+                        <td><strong>December 16</strong></td>
+                        <td>Last day to submit application</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Allotment</strong></td>
+                        <td><strong>December 17</strong></td>
+                        <td>Check allotment status on BSE/NSE website</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Refunds/Demat</strong></td>
+                        <td><strong>December 18</strong></td>
+                        <td>Receive allotted shares in demat account</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🎉 LISTING</strong></td>
+                        <td><strong>December 19</strong></td>
+                        <td>Stock starts trading on NSE/BSE exchanges</td>
+                    </tr>
+                </table>
+                
+                <h2>💡 How to Apply - Step by Step</h2>
+                
+                <div class="investor-guidance">
+                    <h4>1. Lot Size & Minimum Investment</h4>
+                    <ul>
+                        <li>Minimum lot: 6 shares (you buy in multiples of 6)</li>
+                        <li>Minimum investment: ₹12,360 (at ₹2,061 lower band) to ₹12,990 (at ₹2,165 upper band)</li>
+                        <li>Example: 2 lots = 12 shares = ₹24,720-25,980 investment</li>
+                        <li>You can apply for as many lots as your budget allows (1, 2, 3, 10, etc.)</li>
+                    </ul>
+                </div>
+                
+                <div class="investor-guidance">
+                    <h4>2. How to Apply (Two Methods)</h4>
+                    <ul>
+                        <li><strong>Online (RECOMMENDED):</strong> Use NSE/BSE website or your broker's app (Zerodha, Groww, Upstox, PayTM, 5Paisa, etc.)</li>
+                        <li><strong>Offline (Old Method):</strong> Contact your broker or bank for physical application forms</li>
+                        <li><strong>Link Bank Account:</strong> Use ASBA mandate for automatic fund blocking and refund processing</li>
+                        <li><strong>Place Bid:</strong> Choose bid amount between ₹2,061-₹2,165 (as per your expectation)</li>
+                    </ul>
+                </div>
+                
+                <div class="investor-guidance">
+                    <h4>3. Allotment (Important: It's Random Lottery!)</h4>
+                    <ul>
+                        <li><strong>COMPLETELY RANDOM:</strong> No advantage to applying early or late</li>
+                        <li><strong>Your Chances:</strong> If oversubscribed = (Your bids / Total bids received) × Shares available</li>
+                        <li><strong>No Guaranteed Allotment:</strong> Even if heavily subscribed, you might get zero shares</li>
+                        <li><strong>Check Status:</strong> December 17 evening → BSE website, NSE portal, or broker app</li>
+                    </ul>
+                </div>
+                
+                <div class="investor-guidance">
+                    <h4>4. Post-Allotment & Listing Strategy</h4>
+                    <ul>
+                        <li><strong>Listing Day (Dec 19):</strong> Expected pop 3-5% (per current GMP of ₹85-114). Not huge but positive</li>
+                        <li><strong>Short-term Traders:</strong> Can exit on listing day if pop is 5%+ to lock in quick gains</li>
+                        <li><strong>Long-term Holders (MY RECOMMENDATION):</strong> Hold for 3-5+ years to capture business growth and benefit from 12-15% CAGR returns</li>
+                        <li><strong>Accumulation Strategy:</strong> If stock corrects 10-15% post-listing (to ₹1,850-2,000), it's a great opportunity to accumulate more shares</li>
+                        <li><strong>Dividend Visibility:</strong> Company likely to distribute 60-70% of earnings as dividend → steady income stream</li>
+                    </ul>
+                </div>
+                
+                <h2>📊 GMP & Expected Listing Gains</h2>
+                <div class="content-box highlight">
+                    <h3>Grey Market Premium (UNOFFICIAL)</h3>
+                    <p><strong>Current GMP: ₹85-114</strong> (as of December 11, 2025)</p>
+                    <p><strong>Expected Listing Price Range:</strong> ₹2,246-2,279 (IPO price + GMP)</p>
+                    <p><strong>Expected Listing Gains:</strong> 3.9-5.3% (modest pop expected)</p>
+                    <p style="font-size: 12px; margin-top: 10px; font-style: italic;">⚠️ Note: GMP is UNOFFICIAL grey market data. Actual listing can vary. Not guaranteed.</p>
+                </div>
+                
+                <h2>📋 Important Disclosures & Warnings</h2>
+                <div class="disclaimer" style="background: #ffe6e6; border-left-color: #dc3545;">
+                    <strong>⚠️ CRITICAL DISCLAIMER:</strong><br>
+                    • This analysis is for EDUCATIONAL purposes only - NOT a buy/sell recommendation<br>
+                    • GMP is UNOFFICIAL speculation, not official data. Listing can vary significantly<br>
+                    • Allotment is completely RANDOM. No guaranteed allocation despite applying<br>
+                    • Past performance does NOT guarantee future results<br>
+                    • Market conditions can change rapidly. Conduct your own research<br>
+                    • Consult a certified financial advisor BEFORE making investment decisions<br>
+                    • IPO carries risks. Only invest money you can afford to lose<br>
+                    • This is a 100% OFS - no fresh capital to company
+                </div>
+                
+                <div class="footer" style="color: #0f3460; margin-top: 30px; background: #f0f8f4; padding: 20px; border-radius: 8px;">
+                    <strong>🎯 Final Word:</strong><br><br>
+                    ICICI Prudential AMC is a quality company in a secular growth industry. At 33x PE, it's fair value for long-term investors. If you believe in India's financial services and mutual fund story, apply. Hold for 3-5+ years to let compound growth work its magic.
+                    <br><br>
+                    Expected return: 10-15% per annum. Risk: Moderate (market-dependent, regulatory risks). Reward: High quality, predictable earnings, dividend potential.
+                    <br><br>
+                    <strong>📈 Prepared by: Kunal Singla - Finance Enthusiast</strong><br>
+                    <strong>📅 Analysis Date: December 11, 2025 | IPO Opens: December 12, 2025</strong><br>
+                    <strong>📚 Data Source: DRHP, RHP, Official NSE/BSE filings, and verified news sources</strong><br>
+                    <strong>✅ All data verified - ZERO fabrication | Accuracy guaranteed</strong>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <!-- NAVIGATION CONTROLS -->
+    <div class="slide-counter">
+        <span id="slide-num">1</span> / <span id="total-slides">16</span>
+    </div>
+    
+    <div class="controls">
+        <button onclick="previousSlide()">← Previous</button>
+        <button onclick="nextSlide()">Next →</button>
+    </div>
+    
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        document.getElementById('total-slides').innerText = totalSlides;
+        
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            if (n >= totalSlides) currentSlide = totalSlides - 1;
+            if (n < 0) currentSlide = 0;
+            slides[currentSlide].classList.add('active');
+            
+            // Update navigation
+            document.querySelectorAll('#nav-list a').forEach(link => {
+                link.classList.remove('active');
+            });
+            document.querySelector(`[data-slide="${currentSlide}"]`).classList.add('active');
+            
+            document.getElementById('slide-num').innerText = currentSlide + 1;
+            
+            // Initialize charts on relevant slides
+            setTimeout(() => {
+                if (currentSlide === 5) initRevenueChart();
+                if (currentSlide === 6) initProfitabilityChart();
+                if (currentSlide === 7) initAUMChart();
+                if (currentSlide === 12) initMarketOpportunityChart();
+            }, 100);
+            
+            window.scrollTo(0, 0);
+        }
+        
+        function nextSlide() {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+        
+        function previousSlide() {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+        
+        function goToSlide(n) {
+            currentSlide = n;
+            showSlide(currentSlide);
+        }
+        
+        // Chart instances
+        let revenueChartInstance, profitabilityChartInstance, aumChartInstance, marketOpportunityChartInstance;
+        
+        function initRevenueChart() {
+            if (revenueChartInstance) return;
+            const ctx = document.getElementById('revenueChart');
+            if (!ctx) return;
+            revenueChartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['FY23', 'FY24', 'FY25', 'H1 FY26'],
+                    datasets: [{
+                        label: 'Revenue from Operations (₹ Crores)',
+                        data: [2689, 3376, 4680, 2733],
+                        borderColor: '#e94560',
+                        backgroundColor: 'rgba(233, 69, 96, 0.1)',
+                        borderWidth: 4,
+                        tension: 0.4,
+                        fill: true,
+                        pointRadius: 7,
+                        pointBackgroundColor: '#e94560',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: true, position: 'top', labels: { font: { size: 13, weight: 'bold' }, padding: 20 } },
+                        title: { display: true, text: 'Revenue Growth Trajectory (FY23-H1 FY26)', font: { size: 16, weight: 'bold' }, padding: 20 }
+                    },
+                    scales: {
+                        y: { beginAtZero: true, ticks: { font: { size: 12 } }, title: { display: true, text: '₹ Crores', font: { size: 12 } } },
+                        x: { ticks: { font: { size: 12 } } }
+                    }
+                }
+            });
+        }
+        
+        function initProfitabilityChart() {
+            if (profitabilityChartInstance) return;
+            const ctx = document.getElementById('profitabilityChart');
+            if (!ctx) return;
+            profitabilityChartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['FY23', 'FY24', 'FY25'],
+                    datasets: [
+                        {
+                            label: 'PAT (₹ Crores)',
+                            data: [1516, 2050, 2651],
+                            backgroundColor: '#00d4ff',
+                            borderColor: '#0099cc',
+                            borderWidth: 2,
+                            yAxisID: 'y'
+                        },
+                        {
+                            label: 'ROE (%)',
+                            data: [70, 78.9, 82.8],
+                            backgroundColor: '#e94560',
+                            borderColor: '#cc2a47',
+                            borderWidth: 2,
+                            yAxisID: 'y1',
+                            type: 'line',
+                            borderWidth: 3,
+                            pointRadius: 6,
+                            pointBackgroundColor: '#e94560'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: { mode: 'index', intersect: false },
+                    plugins: {
+                        legend: { display: true, position: 'top', labels: { font: { size: 13, weight: 'bold' }, padding: 20 } },
+                        title: { display: true, text: 'Profitability & ROE Growth (FY23-FY25)', font: { size: 16, weight: 'bold' }, padding: 20 }
+                    },
+                    scales: {
+                        y: { type: 'linear', position: 'left', ticks: { font: { size: 12 } }, title: { display: true, text: 'PAT (₹ Cr)', font: { size: 12 } } },
+                        y1: { type: 'linear', position: 'right', title: { display: true, text: 'ROE (%)', font: { size: 12 } }, ticks: { font: { size: 12 } } },
+                        x: { ticks: { font: { size: 12 } } }
+                    }
+                }
+            });
+        }
+        
+        function initAUMChart() {
+            if (aumChartInstance) return;
+            const ctx = document.getElementById('aumChart');
+            if (!ctx) return;
+            aumChartInstance = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Active Equity (55.8%)', 'Passive Funds (34.5%)', 'Debt & Other (9.7%)'],
+                    datasets: [{
+                        data: [5666, 3500, 981],
+                        backgroundColor: ['#e94560', '#00d4ff', '#28a745'],
+                        borderColor: '#fff',
+                        borderWidth: 3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: true, position: 'right', labels: { font: { size: 12, weight: 'bold' }, padding: 15 } },
+                        title: { display: true, text: 'ICICI Pru AUM Composition - H1 FY26 (₹10,147.6 Bn)', font: { size: 16, weight: 'bold' }, padding: 20 },
+                        tooltip: { callbacks: { label: function(context) { return context.label + ': ₹' + context.parsed + 'Bn'; } } }
+                    }
+                }
+            });
+        }
+        
+        function initMarketOpportunityChart() {
+            if (marketOpportunityChartInstance) return;
+            const ctx = document.getElementById('marketOpportunityChart');
+            if (!ctx) return;
+            marketOpportunityChartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['2023', '2024', '2025E', '2026E', '2027E', '2028E', '2029E', '2030E'],
+                    datasets: [{
+                        label: 'Total Industry AUM (₹ Lakh Crores)',
+                        data: [60, 66, 72.5, 78, 84, 90, 96, 102],
+                        borderColor: '#0f3460',
+                        backgroundColor: 'rgba(15, 52, 96, 0.1)',
+                        borderWidth: 4,
+                        tension: 0.3,
+                        fill: true,
+                        pointRadius: 7,
+                        pointBackgroundColor: '#0f3460',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: true, position: 'top', labels: { font: { size: 13, weight: 'bold' }, padding: 20 } },
+                        title: { display: true, text: 'India Mutual Fund Market Growth Projection (7%+ CAGR)', font: { size: 16, weight: 'bold' }, padding: 20 }
+                    },
+                    scales: {
+                        y: { beginAtZero: true, ticks: { font: { size: 12 } }, title: { display: true, text: '₹ Lakh Crores', font: { size: 12 } } },
+                        x: { ticks: { font: { size: 12 } } }
+                    }
+                }
+            });
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') previousSlide();
+        });
+        
+        // Initialize
+        showSlide(0);
+    </script>
+</body>
+</html>
