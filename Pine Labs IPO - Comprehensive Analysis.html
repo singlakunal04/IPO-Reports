@@ -1,0 +1,2021 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)file:///Users/singlakunal04/Downloads/index%20(1).html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pine Labs IPO - Comprehensive Analysis</title>
+    <script src="./Pine Labs IPO - Comprehensive Analysis_files/chart.js"></script>
+    <style>
+        :root {
+            --navy-blue: #003366;
+            --charcoal-grey: #333333;
+            --white: #FFFFFF;
+            --accent-orange: #FF6600;
+            --light-grey: #F5F5F5;
+            --border-grey: #DDDDDD;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Calibri', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .presentation-container {
+            width: 100%;
+            max-width: 1200px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            padding: 40px 50px;
+            min-height: 600px;
+            position: relative;
+            background: white;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .slide-header {
+            background: var(--navy-blue);
+            color: white;
+            padding: 20px 30px;
+            margin: -40px -50px 30px -50px;
+            border-bottom: 4px solid var(--accent-orange);
+        }
+
+        .slide-header h1 {
+            font-size: 32px;
+            margin: 0;
+        }
+
+        .slide-header h2 {
+            font-size: 28px;
+            margin: 0;
+        }
+
+        .slide-number {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: var(--navy-blue);
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .slide-footer {
+            position: absolute;
+            bottom: 15px;
+            left: 50px;
+            right: 50px;
+            text-align: center;
+            color: var(--charcoal-grey);
+            font-size: 12px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-grey);
+        }
+
+        .title-slide {
+            background: linear-gradient(135deg, var(--navy-blue) 0%, #004488 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px;
+        }
+
+        .title-slide h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .title-slide h2 {
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: var(--accent-orange);
+        }
+
+        .title-slide .author {
+            font-size: 22px;
+            margin-top: 40px;
+            color: white;
+        }
+
+        .title-slide .disclaimer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 800px;
+        }
+
+        .content {
+            margin-top: 20px;
+        }
+
+        .fact-box {
+            background: var(--light-grey);
+            border-left: 4px solid var(--accent-orange);
+            padding: 15px 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .fact-box strong {
+            color: var(--navy-blue);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .info-card {
+            background: var(--light-grey);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-grey);
+        }
+
+        .info-card h3 {
+            color: var(--navy-blue);
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .info-card p {
+            color: var(--charcoal-grey);
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .chart-container {
+            width: 100%;
+            height: 350px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+
+        table th {
+            background: var(--navy-blue);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        table td {
+            padding: 10px 12px;
+            border: 1px solid var(--border-grey);
+        }
+
+        table tr:nth-child(even) {
+            background: var(--light-grey);
+        }
+
+        .highlight-number {
+            font-size: 36px;
+            font-weight: bold;
+            color: var(--accent-orange);
+            display: block;
+            margin: 10px 0;
+        }
+
+        .metric-row {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .metric-box {
+            text-align: center;
+            padding: 15px;
+            background: var(--light-grey);
+            border-radius: 8px;
+            min-width: 150px;
+            margin: 10px;
+        }
+
+        .metric-box .value {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--navy-blue);
+        }
+
+        .metric-box .label {
+            font-size: 12px;
+            color: var(--charcoal-grey);
+            margin-top: 5px;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 50px;
+            background: var(--light-grey);
+            border-top: 2px solid var(--border-grey);
+        }
+
+        .nav-button {
+            background: var(--navy-blue);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background: var(--accent-orange);
+            transform: translateY(-2px);
+        }
+
+        .nav-button:disabled {
+            background: #CCCCCC;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .slide-indicator {
+            text-align: center;
+            color: var(--charcoal-grey);
+            font-weight: bold;
+        }
+
+        ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        li {
+            margin: 8px 0;
+            color: var(--charcoal-grey);
+            line-height: 1.6;
+        }
+
+        .strength-list li {
+            color: #006600;
+            font-weight: 500;
+        }
+
+        .risk-list li {
+            color: #CC0000;
+            font-weight: 500;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-item {
+            padding: 15px;
+            background: var(--light-grey);
+            margin: 10px 0;
+            border-left: 4px solid var(--accent-orange);
+            border-radius: 5px;
+        }
+
+        .timeline-item strong {
+            color: var(--navy-blue);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .warning-box {
+            background: #FFF3CD;
+            border: 2px solid var(--accent-orange);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .warning-box strong {
+            color: var(--accent-orange);
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                padding: 30px 20px;
+            }
+
+            .slide-header {
+                margin: -30px -20px 20px -20px;
+                padding: 15px 20px;
+            }
+
+            .slide-header h1 {
+                font-size: 24px;
+            }
+
+            .slide-header h2 {
+                font-size: 20px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .navigation {
+                padding: 15px 20px;
+            }
+
+            .chart-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Slide 1: Title Slide -->
+        <div class="slide title-slide">
+            <h1>Pine Labs IPO</h1>
+            <h2>Comprehensive Analysis &amp; Investment Intelligence</h2>
+            <div class="author">Prepared by: Kunal Singla - Finance Enthusiast</div>
+            <div class="disclaimer">
+                <strong>Disclaimer:</strong> This presentation is for informational and educational purposes only. 
+                It does not constitute investment advice. Please consult with a qualified financial advisor before making any investment decisions.
+            </div>
+        </div>
+
+        <!-- Slide 2: Executive Summary -->
+        <div class="slide">
+            <div class="slide-number">Slide 2 of 30</div>
+            <div class="slide-header">
+                <h2>Executive Summary</h2>
+            </div>
+            <div class="content">
+                <div class="fact-box">
+                    <strong>Company:</strong> Pine Labs Limited - India's Leading Merchant Commerce Platform
+                </div>
+                <div class="fact-box">
+                    <strong>IPO Size:</strong> ₹3,900 crore (₹2,080 Cr fresh issue + ₹1,820 Cr OFS)
+                </div>
+                <div class="fact-box">
+                    <strong>Price Band:</strong> ₹210 - ₹221 per share
+                </div>
+                <div class="fact-box">
+                    <strong>Valuation:</strong> ₹25,377 crore ($2.86 billion) at upper price band
+                </div>
+                <div class="fact-box">
+                    <strong>Subscription Period:</strong> November 7-11, 2025
+                </div>
+                <div class="fact-box">
+                    <strong>Listing Date:</strong> November 14, 2025
+                </div>
+                <div class="fact-box">
+                    <strong>Key Milestone:</strong> Achieved first quarterly profit in Q1 FY26 (₹4.8 crore)
+                </div>
+                <div class="fact-box">
+                    <strong>Market Position:</strong> Market leader in POS terminal space with 9.88+ lakh merchants
+                </div>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 3: Quick Facts Box -->
+        <div class="slide">
+            <div class="slide-number">Slide 3 of 30</div>
+            <div class="slide-header">
+                <h2>Quick Facts Box</h2>
+            </div>
+            <div class="content">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>Company Details</h3>
+                        <p><strong>Name:</strong> Pine Labs Limited</p>
+                        <p><strong>Industry:</strong> Fintech / Merchant Commerce</p>
+                        <p><strong>Founded:</strong> 1998</p>
+                        <p><strong>Founder:</strong> Lokvir Kapoor</p>
+                        <p><strong>Headquarters:</strong> Noida, Uttar Pradesh</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>IPO Details</h3>
+                        <p><strong>IPO Size:</strong> ₹3,900 crore</p>
+                        <p><strong>Fresh Issue:</strong> ₹2,080 crore</p>
+                        <p><strong>OFS:</strong> ₹1,820 crore</p>
+                        <p><strong>Price Band:</strong> ₹210-₹221/share</p>
+                        <p><strong>Lot Size:</strong> 67 shares</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Valuation</h3>
+                        <p><strong>At Upper Band:</strong> ₹25,377 crore</p>
+                        <p><strong>USD Valuation:</strong> $2.86 billion</p>
+                        <p><strong>P/E Ratio:</strong> 152.41x</p>
+                        <p><strong>Face Value:</strong> ₹1 per share</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Timeline</h3>
+                        <p><strong>Anchor:</strong> Nov 6, 2025</p>
+                        <p><strong>Subscription:</strong> Nov 7-11, 2025</p>
+                        <p><strong>Listing:</strong> Nov 14, 2025</p>
+                        <p><strong>Exchanges:</strong> NSE &amp; BSE</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 4: Company Overview -->
+        <div class="slide">
+            <div class="slide-number">Slide 4 of 30</div>
+            <div class="slide-header">
+                <h2>Company Overview</h2>
+            </div>
+            <div class="content">
+                <div class="fact-box">
+                    <strong>Established:</strong> 1998 by Lokvir Kapoor
+                </div>
+                <div class="fact-box">
+                    <strong>Headquarters:</strong> Noida, Uttar Pradesh, India
+                </div>
+                <div class="fact-box">
+                    <strong>Business Description:</strong> Leading merchant commerce platform offering comprehensive payment solutions including POS terminals, online payment gateways, Buy Now Pay Later (BNPL), and fintech infrastructure services
+                </div>
+                <div class="metric-row">
+                    <div class="metric-box">
+                        <div class="value">5,162</div>
+                        <div class="label">Employees</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="value">₹9,569 Cr</div>
+                        <div class="label">Total Funding</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="value">27 Years</div>
+                        <div class="label">Industry Experience</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="value">7 Countries</div>
+                        <div class="label">Global Presence</div>
+                    </div>
+                </div>
+                <div class="fact-box">
+                    <strong>Vision:</strong> To be the most trusted and innovative merchant commerce platform, empowering businesses with seamless payment and commerce solutions
+                </div>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 5: Business Model -->
+        <div class="slide">
+            <div class="slide-number">Slide 5 of 30</div>
+            <div class="slide-header">
+                <h2>Business Model &amp; Revenue Streams</h2>
+            </div>
+            <div class="content">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>🏪 In-Store Payments (Primary)</h3>
+                        <p>POS terminal solutions for offline merchants including ePOS, Plutus terminals, and cloud-based smart terminals. Revenue from device deployment, transaction fees, and merchant services.</p>
+                        <p><strong>Market Position:</strong> Market leader in India</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>💳 Online Payments (Secondary)</h3>
+                        <p>Payment gateway services for e-commerce and online businesses. Facilitates digital transactions with multiple payment options including cards, UPI, and wallets.</p>
+                        <p><strong>Integration:</strong> Seamless omnichannel experience</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🏦 Fintech Infrastructure (Tertiary)</h3>
+                        <p>BNPL solutions, EMI at checkout, gift card platform (Qwikcilver), and merchant financing options. Revenue from transaction fees and partnership commissions.</p>
+                        <p><strong>Partnerships:</strong> 177 financial institutions</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>📊 Value Proposition</h3>
+                        <p>Integrated platform offering merchants complete payment ecosystem with loyalty programs, consumer financing, and data analytics capabilities.</p>
+                        <p><strong>Differentiation:</strong> Omnichannel solutions</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 6: Products & Services -->
+        <div class="slide">
+            <div class="slide-number">Slide 6 of 30</div>
+            <div class="slide-header">
+                <h2>Products &amp; Services Portfolio</h2>
+            </div>
+            <div class="content">
+                <div class="two-column">
+                    <div>
+                        <h3 style="color: var(--navy-blue); margin-bottom: 15px;">Payment Solutions</h3>
+                        <ul>
+                            <li><strong>ePOS:</strong> Advanced electronic point-of-sale system with integrated features</li>
+                            <li><strong>Pine Labs POS:</strong> Traditional POS terminals for retail merchants</li>
+                            <li><strong>Plutus Terminal:</strong> Stand-alone payment acceptance device</li>
+                            <li><strong>Plutus Smart:</strong> Cloud-based intelligent payment platform</li>
+                            <li><strong>Online Payment Gateway:</strong> Secure digital payment processing</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--navy-blue); margin-bottom: 15px;">Fintech Services</h3>
+                        <ul>
+                            <li><strong>BNPL/EMI:</strong> Buy Now Pay Later and EMI options at checkout</li>
+                            <li><strong>Qwikcilver:</strong> Comprehensive gift card and stored value solutions</li>
+                            <li><strong>Merchant Financing:</strong> Working capital and business loans</li>
+                            <li><strong>Loyalty Programs:</strong> Customer retention and rewards management</li>
+                            <li><strong>Analytics Dashboard:</strong> Business insights and reporting tools</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="warning-box">
+                    <strong>Key Advantage:</strong> Comprehensive omnichannel platform covering both offline and online merchant needs with integrated fintech solutions
+                </div>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 7: Market Presence -->
+        <div class="slide">
+            <div class="slide-number">Slide 7 of 30</div>
+            <div class="slide-header">
+                <h2>Market Presence &amp; Scale</h2>
+            </div>
+            <div class="content">
+                <div class="metric-row">
+                    <div class="metric-box">
+                        <div class="value">9.88L+</div>
+                        <div class="label">Active Merchants</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="value">177</div>
+                        <div class="label">Financial Partners</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="value">716+</div>
+                        <div class="label">Consumer Brands</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="value">5.68B</div>
+                        <div class="label">Transactions (FY25)</div>
+                    </div>
+                </div>
+                <h3 style="color: var(--navy-blue); margin: 30px 0 15px 0;">Geographic Footprint</h3>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>🇮🇳 India (Primary Market)</h3>
+                        <p>Largest market with extensive merchant network across all major cities and growing presence in tier 2 and tier 3 cities</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🌏 Southeast Asia</h3>
+                        <p><strong>Malaysia:</strong> Established operations<br><strong>Singapore:</strong> Regional hub</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🌍 Middle East &amp; Africa</h3>
+                        <p><strong>UAE:</strong> Growing market presence<br><strong>Africa:</strong> Expanding footprint</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🌎 Other Markets</h3>
+                        <p><strong>Australia:</strong> Market entry<br><strong>United States:</strong> Strategic presence</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 8: Revenue Growth -->
+        <div class="slide active">
+            <div class="slide-number">Slide 8 of 30</div>
+            <div class="slide-header">
+                <h2>Financial Performance - Revenue Growth</h2>
+            </div>
+            <div class="content">
+                <div class="chart-container">
+                    <canvas id="revenueChart" height="700" style="display: block; box-sizing: border-box; height: 350px; width: 1084px;" width="2168"></canvas>
+                </div>
+                <div class="metric-row">
+                    <div class="metric-box">
+                        <div class="value">₹1,543 Cr</div>
+                        <div class="label">FY23 Revenue</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="value">₹1,769 Cr</div>
+                        <div class="label">FY24 Revenue</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="value">₹2,274 Cr</div>
+                        <div class="label">FY25 Revenue</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="value">28.5%</div>
+                        <div class="label">FY25 YoY Growth</div>
+                    </div>
+                </div>
+                <div class="fact-box">
+                    <strong>Q1 FY26 Revenue:</strong> ₹615 crore (17.8% YoY growth) - Strong momentum continues
+                </div>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 9: Profitability Journey -->
+        <div class="slide">
+            <div class="slide-number">Slide 9 of 30</div>
+            <div class="slide-header">
+                <h2>Profitability Journey - Path to Profit</h2>
+            </div>
+            <div class="content">
+                <div class="chart-container">
+                    <canvas id="profitChart" height="700" style="display: block; box-sizing: border-box; height: 350px; width: 1084px;" width="2168"></canvas>
+                </div>
+                <div class="metric-row">
+                    <div class="metric-box">
+                        <div class="value" style="color: #CC0000;">-₹341 Cr</div>
+                        <div class="label">FY24 Net Loss</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="value" style="color: #CC6600;">-₹145 Cr</div>
+                        <div class="label">FY25 Net Loss</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="value" style="color: #006600;">+₹4.8 Cr</div>
+                        <div class="label">Q1 FY26 Profit ✓</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="value" style="color: #006600;">57.4%</div>
+                        <div class="label">Loss Reduction (FY25)</div>
+                    </div>
+                </div>
+                <div class="warning-box" style="background: #D4EDDA; border-color: #006600;">
+                    <strong style="color: #006600;">Major Milestone:</strong> Pine Labs achieved its first quarterly profit in Q1 FY26, marking a significant turnaround after years of losses
+                </div>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 10: EBITDA & Margins -->
+        <div class="slide">
+            <div class="slide-number">Slide 10 of 30</div>
+            <div class="slide-header">
+                <h2>EBITDA Performance &amp; Margin Expansion</h2>
+            </div>
+            <div class="content">
+                <div class="chart-container">
+                    <canvas id="ebitdaChart" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas>
+                </div>
+                <div class="metric-row">
+                    <div class="metric-box">
+                        <div class="value">₹196 Cr</div>
+                        <div class="label">FY23 EBITDA</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="value">₹158 Cr</div>
+                        <div class="label">FY24 EBITDA</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="value">₹356 Cr</div>
+                        <div class="label">FY25 EBITDA</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="value">125.3%</div>
+                        <div class="label">FY25 Growth</div>
+                    </div>
+                </div>
+                <div class="fact-box">
+                    <strong>EBITDA Margin Expansion:</strong> From 8.9% (FY24) to 15.6% (FY25) - demonstrating operational efficiency improvements and scale benefits
+                </div>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 11: GTV Growth -->
+        <div class="slide">
+            <div class="slide-number">Slide 11 of 30</div>
+            <div class="slide-header">
+                <h2>Gross Transaction Value (GTV)</h2>
+            </div>
+            <div class="content">
+                <div class="metric-row">
+                    <div class="metric-box" style="min-width: 250px;">
+                        <div class="value">₹11.42 Lakh Cr</div>
+                        <div class="label">FY25 Total GTV</div>
+                    </div>
+                    <div class="metric-box" style="min-width: 250px;">
+                        <div class="value">₹3.83 Lakh Cr</div>
+                        <div class="label">Q1 FY26 GTV</div>
+                    </div>
+                    <div class="metric-box" style="min-width: 250px;">
+                        <div class="value">₹15.4 Lakh Cr</div>
+                        <div class="label">Annualized Run-Rate</div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="gtvChart" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas>
+                </div>
+                <div class="fact-box">
+                    <strong>Transaction Volume:</strong> Processed 5.68 billion transactions in FY25, showcasing massive scale and merchant adoption across the platform
+                </div>
+                <div class="fact-box">
+                    <strong>Growth Trajectory:</strong> Based on Q1 FY26 performance, annualized GTV run-rate suggests 35% growth potential
+                </div>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 12: Use of IPO Proceeds -->
+        <div class="slide">
+            <div class="slide-number">Slide 12 of 30</div>
+            <div class="slide-header">
+                <h2>Use of IPO Proceeds</h2>
+            </div>
+            <div class="content">
+                <div class="fact-box">
+                    <strong>Total Fresh Issue:</strong> ₹2,080 crore
+                </div>
+                <div class="chart-container">
+                    <canvas id="proceedsChart" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas>
+                </div>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>💰 Debt Repayment</h3>
+                        <p><strong>Amount:</strong> ₹870 crore</p>
+                        <p>Strengthen balance sheet by reducing debt burden and improving financial flexibility</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🖥️ Technology &amp; Cloud</h3>
+                        <p><strong>Focus:</strong> Infrastructure upgrade</p>
+                        <p>Investment in cloud infrastructure, platform scalability, and technology innovation</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🌍 Subsidiary Investments</h3>
+                        <p><strong>Targets:</strong></p>
+                        <p>• Qwikcilver Singapore<br>• Pine Payment Solutions Malaysia<br>• Pine Labs UAE</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>📈 General Corporate</h3>
+                        <p><strong>Purpose:</strong> Working capital</p>
+                        <p>Support business growth, expansion initiatives, and operational requirements</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 13: IPO Structure -->
+        <div class="slide">
+            <div class="slide-number">Slide 13 of 30</div>
+            <div class="slide-header">
+                <h2>IPO Structure Details</h2>
+            </div>
+            <div class="content">
+                <div class="two-column">
+                    <div>
+                        <h3 style="color: var(--navy-blue); margin-bottom: 15px;">Issue Components</h3>
+                        <div class="info-card">
+                            <h3>Fresh Issue</h3>
+                            <p><strong>Amount:</strong> ₹2,080 crore</p>
+                            <p><strong>Shares:</strong> 9.41 crore equity shares</p>
+                            <p>Proceeds to the company for business growth</p>
+                        </div>
+                        <div class="info-card" style="margin-top: 15px;">
+                            <h3>Offer for Sale (OFS)</h3>
+                            <p><strong>Amount:</strong> ₹1,820 crore</p>
+                            <p><strong>Shares:</strong> 8.23 crore equity shares</p>
+                            <p>Existing shareholders selling stake</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--navy-blue); margin-bottom: 15px;">Investment Details</h3>
+                        <table>
+                            <tbody><tr>
+                                <th>Parameter</th>
+                                <th>Details</th>
+                            </tr>
+                            <tr>
+                                <td>Face Value</td>
+                                <td>₹1 per share</td>
+                            </tr>
+                            <tr>
+                                <td>Price Band</td>
+                                <td>₹210 - ₹221</td>
+                            </tr>
+                            <tr>
+                                <td>Lot Size</td>
+                                <td>67 shares</td>
+                            </tr>
+                            <tr>
+                                <td>Min Investment</td>
+                                <td>₹14,070 (lower)<br>₹14,807 (upper)</td>
+                            </tr>
+                            <tr>
+                                <td>Total IPO Size</td>
+                                <td>₹3,900 crore</td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 14: Valuation Analysis -->
+        <div class="slide">
+            <div class="slide-number">Slide 14 of 30</div>
+            <div class="slide-header">
+                <h2>Price Band &amp; Valuation Analysis</h2>
+            </div>
+            <div class="content">
+                <div class="metric-row">
+                    <div class="metric-box">
+                        <div class="value">₹210 - ₹221</div>
+                        <div class="label">Price Band</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="value">₹25,377 Cr</div>
+                        <div class="label">Valuation (Upper)</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="value">$2.86B</div>
+                        <div class="label">USD Valuation</div>
+                    </div>
+                </div>
+                <h3 style="color: var(--navy-blue); margin: 25px 0 15px 0;">Valuation Metrics</h3>
+                <table>
+                    <tbody><tr>
+                        <th>Metric</th>
+                        <th>At Lower Band (₹210)</th>
+                        <th>At Upper Band (₹221)</th>
+                        <th>Market Average</th>
+                    </tr>
+                    <tr>
+                        <td>P/E Ratio</td>
+                        <td>144.83x</td>
+                        <td>152.41x</td>
+                        <td>61.78x</td>
+                    </tr>
+                    <tr>
+                        <td>Valuation</td>
+                        <td>₹24,113 crore</td>
+                        <td>₹25,377 crore</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Premium to Market</td>
+                        <td>2.34x</td>
+                        <td>2.47x</td>
+                        <td>-</td>
+                    </tr>
+                </tbody></table>
+                <div class="warning-box">
+                    <strong>Historical Context:</strong> Previous valuation peaked at $5 billion (2022). Original IPO target was $6-7 billion (later revised). Current valuation of $2.86B represents significant discount from peak.
+                </div>
+                <div class="fact-box">
+                    <strong>Note:</strong> High P/E ratio justified by strong growth trajectory, market leadership position, and path to profitability demonstrated in Q1 FY26
+                </div>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 15: Allocation Details -->
+        <div class="slide">
+            <div class="slide-number">Slide 15 of 30</div>
+            <div class="slide-header">
+                <h2>Share Allocation &amp; Investor Categories</h2>
+            </div>
+            <div class="content">
+                <div class="chart-container">
+                    <canvas id="allocationChart" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas>
+                </div>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>QIB - Qualified Institutional Buyers</h3>
+                        <p><strong>Allocation:</strong> 75%</p>
+                        <p>Includes mutual funds, insurance companies, FIIs, and other large institutional investors</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>NII - Non-Institutional Investors</h3>
+                        <p><strong>Allocation:</strong> 15%</p>
+                        <p>High net-worth individuals (HNIs) with application size above ₹2 lakhs</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>RII - Retail Individual Investors</h3>
+                        <p><strong>Allocation:</strong> 10%</p>
+                        <p>Individual investors with application size up to ₹2 lakhs</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Employee Reservation</h3>
+                        <p><strong>Allocation:</strong> ₹25 crore</p>
+                        <p><strong>Discount:</strong> ₹21 per share for employees</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 16: Key Dates Timeline -->
+        <div class="slide">
+            <div class="slide-number">Slide 16 of 30</div>
+            <div class="slide-header">
+                <h2>IPO Timeline - Key Dates</h2>
+            </div>
+            <div class="content">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <strong>📅 November 6, 2025</strong>
+                        <p>Anchor Investor Bidding - Reserved for qualified institutional investors</p>
+                    </div>
+                    <div class="timeline-item">
+                        <strong>📅 November 7-11, 2025</strong>
+                        <p>IPO Subscription Period (5 days) - Open for all investor categories</p>
+                    </div>
+                    <div class="timeline-item">
+                        <strong>📅 November 12, 2025</strong>
+                        <p>Basis of Allotment - Share allocation finalized and announced</p>
+                    </div>
+                    <div class="timeline-item">
+                        <strong>📅 November 13, 2025</strong>
+                        <p>Refund Initiation &amp; Credit of Shares - Unsuccessful applicants refunded, successful applicants receive shares in demat</p>
+                    </div>
+                    <div class="timeline-item">
+                        <strong>📅 November 14, 2025</strong>
+                        <p>Listing Date - Shares commence trading on NSE &amp; BSE</p>
+                    </div>
+                </div>
+                <div class="warning-box">
+                    <strong>Important:</strong> Ensure your demat account and trading account are active and linked. Applications must be submitted through ASBA (Application Supported by Blocked Amount) only.
+                </div>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 17: Book Running Lead Managers -->
+        <div class="slide">
+            <div class="slide-number">Slide 17 of 30</div>
+            <div class="slide-header">
+                <h2>Book-Running Lead Managers (BRLM)</h2>
+            </div>
+            <div class="content">
+                <h3 style="color: var(--navy-blue); margin-bottom: 20px;">Lead Investment Banks Managing the IPO</h3>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>🏦 Axis Capital</h3>
+                        <p>Leading Indian investment banking firm with extensive IPO experience in fintech sector</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🏦 Morgan Stanley India</h3>
+                        <p>Global financial services leader with strong presence in Indian capital markets</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🏦 Citigroup Global Markets India</h3>
+                        <p>International banking giant with deep expertise in large-scale IPOs</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🏦 J.P. Morgan India</h3>
+                        <p>Premier global investment bank with significant track record in tech IPOs</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🏦 Jefferies India</h3>
+                        <p>Global investment banking firm with focus on growth companies</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>📋 Registrar</h3>
+                        <p><strong>KFin Technologies Limited</strong><br>Handling share allocation, refunds, and demat credit processes</p>
+                    </div>
+                </div>
+                <div class="fact-box" style="margin-top: 20px;">
+                    <strong>Significance:</strong> The involvement of five premier global investment banks indicates strong institutional interest and confidence in Pine Labs' IPO
+                </div>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 18: Major Shareholders -->
+        <div class="slide">
+            <div class="slide-number">Slide 18 of 30</div>
+            <div class="slide-header">
+                <h2>Major Shareholders (Pre-IPO)</h2>
+            </div>
+            <div class="content">
+                <div class="chart-container">
+                    <canvas id="shareholdingChart" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas>
+                </div>
+                <table style="margin-top: 20px;">
+                    <tbody><tr>
+                        <th>Shareholder</th>
+                        <th>Stake (%)</th>
+                        <th>Type</th>
+                    </tr>
+                    <tr>
+                        <td>Peak XV Partners (formerly Sequoia)</td>
+                        <td>20.25%</td>
+                        <td>Venture Capital</td>
+                    </tr>
+                    <tr>
+                        <td>Temasek (via Macritchie)</td>
+                        <td>7.06%</td>
+                        <td>Sovereign Wealth Fund</td>
+                    </tr>
+                    <tr>
+                        <td>PayPal</td>
+                        <td>5.98%</td>
+                        <td>Strategic Investor</td>
+                    </tr>
+                    <tr>
+                        <td>Actis</td>
+                        <td>5.75%</td>
+                        <td>Private Equity</td>
+                    </tr>
+                    <tr>
+                        <td>Mastercard</td>
+                        <td>5.22%</td>
+                        <td>Strategic Investor</td>
+                    </tr>
+                    <tr>
+                        <td>Alpha Wave</td>
+                        <td>3.37%</td>
+                        <td>Investment Firm</td>
+                    </tr>
+                    <tr>
+                        <td>Lokvir Kapoor (CEO)</td>
+                        <td>2.35%</td>
+                        <td>Founder (Not selling)</td>
+                    </tr>
+                </tbody></table>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 19: Selling Shareholders -->
+        <div class="slide">
+            <div class="slide-number">Slide 19 of 30</div>
+            <div class="slide-header">
+                <h2>Selling Shareholders in Offer for Sale</h2>
+            </div>
+            <div class="content">
+                <div class="fact-box">
+                    <strong>Total OFS Amount:</strong> ₹1,820 crore through sale of 8.23 crore equity shares
+                </div>
+                <h3 style="color: var(--navy-blue); margin: 25px 0 15px 0;">Key Sellers</h3>
+                <ul style="margin: 20px 0;">
+                    <li><strong>Peak XV Partners:</strong> Largest seller, likely partial exit after strong returns</li>
+                    <li><strong>Temasek Holdings:</strong> Singapore sovereign wealth fund, booking partial profits</li>
+                    <li><strong>Actis:</strong> Private equity firm exiting after successful investment</li>
+                    <li><strong>PayPal:</strong> Strategic investor reducing stake while maintaining partnership</li>
+                    <li><strong>Mastercard:</strong> Payment giant partially monetizing investment</li>
+                    <li><strong>Invesco:</strong> Global asset manager partial exit</li>
+                    <li><strong>Madison India Capital:</strong> PE firm selling stake</li>
+                    <li><strong>Sofina Ventures:</strong> Venture capital investor exit</li>
+                </ul>
+                <div class="warning-box">
+                    <strong>Important Note:</strong> Founder and CEO Lokvir Kapoor (2.35% stake) is NOT participating in the OFS, demonstrating long-term commitment and confidence in company's future
+                </div>
+                <div class="fact-box" style="margin-top: 15px;">
+                    <strong>Investor Profile:</strong> Mix of marquee global investors including venture capital, private equity, sovereign wealth funds, and strategic partners indicates strong institutional backing
+                </div>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 20: Competitive Landscape -->
+        <div class="slide">
+            <div class="slide-number">Slide 20 of 30</div>
+            <div class="slide-header">
+                <h2>Competitive Landscape</h2>
+            </div>
+            <div class="content">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>🏆 Pine Labs</h3>
+                        <p><strong>Founded:</strong> 1998 (Oldest)</p>
+                        <p><strong>Strength:</strong> Market leader in POS, merchant-focused, omnichannel platform</p>
+                        <p><strong>Position:</strong> Dominant in offline payments</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>💳 Paytm</h3>
+                        <p><strong>Type:</strong> Consumer + Merchant platform</p>
+                        <p><strong>Strength:</strong> Large consumer base, payments bank, diversified services</p>
+                        <p><strong>Challenge:</strong> RBI regulatory issues</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>📱 PhonePe (Walmart)</h3>
+                        <p><strong>Type:</strong> UPI-focused consumer app</p>
+                        <p><strong>Strength:</strong> Largest UPI market share, consumer adoption</p>
+                        <p><strong>Focus:</strong> Primarily consumer payments</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>💼 BharatPe</h3>
+                        <p><strong>Type:</strong> Merchant QR + lending</p>
+                        <p><strong>Strength:</strong> SME merchant focus, lending</p>
+                        <p><strong>Challenge:</strong> Governance issues</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>⚡ Razorpay</h3>
+                        <p><strong>Type:</strong> Online payment gateway</p>
+                        <p><strong>Strength:</strong> Developer-friendly, online businesses</p>
+                        <p><strong>Focus:</strong> Primarily online payments</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🎯 Competitive Edge</h3>
+                        <p><strong>Pine Labs Differentiation:</strong></p>
+                        <p>• 27 years experience<br>• POS market leadership<br>• Merchant trust<br>• Omnichannel<br>• Global presence</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 21: Strengths -->
+        <div class="slide">
+            <div class="slide-number">Slide 21 of 30</div>
+            <div class="slide-header">
+                <h2>Key Strengths &amp; Competitive Advantages</h2>
+            </div>
+            <div class="content">
+                <ul class="strength-list" style="font-size: 15px; line-height: 1.8;">
+                    <li><strong>Market Leadership:</strong> Dominant position in India's POS terminal market with 9.88+ lakh active merchants</li>
+                    <li><strong>Profitability Achieved:</strong> First quarterly profit of ₹4.8 crore in Q1 FY26, demonstrating sustainable business model</li>
+                    <li><strong>Strong EBITDA Growth:</strong> 125.3% EBITDA growth in FY25 with margin expansion from 8.9% to 15.6%</li>
+                    <li><strong>Diversified Revenue Streams:</strong> Multiple income sources including POS, online payments, BNPL, fintech infrastructure</li>
+                    <li><strong>Extensive Partnerships:</strong> 177 financial institutions and 716+ consumer brands integrated</li>
+                    <li><strong>Technology Moat:</strong> Cloud-based Plutus Smart platform with advanced analytics and merchant tools</li>
+                    <li><strong>International Presence:</strong> Operations across 7 countries providing geographic diversification</li>
+                    <li><strong>Merchant Trust:</strong> 27 years of operations building strong brand reputation and customer loyalty</li>
+                    <li><strong>Omnichannel Platform:</strong> Seamless integration between offline and online payment channels</li>
+                    <li><strong>Marquee Investors:</strong> Backed by Peak XV, Temasek, PayPal, Mastercard indicating strong institutional confidence</li>
+                    <li><strong>Processing Scale:</strong> ₹11.42 lakh crore GTV processed in FY25 demonstrating massive transaction volumes</li>
+                    <li><strong>Management Stability:</strong> Founder CEO with 2.35% stake not participating in OFS shows long-term commitment</li>
+                </ul>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 22: Risks & Challenges -->
+        <div class="slide">
+            <div class="slide-number">Slide 22 of 30</div>
+            <div class="slide-header">
+                <h2>Key Risks &amp; Challenges</h2>
+            </div>
+            <div class="content">
+                <ul class="risk-list" style="font-size: 15px; line-height: 1.8;">
+                    <li><strong>High Valuation:</strong> P/E ratio of 144-152x significantly higher than market average of 61.78x</li>
+                    <li><strong>Zero MDR Impact:</strong> Government's zero MDR (Merchant Discount Rate) policy on UPI affecting revenue potential</li>
+                    <li><strong>Intense Competition:</strong> Facing strong rivals like PhonePe, Paytm with larger consumer bases and aggressive expansion</li>
+                    <li><strong>Regulatory Risks:</strong> Fintech sector under increased regulatory scrutiny; policy changes could impact business</li>
+                    <li><strong>Recent Profitability:</strong> Only achieved first profit in Q1 FY26; sustainability needs to be proven over time</li>
+                    <li><strong>Market Saturation:</strong> Core POS segment in metros reaching saturation; growth depends on tier 2/3 expansion</li>
+                    <li><strong>Transaction Dependency:</strong> Revenue highly dependent on transaction volumes which can be affected by economic slowdowns</li>
+                    <li><strong>Customer Concentration:</strong> Significant portion of revenue from large merchants; loss of key clients could impact</li>
+                    <li><strong>Technology Disruption:</strong> Rapid changes in payment technology require continuous investment in innovation</li>
+                    <li><strong>Currency Risk:</strong> International operations exposed to forex fluctuations affecting profitability</li>
+                    <li><strong>Debt Levels:</strong> While IPO proceeds will reduce debt, company still carries substantial borrowings</li>
+                    <li><strong>Valuation Concern:</strong> Current $2.86B valuation still below 2022 peak of $5B; previous IPO target was $6-7B</li>
+                </ul>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 23: Market Opportunities -->
+        <div class="slide">
+            <div class="slide-number">Slide 23 of 30</div>
+            <div class="slide-header">
+                <h2>Market Opportunities &amp; Growth Drivers</h2>
+            </div>
+            <div class="content">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>📈 Digital Payment Growth</h3>
+                        <p>India's digital payment penetration still expanding. UPI transactions growing 50%+ annually. Cash-to-digital transition continues across sectors.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🏪 SME Digitalization</h3>
+                        <p>Millions of small merchants yet to adopt digital payments. Tier 2/3 cities offer massive untapped potential for POS deployment.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>💳 BNPL Expansion</h3>
+                        <p>Buy Now Pay Later and EMI services gaining traction. Merchant financing solutions creating new revenue streams.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🌍 International Growth</h3>
+                        <p>Expanding presence in Malaysia, UAE, Africa, and other markets. Southeast Asia's digital payment adoption accelerating.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🔧 Fintech Infrastructure</h3>
+                        <p>Growing demand for payment infrastructure services. White-label solutions for banks and fintech companies.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🛒 E-commerce Integration</h3>
+                        <p>Omnichannel commerce growth. Integration with online marketplaces and direct-to-consumer brands expanding.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🎁 Gift Cards &amp; Loyalty</h3>
+                        <p>Qwikcilver platform offering gift card solutions. Corporate gifting and loyalty programs growing market segment.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>📊 Data Analytics</h3>
+                        <p>Merchant analytics and insights becoming valuable service. Helping businesses optimize inventory and pricing.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 24: Financial Metrics Summary -->
+        <div class="slide">
+            <div class="slide-number">Slide 24 of 30</div>
+            <div class="slide-header">
+                <h2>Financial Metrics Summary</h2>
+            </div>
+            <div class="content">
+                <h3 style="color: var(--navy-blue); margin-bottom: 15px;">Revenue &amp; Profitability Trends</h3>
+                <table>
+                    <tbody><tr>
+                        <th>Metric</th>
+                        <th>FY23</th>
+                        <th>FY24</th>
+                        <th>FY25</th>
+                        <th>Q1 FY26</th>
+                    </tr>
+                    <tr>
+                        <td>Revenue</td>
+                        <td>₹1,543 Cr</td>
+                        <td>₹1,769 Cr</td>
+                        <td>₹2,274 Cr</td>
+                        <td>₹615 Cr</td>
+                    </tr>
+                    <tr>
+                        <td>YoY Growth</td>
+                        <td>-</td>
+                        <td>14.6%</td>
+                        <td>28.5%</td>
+                        <td>17.8%</td>
+                    </tr>
+                    <tr>
+                        <td>EBITDA</td>
+                        <td>₹196 Cr</td>
+                        <td>₹158 Cr</td>
+                        <td>₹356 Cr</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>EBITDA Margin</td>
+                        <td>12.7%</td>
+                        <td>8.9%</td>
+                        <td>15.6%</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Net Profit/(Loss)</td>
+                        <td>-</td>
+                        <td>(₹341 Cr)</td>
+                        <td>(₹145 Cr)</td>
+                        <td>₹4.8 Cr ✓</td>
+                    </tr>
+                </tbody></table>
+                <h3 style="color: var(--navy-blue); margin: 25px 0 15px 0;">Operational Metrics</h3>
+                <table>
+                    <tbody><tr>
+                        <th>Parameter</th>
+                        <th>Value</th>
+                        <th>Period</th>
+                    </tr>
+                    <tr>
+                        <td>Gross Transaction Value (GTV)</td>
+                        <td>₹11.42 Lakh Crore</td>
+                        <td>FY25</td>
+                    </tr>
+                    <tr>
+                        <td>Total Transactions</td>
+                        <td>5.68 Billion</td>
+                        <td>FY25</td>
+                    </tr>
+                    <tr>
+                        <td>Active Merchants</td>
+                        <td>9.88+ Lakh</td>
+                        <td>Current</td>
+                    </tr>
+                    <tr>
+                        <td>Financial Partnerships</td>
+                        <td>177 Institutions</td>
+                        <td>Current</td>
+                    </tr>
+                    <tr>
+                        <td>Consumer Brands</td>
+                        <td>716+</td>
+                        <td>Current</td>
+                    </tr>
+                </tbody></table>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 25: Investment Recommendation -->
+        <div class="slide">
+            <div class="slide-number">Slide 25 of 30</div>
+            <div class="slide-header">
+                <h2>Investment Analysis &amp; Key Takeaways</h2>
+            </div>
+            <div class="content">
+                <h3 style="color: #006600; margin-bottom: 15px;">✓ Positive Factors</h3>
+                <ul class="strength-list" style="margin-bottom: 25px;">
+                    <li>Market leader in POS space with 27 years of proven track record</li>
+                    <li>Achieved profitability milestone in Q1 FY26 after years of losses</li>
+                    <li>Strong EBITDA growth (125.3%) and margin expansion (15.6%)</li>
+                    <li>Diversified revenue streams reducing dependency risk</li>
+                    <li>Backed by marquee investors (Peak XV, Temasek, PayPal, Mastercard)</li>
+                    <li>International presence providing growth opportunities</li>
+                </ul>
+                <h3 style="color: #CC0000; margin-bottom: 15px;">⚠ Concerns to Consider</h3>
+                <ul class="risk-list" style="margin-bottom: 25px;">
+                    <li>Very high P/E valuation (152.41x) vs market average (61.78x)</li>
+                    <li>Just achieved profitability; sustainability needs time to prove</li>
+                    <li>Intense competition from larger players like PhonePe and Paytm</li>
+                    <li>Zero MDR policy affecting revenue potential on UPI transactions</li>
+                    <li>Valuation at $2.86B below 2022 peak of $5B</li>
+                </ul>
+                <div class="warning-box" style="background: #E8F4FD; border-color: var(--navy-blue);">
+                    <strong style="color: var(--navy-blue);">Investment Perspective:</strong> Pine Labs offers exposure to India's digital payment growth story with strong market position. Suitable for investors with high risk appetite and long-term horizon (3-5 years). The high valuation demands careful consideration. GMP indicates positive sentiment but not guaranteed.
+                </div>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 26: GMP Information -->
+        <div class="slide">
+            <div class="slide-number">Slide 26 of 30</div>
+            <div class="slide-header">
+                <h2>Grey Market Premium (GMP) Analysis</h2>
+            </div>
+            <div class="content">
+                <div class="metric-row">
+                    <div class="metric-box">
+                        <div class="value">₹35</div>
+                        <div class="label">Current GMP</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="value">~₹256</div>
+                        <div class="label">Est. Listing Price</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="value">~15.84%</div>
+                        <div class="label">Potential Gain</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="value">Nov 3, 2025</div>
+                        <div class="label">GMP Date</div>
+                    </div>
+                </div>
+                <h3 style="color: var(--navy-blue); margin: 25px 0 15px 0;">GMP Calculation</h3>
+                <table>
+                    <tbody><tr>
+                        <th>Parameter</th>
+                        <th>At Lower Band</th>
+                        <th>At Upper Band</th>
+                    </tr>
+                    <tr>
+                        <td>Issue Price</td>
+                        <td>₹210</td>
+                        <td>₹221</td>
+                    </tr>
+                    <tr>
+                        <td>Grey Market Premium</td>
+                        <td>₹35</td>
+                        <td>₹35</td>
+                    </tr>
+                    <tr>
+                        <td>Expected Listing Price</td>
+                        <td>₹245</td>
+                        <td>₹256</td>
+                    </tr>
+                    <tr>
+                        <td>Potential Listing Gain</td>
+                        <td>16.67%</td>
+                        <td>15.84%</td>
+                    </tr>
+                </tbody></table>
+                <div class="warning-box">
+                    <strong>IMPORTANT DISCLAIMER:</strong> Grey Market Premium is UNOFFICIAL and NOT GUARANTEED. It's an indicative sentiment measure from unofficial trading before listing. Actual listing price may vary significantly based on market conditions, subscription levels, and overall market sentiment. Past GMP accuracy varies widely. Do not make investment decisions solely based on GMP.
+                </div>
+                <div class="fact-box" style="margin-top: 15px;">
+                    <strong>GMP Interpretation:</strong> Positive GMP of ₹35 suggests market optimism about Pine Labs IPO. However, the premium is moderate (15.84%), indicating cautious investor sentiment given the high valuation.
+                </div>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 27: Financial Ratios -->
+        <div class="slide">
+            <div class="slide-number">Slide 27 of 30</div>
+            <div class="slide-header">
+                <h2>Key Financial Ratios &amp; Metrics</h2>
+            </div>
+            <div class="content">
+                <h3 style="color: var(--navy-blue); margin-bottom: 15px;">Valuation Metrics</h3>
+                <table>
+                    <tbody><tr>
+                        <th>Ratio</th>
+                        <th>At Lower Band (₹210)</th>
+                        <th>At Upper Band (₹221)</th>
+                        <th>Benchmark</th>
+                    </tr>
+                    <tr>
+                        <td>P/E Ratio (Price to Earnings)</td>
+                        <td>144.83x</td>
+                        <td>152.41x</td>
+                        <td>Market Avg: 61.78x</td>
+                    </tr>
+                    <tr>
+                        <td>EV/Revenue (Enterprise Value)</td>
+                        <td>~10.6x</td>
+                        <td>~11.2x</td>
+                        <td>Fintech: 5-8x</td>
+                    </tr>
+                    <tr>
+                        <td>Market Cap</td>
+                        <td>₹24,113 Crore</td>
+                        <td>₹25,377 Crore</td>
+                        <td>-</td>
+                    </tr>
+                </tbody></table>
+                <h3 style="color: var(--navy-blue); margin: 25px 0 15px 0;">Profitability &amp; Efficiency Metrics</h3>
+                <table>
+                    <tbody><tr>
+                        <th>Metric</th>
+                        <th>FY24</th>
+                        <th>FY25</th>
+                        <th>Change</th>
+                    </tr>
+                    <tr>
+                        <td>EBITDA Margin</td>
+                        <td>8.9%</td>
+                        <td>15.6%</td>
+                        <td><span style="color: #006600;">+6.7 pp ↑</span></td>
+                    </tr>
+                    <tr>
+                        <td>Net Profit Margin</td>
+                        <td>-19.3%</td>
+                        <td>-6.4%</td>
+                        <td><span style="color: #006600;">Improving ↑</span></td>
+                    </tr>
+                    <tr>
+                        <td>Revenue Growth YoY</td>
+                        <td>14.6%</td>
+                        <td>28.5%</td>
+                        <td><span style="color: #006600;">Accelerating ↑</span></td>
+                    </tr>
+                    <tr>
+                        <td>Loss Reduction</td>
+                        <td>₹341 Cr loss</td>
+                        <td>₹145 Cr loss</td>
+                        <td><span style="color: #006600;">-57.4% ↑</span></td>
+                    </tr>
+                </tbody></table>
+                <div class="fact-box" style="margin-top: 20px;">
+                    <strong>Margin Trajectory:</strong> Company showing strong operational improvements with EBITDA margins expanding from 8.9% to 15.6%, indicating better unit economics and scalability of the business model.
+                </div>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 28: Peer Comparison -->
+        <div class="slide">
+            <div class="slide-number">Slide 28 of 30</div>
+            <div class="slide-header">
+                <h2>Competitive Positioning &amp; Peer Analysis</h2>
+            </div>
+            <div class="content">
+                <h3 style="color: var(--navy-blue); margin-bottom: 15px;">Market Position Comparison</h3>
+                <table>
+                    <tbody><tr>
+                        <th>Company</th>
+                        <th>Primary Focus</th>
+                        <th>Market Position</th>
+                        <th>Key Strength</th>
+                    </tr>
+                    <tr style="background: #E8F4FD;">
+                        <td><strong>Pine Labs</strong></td>
+                        <td>Merchant Commerce</td>
+                        <td>POS Market Leader</td>
+                        <td>Omnichannel, Profitability</td>
+                    </tr>
+                    <tr>
+                        <td>Paytm</td>
+                        <td>Consumer + Merchant</td>
+                        <td>Broad Ecosystem</td>
+                        <td>Consumer Base, Payments Bank</td>
+                    </tr>
+                    <tr>
+                        <td>PhonePe</td>
+                        <td>Consumer Payments</td>
+                        <td>#1 in UPI</td>
+                        <td>Massive User Base (500M+)</td>
+                    </tr>
+                    <tr>
+                        <td>BharatPe</td>
+                        <td>SME Merchants</td>
+                        <td>QR + Lending</td>
+                        <td>Zero MDR, Lending Focus</td>
+                    </tr>
+                    <tr>
+                        <td>Razorpay</td>
+                        <td>Online Payments</td>
+                        <td>Developer Platform</td>
+                        <td>API-first, Tech Stack</td>
+                    </tr>
+                </tbody></table>
+                <h3 style="color: var(--navy-blue); margin: 25px 0 15px 0;">Pine Labs Competitive Advantages</h3>
+                <div class="two-column">
+                    <div>
+                        <div class="info-card">
+                            <h3>🎯 Differentiation</h3>
+                            <ul style="font-size: 13px;">
+                                <li>Oldest player (1998) with merchant trust</li>
+                                <li>Market leader in POS terminals</li>
+                                <li>True omnichannel platform</li>
+                                <li>International presence (7 countries)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="info-card">
+                            <h3>💪 Competitive Moats</h3>
+                            <ul style="font-size: 13px;">
+                                <li>Established merchant relationships</li>
+                                <li>Hardware + software integration</li>
+                                <li>177 financial institution partnerships</li>
+                                <li>Proven path to profitability</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 29: FAQs -->
+        <div class="slide">
+            <div class="slide-number">Slide 29 of 30</div>
+            <div class="slide-header">
+                <h2>FAQs &amp; Important Information</h2>
+            </div>
+            <div class="content">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>❓ What is the minimum investment?</h3>
+                        <p>Minimum 1 lot = 67 shares<br>At lower band: ₹14,070<br>At upper band: ₹14,807</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>❓ How to apply for the IPO?</h3>
+                        <p>Apply through your trading account using ASBA (Application Supported by Blocked Amount) via broker, bank, or UPI apps.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>❓ When will shares be credited?</h3>
+                        <p>Allotment: Nov 12, 2025<br>Credit to demat: Nov 13, 2025<br>Listing: Nov 14, 2025</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>❓ What about the high P/E ratio?</h3>
+                        <p>P/E of 152x is high but justified by growth trajectory and recent profitability achievement. Consider long-term potential.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>❓ Is GMP reliable?</h3>
+                        <p>No. GMP is unofficial and not guaranteed. It's only an indicative sentiment measure. Actual listing can vary significantly.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>❓ What are the main risks?</h3>
+                        <p>High valuation, intense competition, regulatory changes, and zero MDR policy on UPI are key concerns.</p>
+                    </div>
+                </div>
+                <div class="warning-box" style="margin-top: 20px;">
+                    <strong>Contact Information:</strong><br>
+                    Registrar: KFin Technologies Limited<br>
+                    For queries: Contact your broker or visit company's IPO website<br>
+                    <strong>Remember:</strong> Read the RHP (Red Herring Prospectus) carefully before investing
+                </div>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Slide 30: Disclaimer -->
+        <div class="slide">
+            <div class="slide-number">Slide 30 of 30</div>
+            <div class="slide-header">
+                <h2>Disclaimer &amp; Attribution</h2>
+            </div>
+            <div class="content">
+                <div class="warning-box" style="background: #FFF3CD; padding: 25px;">
+                    <h3 style="color: var(--accent-orange); margin-bottom: 15px;">⚠️ Investment Disclaimer</h3>
+                    <p style="line-height: 1.8; font-size: 14px;">
+                        This presentation is prepared for <strong>informational and educational purposes only</strong>. 
+                        It does not constitute investment advice, recommendation, or solicitation to buy or sell any securities.
+                    </p>
+                    <p style="line-height: 1.8; font-size: 14px; margin-top: 10px;">
+                        <strong>Investment in securities is subject to market risks.</strong> Please read all scheme-related 
+                        documents carefully before investing. Past performance is not indicative of future results.
+                    </p>
+                    <p style="line-height: 1.8; font-size: 14px; margin-top: 10px;">
+                        Investors should consult with their <strong>qualified financial advisors</strong> and conduct their 
+                        own due diligence before making any investment decisions.
+                    </p>
+                </div>
+                <div class="fact-box" style="margin-top: 20px;">
+                    <strong>Data Sources:</strong> Pine Labs IPO Prospectus (DRHP), Company Filings, Stock Exchange Announcements, 
+                    Financial Newspapers, and publicly available information as of November 3, 2025.
+                </div>
+                <div class="fact-box">
+                    <strong>Grey Market Premium (GMP):</strong> GMP data is from unofficial grey market sources and is not 
+                    guaranteed or endorsed. Actual listing price may differ materially.
+                </div>
+                <div class="info-card" style="text-align: center; margin-top: 30px; background: var(--navy-blue); color: white; padding: 25px;">
+                    <h2 style="color: white; margin-bottom: 10px;">Pine Labs IPO Analysis</h2>
+                    <h3 style="color: var(--accent-orange); margin-bottom: 15px;">Comprehensive Investment Intelligence</h3>
+                    <p style="font-size: 18px; margin-top: 20px;"><strong>Prepared by: Kunal Singla</strong></p>
+                    <p style="font-size: 16px;">Finance Enthusiast</p>
+                    <p style="font-size: 14px; margin-top: 15px; color: rgba(255,255,255,0.8);">Date: November 3, 2025</p>
+                </div>
+                <div class="fact-box" style="text-align: center; margin-top: 20px;">
+                    <strong>For Educational Purposes Only | Not Investment Advice</strong>
+                </div>
+            </div>
+            <div class="slide-footer">Made by Kunal Singla - Finance Enthusiast</div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <button class="nav-button" id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+            <div class="slide-indicator">
+                <span id="currentSlide">8</span> / <span id="totalSlides">30</span>
+            </div>
+            <button class="nav-button" id="nextBtn" onclick="changeSlide(1)">Next →</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 30;
+        let chartsInitialized = false;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            showSlide(currentSlide);
+            updateNavigationButtons();
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+        });
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        function showSlide(n) {
+            const slides = document.getElementsByClassName('slide');
+            
+            if (n > totalSlides) n = 1;
+            if (n < 1) n = totalSlides;
+            
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove('active');
+            }
+            
+            slides[n - 1].classList.add('active');
+            currentSlide = n;
+            
+            document.getElementById('currentSlide').innerText = currentSlide;
+            document.getElementById('totalSlides').innerText = totalSlides;
+            
+            updateNavigationButtons();
+            
+            // Initialize charts when relevant slides are shown
+            if (!chartsInitialized) {
+                setTimeout(initializeCharts, 100);
+                chartsInitialized = true;
+            }
+        }
+
+        function updateNavigationButtons() {
+            document.getElementById('prevBtn').disabled = (currentSlide === 1);
+            document.getElementById('nextBtn').disabled = (currentSlide === totalSlides);
+        }
+
+        function initializeCharts() {
+            // Revenue Growth Chart
+            const revenueCtx = document.getElementById('revenueChart');
+            if (revenueCtx) {
+                new Chart(revenueCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['FY23', 'FY24', 'FY25', 'Q1 FY26 (Annualized)'],
+                        datasets: [{
+                            label: 'Revenue (₹ Crore)',
+                            data: [1543, 1769, 2274, 2460],
+                            backgroundColor: ['#1FB8CD', '#FFC185', '#B4413C', '#5D878F'],
+                            borderColor: ['#1FB8CD', '#FFC185', '#B4413C', '#5D878F'],
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: true },
+                            title: {
+                                display: true,
+                                text: 'Revenue Growth Trend',
+                                font: { size: 16, weight: 'bold' }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value) {
+                                        return '₹' + value + ' Cr';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Profitability Chart
+            const profitCtx = document.getElementById('profitChart');
+            if (profitCtx) {
+                new Chart(profitCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['FY24', 'FY25', 'Q1 FY26'],
+                        datasets: [{
+                            label: 'Net Profit/(Loss) (₹ Crore)',
+                            data: [-341, -145, 4.8],
+                            backgroundColor: 'rgba(31, 184, 205, 0.2)',
+                            borderColor: '#1FB8CD',
+                            borderWidth: 3,
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: true },
+                            title: {
+                                display: true,
+                                text: 'Path to Profitability',
+                                font: { size: 16, weight: 'bold' }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                ticks: {
+                                    callback: function(value) {
+                                        return '₹' + value + ' Cr';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // EBITDA Chart
+            const ebitdaCtx = document.getElementById('ebitdaChart');
+            if (ebitdaCtx) {
+                new Chart(ebitdaCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['FY23', 'FY24', 'FY25'],
+                        datasets: [{
+                            label: 'EBITDA (₹ Crore)',
+                            data: [196, 158, 356],
+                            backgroundColor: ['#1FB8CD', '#FFC185', '#B4413C'],
+                            borderColor: ['#1FB8CD', '#FFC185', '#B4413C'],
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: true },
+                            title: {
+                                display: true,
+                                text: 'EBITDA Performance',
+                                font: { size: 16, weight: 'bold' }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value) {
+                                        return '₹' + value + ' Cr';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // GTV Chart
+            const gtvCtx = document.getElementById('gtvChart');
+            if (gtvCtx) {
+                new Chart(gtvCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['FY25', 'Q1 FY26 (Annualized Run-Rate)'],
+                        datasets: [{
+                            label: 'Gross Transaction Value (₹ Lakh Crore)',
+                            data: [11.42, 15.32],
+                            backgroundColor: 'rgba(180, 65, 60, 0.2)',
+                            borderColor: '#B4413C',
+                            borderWidth: 3,
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: true },
+                            title: {
+                                display: true,
+                                text: 'GTV Growth Trajectory',
+                                font: { size: 16, weight: 'bold' }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value) {
+                                        return '₹' + value + ' L Cr';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Use of Proceeds Pie Chart
+            const proceedsCtx = document.getElementById('proceedsChart');
+            if (proceedsCtx) {
+                new Chart(proceedsCtx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['Debt Repayment', 'Technology & Cloud', 'Subsidiary Investments', 'General Corporate'],
+                        datasets: [{
+                            data: [870, 500, 400, 310],
+                            backgroundColor: ['#1FB8CD', '#FFC185', '#B4413C', '#5D878F'],
+                            borderWidth: 2,
+                            borderColor: '#FFFFFF'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { 
+                                display: true,
+                                position: 'bottom'
+                            },
+                            title: {
+                                display: true,
+                                text: 'Allocation of Fresh Issue Proceeds (₹2,080 Crore)',
+                                font: { size: 16, weight: 'bold' }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return context.label + ': ₹' + context.parsed + ' Cr';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Allocation Chart
+            const allocationCtx = document.getElementById('allocationChart');
+            if (allocationCtx) {
+                new Chart(allocationCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['QIB (75%)', 'NII (15%)', 'RII (10%)'],
+                        datasets: [{
+                            data: [75, 15, 10],
+                            backgroundColor: ['#1FB8CD', '#FFC185', '#B4413C'],
+                            borderWidth: 2,
+                            borderColor: '#FFFFFF'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { 
+                                display: true,
+                                position: 'bottom'
+                            },
+                            title: {
+                                display: true,
+                                text: 'IPO Share Allocation by Category',
+                                font: { size: 16, weight: 'bold' }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return context.label + ': ' + context.parsed + '%';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Shareholding Chart
+            const shareholdingCtx = document.getElementById('shareholdingChart');
+            if (shareholdingCtx) {
+                new Chart(shareholdingCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Peak XV', 'Temasek', 'PayPal', 'Actis', 'Mastercard', 'Alpha Wave', 'Others'],
+                        datasets: [{
+                            label: 'Shareholding %',
+                            data: [20.25, 7.06, 5.98, 5.75, 5.22, 3.37, 52.37],
+                            backgroundColor: ['#1FB8CD', '#FFC185', '#B4413C', '#ECEBD5', '#5D878F', '#DB4545', '#D2BA4C'],
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        indexAxis: 'y',
+                        plugins: {
+                            legend: { display: false },
+                            title: {
+                                display: true,
+                                text: 'Pre-IPO Shareholding Pattern',
+                                font: { size: 16, weight: 'bold' }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                max: 60,
+                                ticks: {
+                                    callback: function(value) {
+                                        return value + '%';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+    </script>
+
+</body></html>

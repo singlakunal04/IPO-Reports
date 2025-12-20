@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meesho IPO Analysis - Comprehensive Presentation</title>
+    <style>
+        /* Design System Variables */
+        :root {
+            --color-white: rgba(255, 255, 255, 1);
+            --color-black: rgba(0, 0, 0, 1);
+            --color-cream-50: rgba(252, 252, 249, 1);
+            --color-gray-200: rgba(245, 245, 245, 1);
+            --color-gray-300: rgba(167, 169, 169, 1);
+            --color-gray-400: rgba(119, 124, 124, 1);
+            --color-slate-500: rgba(98, 108, 113, 1);
+            --color-charcoal-700: rgba(31, 33, 33, 1);
+            --color-slate-900: rgba(19, 52, 59, 1);
+            --color-teal-500: rgba(33, 128, 141, 1);
+            --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family-base);
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .page {
+            min-height: 100vh;
+            padding: 60px 80px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            page-break-after: always;
+        }
+
+        .page-number {
+            position: absolute;
+            bottom: 20px;
+            left: 80px;
+            font-size: 1em;
+            opacity: 0.7;
+        }
+
+        .attribution {
+            position: absolute;
+            bottom: 20px;
+            right: 80px;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        /* Page 1 - Title Slide */
+        .page-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .page-1 h1 {
+            font-size: 5em;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+
+        .page-1 h2 {
+            font-size: 2.8em;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+
+        .page-1 p {
+            font-size: 1.5em;
+            line-height: 2;
+            margin: 10px 0;
+        }
+
+        /* Page 2 - Quick Facts */
+        .page-2 {
+            background: white;
+        }
+
+        .page-2 h2 {
+            font-size: 2.8em;
+            color: #667eea;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .fact-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 2px solid #667eea;
+        }
+
+        .fact-box h3 {
+            font-size: 1.4em;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .fact-box p {
+            font-size: 2em;
+            color: #667eea;
+            font-weight: 800;
+        }
+
+        /* Page 3 - Business Model */
+        .page-3 {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
+
+        .page-3 h2 {
+            font-size: 2.8em;
+            margin-bottom: 40px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .column h3 {
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .column p, .column ul {
+            font-size: 1.3em;
+            line-height: 2;
+            color: white;
+        }
+
+        .column ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .column ul li {
+            margin-bottom: 18px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .column ul li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-size: 1.5em;
+            color: #ffd700;
+        }
+
+        /* Page 4 - Market Position */
+        .page-4 {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
+
+        .page-4 h2 {
+            font-size: 2.8em;
+            margin-bottom: 30px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .highlight-box h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: white;
+            font-weight: 700;
+        }
+
+        .highlight-box p {
+            font-size: 1.4em;
+            line-height: 2;
+            color: white;
+        }
+
+        /* Page 5 - Financial Table */
+        .page-5 {
+            background: white;
+        }
+
+        .page-5 h2 {
+            font-size: 2.8em;
+            color: #333;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 1.3em;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        table th {
+            background: #667eea;
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+
+        table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid #ddd;
+            font-family: monospace;
+        }
+
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        table tr:hover {
+            background: #f0f0f0;
+        }
+
+        .positive {
+            color: #10b981;
+            font-weight: 700;
+        }
+
+        .negative {
+            color: #ef4444;
+        }
+
+        /* Page 6 - Growth Analysis */
+        .page-6 {
+            background: white;
+        }
+
+        .page-6 h2 {
+            font-size: 2.8em;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .metric-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .metric-card h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .metric-card p {
+            font-size: 2em;
+            color: #667eea;
+            font-weight: 800;
+        }
+
+        .metric-card .description {
+            font-size: 1.2em;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* Page 7 - Unit Economics */
+        .page-7 {
+            background: #f5f5f5;
+        }
+
+        .page-7 h2 {
+            font-size: 2.8em;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .economics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .econ-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 2px solid #e0e0e0;
+        }
+
+        .econ-card h3 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .econ-card p {
+            font-size: 1.4em;
+            line-height: 1.9;
+            color: #333;
+            margin: 12px 0;
+        }
+
+        .econ-card .big-number {
+            font-size: 2.2em;
+            color: #667eea;
+            font-weight: 800;
+        }
+
+        /* Page 8 - Valuation */
+        .page-8 {
+            background: white;
+        }
+
+        .page-8 h2 {
+            font-size: 2.8em;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .valuation-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 35px;
+            border-radius: 12px;
+            margin: 25px 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .valuation-box h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: 700;
+        }
+
+        .valuation-box p {
+            font-size: 1.5em;
+            line-height: 1.9;
+            color: white;
+            margin: 12px 0;
+        }
+
+        .peer-comparison {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border: 2px solid #e0e0e0;
+        }
+
+        .peer-comparison h3 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* Page 9 - Investment Highlights (GREEN) */
+        .page-9 {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+        }
+
+        .page-9 h2 {
+            font-size: 2.8em;
+            margin-bottom: 40px;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+        }
+
+        .highlights-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .highlights-list li {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 25px 30px;
+            margin: 20px 0;
+            border-radius: 10px;
+            font-size: 1.4em;
+            line-height: 1.9;
+            border-left: 6px solid white;
+            color: white;
+            font-weight: 500;
+        }
+
+        .highlights-list li:before {
+            content: "✓";
+            margin-right: 15px;
+            font-size: 1.3em;
+            font-weight: 800;
+            color: white;
+        }
+
+        /* Page 10 - Risks (ORANGE/RED) */
+        .page-10 {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+            color: white;
+        }
+
+        .page-10 h2 {
+            font-size: 2.8em;
+            margin-bottom: 40px;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+        }
+
+        .risks-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .risks-list li {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 22px 30px;
+            margin: 18px 0;
+            border-radius: 10px;
+            font-size: 1.4em;
+            line-height: 1.9;
+            border-left: 6px solid white;
+            color: white;
+            font-weight: 500;
+        }
+
+        .risks-list li:before {
+            content: "✗";
+            margin-right: 15px;
+            font-size: 1.3em;
+            font-weight: 800;
+            color: white;
+        }
+
+        /* Page 11 - Competitive Landscape */
+        .page-11 {
+            background: #f0e6ff;
+        }
+
+        .page-11 h2 {
+            font-size: 2.8em;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .competitive-table {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 30px;
+        }
+
+        /* Page 12 - Use of Proceeds */
+        .page-12 {
+            background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+            color: white;
+        }
+
+        .page-12 h2 {
+            font-size: 2.8em;
+            margin-bottom: 30px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .proceeds-box {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .proceeds-box h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: 700;
+        }
+
+        .proceeds-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .proceeds-box ul li {
+            font-size: 1.4em;
+            line-height: 2;
+            color: white;
+            margin: 15px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .proceeds-box ul li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            font-weight: 800;
+            color: white;
+        }
+
+        /* Page 13 - Recommendation */
+        .page-13 {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+        }
+
+        .page-13 h2 {
+            font-size: 2.8em;
+            margin-bottom: 40px;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+        }
+
+        .recommendation-card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 35px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border: 3px solid white;
+        }
+
+        .recommendation-card h3 {
+            font-size: 2.2em;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .recommendation-card p {
+            font-size: 1.5em;
+            line-height: 2;
+            color: white;
+            margin: 15px 0;
+        }
+
+        .rationale-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 30px;
+        }
+
+        .rationale-list li {
+            font-size: 1.4em;
+            line-height: 1.9;
+            color: white;
+            margin: 18px 0;
+            padding-left: 40px;
+            position: relative;
+        }
+
+        .rationale-list li:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        /* Page 14 - Scenario Analysis */
+        .page-14 {
+            background: white;
+        }
+
+        .page-14 h2 {
+            font-size: 2.8em;
+            color: #333;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        .scenario-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .scenario-card {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 3px solid;
+        }
+
+        .scenario-card.bull {
+            background: #d1fae5;
+            border-color: #10b981;
+        }
+
+        .scenario-card.base {
+            background: #dbeafe;
+            border-color: #3b82f6;
+        }
+
+        .scenario-card.bear {
+            background: #fee2e2;
+            border-color: #ef4444;
+        }
+
+        .scenario-card h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .scenario-card p {
+            font-size: 1.4em;
+            line-height: 1.9;
+            color: #333;
+            margin: 12px 0;
+        }
+
+        .scenario-card .return {
+            font-size: 2em;
+            font-weight: 800;
+            margin-top: 15px;
+        }
+
+        /* Page 15 - Investor Actions */
+        .page-15 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .page-15 h2 {
+            font-size: 2.8em;
+            margin-bottom: 40px;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+        }
+
+        .investor-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .investor-card {
+            background: white;
+            color: #333;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .investor-card h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #667eea;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .investor-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .investor-card ul li {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #333;
+            margin: 12px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .investor-card ul li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-size: 1.5em;
+            font-weight: 800;
+        }
+
+        /* Page 16 - Summary & Disclaimer */
+        .page-16 {
+            background: white;
+        }
+
+        .page-16 h2 {
+            font-size: 2.8em;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .summary-box {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border-left: 5px solid #667eea;
+        }
+
+        .summary-box h3 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .summary-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .summary-box ul li {
+            font-size: 1.3em;
+            line-height: 1.9;
+            color: #333;
+            margin: 15px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .summary-box ul li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: 800;
+        }
+
+        .disclaimer {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .disclaimer h3 {
+            font-size: 1.6em;
+            color: #856404;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .disclaimer p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #856404;
+        }
+
+        .sources {
+            margin-top: 30px;
+            padding: 20px;
+            background: #e7f3ff;
+            border-radius: 8px;
+        }
+
+        .sources h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .sources p {
+            font-size: 1em;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        @media print {
+            .page {
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Page 1: Title Slide -->
+    <div class="page page-1">
+        <h1>MEESHO</h1>
+        <h2>IPO Analysis &amp; Investment Perspective</h2>
+        <p>Prepared by Kunal Singla | December 2025</p>
+        <p>India's Leading Reseller E-Commerce Platform</p>
+        <div class="page-number" style="color: white;">1</div>
+        <div class="attribution" style="color: white;">Made by Kunal Singla - Finance Enthusiast</div>
+    </div>
+
+    <!-- Page 2: Quick Facts -->
+    <div class="page page-2">
+        <h2>IPO Quick Facts</h2>
+        <div class="facts-grid">
+            <div class="fact-box">
+                <h3>Issue Size</h3>
+                <p>₹5,421.20 Cr</p>
+            </div>
+            <div class="fact-box">
+                <h3>Price Band</h3>
+                <p>₹105 - ₹111</p>
+            </div>
+            <div class="fact-box">
+                <h3>IPO Dates</h3>
+                <p>3-5 Dec 2025</p>
+            </div>
+            <div class="fact-box">
+                <h3>Listing Date</h3>
+                <p>10 Dec 2025</p>
+            </div>
+            <div class="fact-box">
+                <h3>Lot Size</h3>
+                <p>135 Shares</p>
+            </div>
+            <div class="fact-box">
+                <h3>Post-IPO Valuation</h3>
+                <p>₹52,500 Cr</p>
+            </div>
+            <div class="fact-box">
+                <h3>FY25 Revenue</h3>
+                <p>₹9,390 Cr</p>
+            </div>
+            <div class="fact-box">
+                <h3>Market Cap</h3>
+                <p>~$6 Billion</p>
+            </div>
+        </div>
+        <div class="page-number">2</div>
+        <div class="attribution">Made by Kunal Singla - Finance Enthusiast</div>
+    </div>
+
+    <!-- Page 3: Business Model -->
+    <div class="page page-3">
+        <h2>Company Overview: Business Model</h2>
+        <div class="two-column">
+            <div class="column">
+                <h3>Platform Fundamentals</h3>
+                <ul>
+                    <li><strong>Platform Type:</strong> Reseller-focused e-commerce marketplace</li>
+                    <li><strong>Annual Users:</strong> 175 Million transacting users (FY25)</li>
+                    <li><strong>Seller Base:</strong> 80 Lakh+ registered sellers across India</li>
+                    <li><strong>Geographic Focus:</strong> 90% orders from Tier-2/3 cities</li>
+                    <li><strong>Supply Mix:</strong> 95% unbranded/value products</li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li><strong>Profitability:</strong> First horizontal e-commerce platform to achieve FCF positive</li>
+                    <li><strong>App Rankings:</strong> #1 shopping app for 4 consecutive years</li>
+                    <li><strong>Network Value:</strong> ₹8,679 Cr NMV in FY25</li>
+                    <li><strong>Women Entrepreneurs:</strong> 9 Million+ women resellers empowered</li>
+                    <li><strong>Order Growth:</strong> 1,834 Million orders placed in FY25</li>
+                </ul>
+            </div>
+        </div>
+        <div class="page-number" style="color: white;">3</div>
+        <div class="attribution" style="color: white;">Made by Kunal Singla - Finance Enthusiast</div>
+    </div>
+
+    <!-- Page 4: Market Position -->
+    <div class="page page-4">
+        <h2>Market Position &amp; Competitive Edge</h2>
+        <div class="highlight-box">
+            <h3>Market Leadership</h3>
+            <p>• #1 shopping app by downloads for 4 consecutive years (FY22-FY25)</p>
+            <p>• 175 Million annual transacting users - highest among horizontal e-commerce platforms</p>
+            <p>• 32% user growth rate vs Flipkart (21%) and Amazon (13%)</p>
+        </div>
+        <div class="highlight-box">
+            <h3>Order Volume Trends</h3>
+            <p>• 1,834 Million orders placed in FY25</p>
+            <p>• 4x increase in order frequency year-over-year</p>
+            <p>• Time to first order reduced from 32 days (FY23) to just 16 days (FY25)</p>
+            <p>• 80% repeat customer rate demonstrates strong engagement</p>
+        </div>
+        <div class="highlight-box">
+            <h3>Tier-2/3 Dominance</h3>
+            <p>• 90% of orders originate from Tier-2 and Tier-3 cities</p>
+            <p>• Deep penetration in underserved markets with limited competition</p>
+            <p>• 9 Million+ women resellers - driving social commerce revolution</p>
+            <p>• Average order value ₹450 - focused on mass market affordability</p>
+        </div>
+        <div class="page-number" style="color: white;">4</div>
+        <div class="attribution" style="color: white;">Made by Kunal Singla - Finance Enthusiast</div>
+    </div>
+
+    <!-- Page 5: Financial Performance -->
+    <div class="page page-5">
+        <h2>Financial Performance (FY23-FY25)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>FY23</th>
+                    <th>FY24</th>
+                    <th>FY25</th>
+                    <th>Growth Comment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Revenue (₹ Cr)</strong></td>
+                    <td>5,735</td>
+                    <td>7,615</td>
+                    <td>9,390</td>
+                    <td class="positive">63.7% CAGR (2-year)</td>
+                </tr>
+                <tr>
+                    <td><strong>EBITDA (₹ Cr)</strong></td>
+                    <td class="negative">-1,345</td>
+                    <td class="negative">-800</td>
+                    <td class="negative">-1,101</td>
+                    <td>Margin pressure from growth investments</td>
+                </tr>
+                <tr>
+                    <td><strong>PAT (₹ Cr)</strong></td>
+                    <td class="negative">-1,876</td>
+                    <td class="negative">-53</td>
+                    <td class="negative">-1,401</td>
+                    <td>Path to profitability in progress</td>
+                </tr>
+                <tr>
+                    <td><strong>Free Cash Flow (₹ Cr)</strong></td>
+                    <td class="negative">-385</td>
+                    <td class="positive">+197</td>
+                    <td class="positive">+1,032</td>
+                    <td class="positive">POSITIVE - Strong turnaround ✓</td>
+                </tr>
+                <tr>
+                    <td><strong>Net Worth (₹ Cr)</strong></td>
+                    <td>2,472</td>
+                    <td>2,230</td>
+                    <td>1,446</td>
+                    <td>Capital deployment for growth</td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="margin-top: 30px; padding: 25px; background: #d1fae5; border-radius: 10px; border-left: 5px solid #10b981;">
+            <h3 style="font-size: 1.8em; color: #065f46; margin-bottom: 15px;">Key Highlight</h3>
+            <p style="font-size: 1.4em; color: #065f46; line-height: 1.9;">Meesho achieved <strong>Free Cash Flow positive</strong> status in FY25 with ₹1,032 Cr - a remarkable swing of ₹1,417 Cr from FY23. This demonstrates operational excellence and unit economics improvement despite bottom-line losses.</p>
+        </div>
+        <div class="page-number">5</div>
+        <div class="attribution">Made by Kunal Singla - Finance Enthusiast</div>
+    </div>
+
+    <!-- Page 6: Revenue & Growth -->
+    <div class="page page-6">
+        <h2>Revenue &amp; Growth Analysis</h2>
+        <div class="metric-grid">
+            <div class="metric-card">
+                <h3>Revenue CAGR</h3>
+                <p>63.7%</p>
+                <p class="description">2-Year compound annual growth rate (FY23-FY25)</p>
+            </div>
+            <div class="metric-card">
+                <h3>Order Frequency</h3>
+                <p>4x Increase</p>
+                <p class="description">Year-over-year growth in customer order frequency</p>
+            </div>
+            <div class="metric-card">
+                <h3>Time to First Order (FY25)</h3>
+                <p>16 Days</p>
+                <p class="description">Reduced from 32 days in FY23 - 50% improvement</p>
+            </div>
+            <div class="metric-card">
+                <h3>Annual Transacting Users</h3>
+                <p>175M</p>
+                <p class="description">Highest among horizontal e-commerce platforms</p>
+            </div>
+            <div class="metric-card">
+                <h3>Marketing Efficiency</h3>
+                <p>₹644 Cr</p>
+                <p class="description">Marketing spend in FY25, down from ₹928 Cr in FY23</p>
+            </div>
+            <div class="metric-card">
+                <h3>Orders Placed (FY25)</h3>
+                <p>1,834M</p>
+                <p class="description">Million orders - demonstrating scale and engagement</p>
+            </div>
+        </div>
+        <div style="margin-top: 30px; padding: 25px; background: #f8f9fa; border-radius: 10px; border: 2px solid #667eea;">
+            <h3 style="font-size: 1.8em; color: #333; margin-bottom: 15px;">Operating Leverage Insights</h3>
+            <p style="font-size: 1.3em; color: #333; line-height: 1.9;">• <strong>Marketing efficiency improved:</strong> Spend reduced by 31% (₹928 Cr to ₹644 Cr) while revenue grew 64%</p>
+            <p style="font-size: 1.3em; color: #333; line-height: 1.9;">• <strong>Customer acquisition optimized:</strong> Time to first order halved, indicating better onboarding</p>
+            <p style="font-size: 1.3em; color: #333; line-height: 1.9;">• <strong>Network effects visible:</strong> 80% repeat customer rate driving organic growth</p>
+        </div>
+        <div class="page-number">6</div>
+        <div class="attribution">Made by Kunal Singla - Finance Enthusiast</div>
+    </div>
+
+    <!-- Page 7: Unit Economics -->
+    <div class="page page-7">
+        <h2>Unit Economics &amp; Profitability Journey</h2>
+        <div class="economics-grid">
+            <div class="econ-card">
+                <h3>Contribution Margin Evolution</h3>
+                <p><strong>FY23:</strong> <span class="big-number">2.9%</span></p>
+                <p><strong>FY25:</strong> <span class="big-number">4.9%</span></p>
+                <p style="margin-top: 20px; color: #10b981; font-weight: 600;">+2.0 percentage points improvement demonstrating better unit economics</p>
+            </div>
+            <div class="econ-card">
+                <h3>Free Cash Flow Turnaround</h3>
+                <p><strong>FY23:</strong> <span class="big-number" style="color: #ef4444;">-₹385 Cr</span></p>
+                <p><strong>FY25:</strong> <span class="big-number" style="color: #10b981;">+₹1,032 Cr</span></p>
+                <p style="margin-top: 20px; color: #10b981; font-weight: 600;">₹1,417 Cr swing - remarkable operational improvement</p>
+            </div>
+            <div class="econ-card">
+                <h3>Average Order Value</h3>
+                <p><span class="big-number">₹450</span></p>
+                <p style="margin-top: 15px;">Ultra-low AOV targeting mass market</p>
+                <p style="margin-top: 10px;">Compensated by high order volume (1,834M orders in FY25)</p>
+            </div>
+            <div class="econ-card">
+                <h3>Customer Behavior Metrics</h3>
+                <p><strong>Repeat Customers:</strong> <span class="big-number">80%</span></p>
+                <p><strong>Cash on Delivery:</strong> <span class="big-number">78%</span></p>
+                <p style="margin-top: 15px;">High CoD rate typical of Tier-2/3 markets; requires robust logistics infrastructure</p>
+            </div>
+        </div>
+        <div style="margin-top: 30px; padding: 25px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 2px solid #10b981;">
+            <h3 style="font-size: 1.8em; color: #333; margin-bottom: 15px;">Unit Economics Summary</h3>
+            <p style="font-size: 1.3em; color: #333; line-height: 1.9;">Meesho has demonstrated clear improvement in unit economics with contribution margin expanding from 2.9% to 4.9%. The FCF positive milestone is particularly impressive given the competitive landscape. The business model is moving toward sustainable profitability while maintaining aggressive growth.</p>
+        </div>
+        <div class="page-number">7</div>
+        <div class="attribution">Made by Kunal Singla - Finance Enthusiast</div>
+    </div>
+
+    <!-- Page 8: Valuation -->
+    <div class="page page-8">
+        <h2>Valuation Analysis &amp; Multiples</h2>
+        <div class="valuation-box">
+            <h3>Valuation at Upper Price Band (₹111)</h3>
+            <p><strong>Market Cap:</strong> ₹52,500 Cr (~$6 Billion)</p>
+            <p><strong>Price-to-Sales Ratio:</strong> 5.6x (based on FY25 revenue of ₹9,390 Cr)</p>
+            <p><strong>Price-to-FCF Ratio:</strong> ~50.9x (based on FY25 FCF of ₹1,032 Cr)</p>
+            <p><strong>P/E Ratio:</strong> Not applicable (company is loss-making at PAT level)</p>
+        </div>
+        <div class="peer-comparison">
+            <h3>Peer Comparison: Price-to-Sales Multiples</h3>
+            <table style="margin-top: 20px;">
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>P/S Multiple</th>
+                        <th>Growth Rate</th>
+                        <th>Profitability Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Meesho</strong></td>
+                        <td><strong>5.6x</strong></td>
+                        <td class="positive">63.7% CAGR</td>
+                        <td class="positive">FCF Positive</td>
+                    </tr>
+                    <tr>
+                        <td>Swiggy</td>
+                        <td>6.5x</td>
+                        <td>~40% YoY</td>
+                        <td>EBITDA Breakeven</td>
+                    </tr>
+                    <tr>
+                        <td>Nykaa</td>
+                        <td>2.1x</td>
+                        <td>~25% YoY</td>
+                        <td class="positive">Profitable</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="margin-top: 30px; padding: 25px; background: #fff3cd; border-radius: 10px; border: 2px solid #ffc107;">
+            <h3 style="font-size: 1.8em; color: #856404; margin-bottom: 15px;">Valuation Verdict</h3>
+            <p style="font-size: 1.4em; color: #856404; line-height: 1.9;"><strong>Growth-priced with limited margin of safety.</strong> At 5.6x sales, Meesho trades at a premium to Nykaa but discount to Swiggy. The valuation is justified by superior growth (64% CAGR) and FCF positive status. However, investors should be aware that multiples could contract if growth decelerates or competition intensifies.</p>
+        </div>
+        <div class="page-number">8</div>
+        <div class="attribution">Made by Kunal Singla - Finance Enthusiast</div>
+    </div>
+
+    <!-- Page 9: Investment Highlights -->
+    <div class="page page-9">
+        <h2>INVESTMENT HIGHLIGHTS</h2>
+        <ul class="highlights-list">
+            <li><strong>Market Leadership:</strong> 175 Million annual transacting users, #1 shopping app for 4 consecutive years (FY22-FY25), highest downloads among horizontal e-commerce platforms</li>
+            <li><strong>High Revenue Growth:</strong> 63.7% revenue CAGR over 2 years (FY23-FY25), growing from ₹5,735 Cr to ₹9,390 Cr with strong momentum continuing</li>
+            <li><strong>Strong Cash Generation:</strong> Free Cash Flow positive with ₹1,032 Cr in FY25, demonstrating operational excellence and path to sustainable profitability</li>
+            <li><strong>Technology Investment:</strong> Heavy investments in AI/ML for recommendation engines, fraud detection, and personalization; cloud infrastructure modernization underway</li>
+            <li><strong>Experienced Backers:</strong> Backed by marquee investors including SoftBank, Elevation Capital, Peak XV Partners (formerly Sequoia), and Y Combinator</li>
+            <li><strong>Secular Tailwind:</strong> Indian e-commerce market expected to grow at 20% CAGR through 2030, with Tier-2/3 cities (Meesho's focus) growing even faster</li>
+        </ul>
+        <div class="page-number" style="color: white;">9</div>
+        <div class="attribution" style="color: white;">Made by Kunal Singla - Finance Enthusiast</div>
+    </div>
+
+    <!-- Page 10: Key Risks -->
+    <div class="page page-10">
+        <h2>KEY RISKS &amp; CONCERNS</h2>
+        <ul class="risks-list">
+            <li><strong>Unprofitable at Scale:</strong> Despite ₹9,390 Cr revenue, company reported PAT loss of ₹1,401 Cr in FY25. Path to bottom-line profitability remains uncertain</li>
+            <li><strong>Seller Concentration Risk:</strong> Top sellers contribute majority of GMV. Loss of key sellers or supplier disruptions could impact revenue significantly</li>
+            <li><strong>Intense Competition:</strong> Faces competition from well-funded giants like Amazon, Flipkart, and emerging threat from Jio Mart. Market share defense requires continuous investment</li>
+            <li><strong>Marketing Dependency:</strong> Heavy customer acquisition costs required to maintain growth. Any reduction in marketing spend could impact user growth trajectory</li>
+            <li><strong>Regulatory Overhang:</strong> E-commerce FDI rules, GST compliance, and potential platform regulations pose ongoing regulatory risks to business model</li>
+            <li><strong>Post-IPO Dilution:</strong> Venture capital lock-in periods expiring post-IPO could lead to significant selling pressure. OFS of ₹1,171 Cr signals existing investor exit intent</li>
+            <li><strong>Macro Sensitivity:</strong> Discretionary category exposure makes business vulnerable to economic slowdowns, inflation, and changes in consumer spending patterns</li>
+        </ul>
+        <div class="page-number" style="color: white;">10</div>
+        <div class="attribution" style="color: white;">Made by Kunal Singla - Finance Enthusiast</div>
+    </div>
+
+    <!-- Page 11: Competitive Landscape -->
+    <div class="page page-11">
+        <h2>Competitive Landscape Analysis</h2>
+        <div class="competitive-table">
+            <table style="margin-top: 30px;">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Meesho</th>
+                        <th>Flipkart</th>
+                        <th>Amazon India</th>
+                        <th>Nykaa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Market Share</strong></td>
+                        <td>Growing (Tier-2/3 leader)</td>
+                        <td>48% (Overall leader)</td>
+                        <td>~26% (Strong metro)</td>
+                        <td>Niche (Beauty focus)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>FY25 Revenue</strong></td>
+                        <td>₹9,390 Cr</td>
+                        <td>₹60,000+ Cr (est)</td>
+                        <td>₹40,000+ Cr (est)</td>
+                        <td>₹6,500+ Cr</td>
+                    </tr>
+                    <tr>
+                        <td><strong>User Growth Rate</strong></td>
+                        <td class="positive">32% YoY</td>
+                        <td>21% YoY</td>
+                        <td>13% YoY</td>
+                        <td>~25% YoY</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Target Segment</strong></td>
+                        <td>Tier-2/3 cities (90%)</td>
+                        <td>Pan-India (Metro heavy)</td>
+                        <td>Pan-India (Metro heavy)</td>
+                        <td>Metros &amp; Tier-1</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Product Mix</strong></td>
+                        <td>95% Unbranded/Value</td>
+                        <td>Branded + Unbranded</td>
+                        <td>Branded + Unbranded</td>
+                        <td>90%+ Branded</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Business Model</strong></td>
+                        <td>Reseller-focused</td>
+                        <td>Traditional marketplace</td>
+                        <td>Traditional marketplace</td>
+                        <td>Inventory + Marketplace</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Profitability</strong></td>
+                        <td class="positive">FCF Positive</td>
+                        <td>Profitable (estimated)</td>
+                        <td>Profitable (estimated)</td>
+                        <td class="positive">Profitable (PAT)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Competitive Edge</strong></td>
+                        <td>Social commerce, Women entrepreneurs</td>
+                        <td>Scale, Logistics, Flipkart Plus</td>
+                        <td>Prime, AWS integration</td>
+                        <td>Beauty expertise, Trust</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="margin-top: 30px; padding: 25px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-left: 5px solid #667eea;">
+            <h3 style="font-size: 1.8em; color: #333; margin-bottom: 15px;">Meesho's Competitive Positioning</h3>
+            <p style="font-size: 1.3em; color: #333; line-height: 1.9;">Meesho has carved a defensible niche in Tier-2/3 cities with a unique reseller-focused model. While smaller than Flipkart/Amazon in absolute terms, it's growing faster (32% vs 21%/13%) and has achieved FCF positive status. The focus on unbranded value products and social commerce creates differentiation, but also limits premium product expansion opportunities.</p>
+        </div>
+        <div class="page-number">11</div>
+        <div class="attribution">Made by Kunal Singla - Finance Enthusiast</div>
+    </div>
+
+    <!-- Page 12: Use of Proceeds -->
+    <div class="page page-12">
+        <h2>Use of IPO Proceeds Breakdown</h2>
+        <div class="proceeds-box">
+            <h3>Fresh Issue: ₹4,250 Crores</h3>
+            <ul>
+                <li><strong>Cloud Infrastructure (30%):</strong> ₹1,275 Cr for Meesho Tech Pvt Ltd cloud infrastructure modernization, scalability improvements, and cost optimization</li>
+                <li><strong>Marketing &amp; Customer Acquisition (25%):</strong> ₹1,062 Cr for expanding into new geographies, brand building, and reducing customer acquisition costs</li>
+                <li><strong>Technology &amp; AI/ML Hiring (20%):</strong> ₹850 Cr for building recommendation engines, fraud detection systems, personalization capabilities, and hiring top tech talent</li>
+                <li><strong>Inorganic Growth &amp; Acquisitions (15%):</strong> ₹638 Cr for potential strategic acquisitions to expand product categories, acquire technology, or enter adjacent markets</li>
+                <li><strong>General Corporate Purposes (10%):</strong> ₹425 Cr for working capital requirements, operational expenses, and maintaining financial flexibility</li>
+            </ul>
+        </div>
+        <div class="proceeds-box">
+            <h3>Offer for Sale (OFS): ₹1,171.20 Crores</h3>
+            <p style="font-size: 1.4em; line-height: 2; color: white; margin-top: 15px;">Existing shareholders selling stake (proceeds go to selling shareholders, not the company):</p>
+            <ul>
+                <li><strong>Elevation Capital:</strong> Partial stake sale</li>
+                <li><strong>Prosus Ventures:</strong> Partial stake sale</li>
+                <li><strong>Peak XV Partners (formerly Sequoia):</strong> Partial stake sale</li>
+                <li><strong>Y Combinator:</strong> Partial stake sale</li>
+                <li><strong>SoftBank Vision Fund:</strong> Partial stake sale</li>
+            </ul>
+        </div>
+        <div style="margin-top: 30px; padding: 30px; background: rgba(255, 255, 255, 0.2); border-radius: 10px; border: 2px solid white;">
+            <h3 style="font-size: 1.8em; color: white; margin-bottom: 15px; font-weight: 700;">Strategic Focus</h3>
+            <p style="font-size: 1.4em; color: white; line-height: 1.9;">The fresh issue proceeds are strategically allocated toward technology infrastructure (50% combined for cloud + AI/ML) and growth initiatives (25% for marketing). This allocation suggests a focus on sustainable scaling and operational efficiency rather than aggressive geographic expansion.</p>
+        </div>
+        <div class="page-number" style="color: white;">12</div>
+        <div class="attribution" style="color: white;">Made by Kunal Singla - Finance Enthusiast</div>
+    </div>
+
+    <!-- Page 13: Investment Recommendation -->
+    <div class="page page-13">
+        <h2>INVESTMENT RECOMMENDATION</h2>
+        <div class="recommendation-card">
+            <h3>VERDICT: BUY (3-Year Horizon)</h3>
+            <p><strong>Conviction Level:</strong> MEDIUM-HIGH</p>
+            <p><strong>Expected Return (12-month):</strong> 15-25%</p>
+            <p><strong>Investment Horizon:</strong> 3+ years recommended for full value realization</p>
+        </div>
+        <div style="margin-top: 30px; padding: 30px; background: rgba(255, 255, 255, 0.15); border-radius: 10px; border: 2px solid rgba(255, 255, 255, 0.3);">
+            <h3 style="font-size: 2em; color: white; margin-bottom: 20px; font-weight: 700;">Investment Rationale</h3>
+            <ul class="rationale-list">
+                <li><strong>Growth Intact:</strong> 64% revenue CAGR, 175M users, market leadership in Tier-2/3 cities, and 32% user growth rate (highest among peers) demonstrate strong business momentum</li>
+                <li><strong>Path to Profitability:</strong> FCF positive with ₹1,032 Cr in FY25, contribution margin expanding from 2.9% to 4.9%, and marketing efficiency improving (spend down 31% while revenue up 64%)</li>
+                <li><strong>Valuation Reasonable:</strong> 5.6x P/S ratio is lower than Swiggy (6.5x) and justified by superior growth and FCF positive status. Premium to Nykaa (2.1x) reflects higher growth potential</li>
+            </ul>
+        </div>
+        <div style="margin-top: 30px; padding: 25px; background: rgba(255, 255, 255, 0.2); border-radius: 10px; border: 2px solid white;">
+            <h3 style="font-size: 1.8em; color: white; margin-bottom: 15px; font-weight: 700;">Who Should Apply?</h3>
+            <p style="font-size: 1.4em; color: white; line-height: 1.9;"><strong>Aggressive growth investors</strong> with 3+ year horizon, comfortable with volatility, and belief in India's e-commerce story. Not suitable for conservative investors or those seeking immediate profitability.</p>
+        </div>
+        <div class="page-number" style="color: white;">13</div>
+        <div class="attribution" style="color: white;">Made by Kunal Singla - Finance Enthusiast</div>
+    </div>
+
+    <!-- Page 14: Scenario Analysis -->
+    <div class="page page-14">
+        <h2>Scenario Analysis: 12-Month Return Potential</h2>
+        <div class="scenario-grid">
+            <div class="scenario-card bull">
+                <h3>BULL CASE</h3>
+                <p><strong>Probability:</strong> 25%</p>
+                <p><strong>Key Drivers:</strong></p>
+                <p>• Revenue growth accelerates to 75%+</p>
+                <p>• EBITDA breakeven achieved ahead of schedule</p>
+                <p>• Market share gains in Tier-2/3</p>
+                <p>• E-commerce sector re-rating</p>
+                <p class="return" style="color: #10b981;">+35% to +40%</p>
+            </div>
+            <div class="scenario-card base">
+                <h3>BASE CASE</h3>
+                <p><strong>Probability:</strong> 50%</p>
+                <p><strong>Key Drivers:</strong></p>
+                <p>• Revenue growth sustains at 50-60%</p>
+                <p>• FCF margins maintain/improve</p>
+                <p>• Competitive intensity remains stable</p>
+                <p>• Valuation multiples hold at 5-6x</p>
+                <p class="return" style="color: #3b82f6;">+15% to +20%</p>
+            </div>
+            <div class="scenario-card bear">
+                <h3>BEAR CASE</h3>
+                <p><strong>Probability:</strong> 25%</p>
+                <p><strong>Key Drivers:</strong></p>
+                <p>• Growth decelerates below 40%</p>
+                <p>• Competition intensifies (Jio entry)</p>
+                <p>• Marketing costs spike, FCF turns negative</p>
+                <p>• Regulatory challenges emerge</p>
+                <p class="return" style="color: #ef4444;">-15% to -20%</p>
+            </div>
+        </div>
+        <div style="margin-top: 40px; padding: 30px; background: #f8f9fa; border-radius: 10px; border: 3px solid #667eea;">
+            <h3 style="font-size: 2em; color: #333; margin-bottom: 20px; font-weight: 700;">Probability-Weighted Expected Return</h3>
+            <p style="font-size: 1.5em; color: #333; line-height: 1.9; margin-bottom: 15px;">Calculation: (25% × 37.5%) + (50% × 17.5%) + (25% × -17.5%) = <strong style="color: #667eea; font-size: 1.3em;">+11.9%</strong></p>
+            <p style="font-size: 1.4em; color: #333; line-height: 1.9;">The base case scenario has the highest probability (50%), supporting a positive expected return. However, investors should be prepared for volatility and potential downside in adverse scenarios. Risk-reward ratio is favorable for long-term investors.</p>
+        </div>
+        <div class="page-number">14</div>
+        <div class="attribution">Made by Kunal Singla - Finance Enthusiast</div>
+    </div>
+
+    <!-- Page 15: Investor Action Steps -->
+    <div class="page page-15">
+        <h2>INVESTOR ACTION STEPS</h2>
+        <div class="investor-grid">
+            <div class="investor-card">
+                <h3>RETAIL INVESTORS</h3>
+                <ul>
+                    <li>Apply for full allocation (1 lot = 135 shares = ₹14,985 at ₹111)</li>
+                    <li>Hold for minimum 1-2 years to benefit from growth story</li>
+                    <li>Monitor quarterly results for revenue growth and FCF trends</li>
+                    <li>Watch for listing day pop - consider partial profit booking if 20%+ gains</li>
+                    <li>Use stop loss at -15% from listing price to manage downside risk</li>
+                </ul>
+            </div>
+            <div class="investor-card">
+                <h3>HNI INVESTORS</h3>
+                <ul>
+                    <li>Apply in HNI category for multiple lots if growth conviction is high</li>
+                    <li>Monitor post-listing price action for first 2-3 weeks before adding more</li>
+                    <li>Consider accumulating on weakness if stock corrects 10-15% post-listing</li>
+                    <li>Set stop loss at -15% and take partial profits at +40% to lock gains</li>
+                    <li>Track competitive dynamics and quarterly market share data closely</li>
+                </ul>
+            </div>
+            <div class="investor-card">
+                <h3>INSTITUTIONAL</h3>
+                <ul>
+                    <li>Participate in QIB portion with allocation to India growth/e-commerce theme</li>
+                    <li>Use lock-in period to accumulate on dips if fundamentals remain strong</li>
+                    <li>Model 3-5 year DCF valuation scenarios for long-term position sizing</li>
+                    <li>Engage with management on path to EBITDA profitability and unit economics</li>
+                    <li>Monitor regulatory developments and competitive landscape evolution</li>
+                </ul>
+            </div>
+        </div>
+        <div style="margin-top: 30px; padding: 25px; background: white; border-radius: 10px; border: 2px solid rgba(255,255,255,0.3); box-shadow: 0 8px 20px rgba(0,0,0,0.2);">
+            <h3 style="font-size: 1.8em; color: #667eea; margin-bottom: 15px; font-weight: 700; text-align: center;">Key Monitoring Metrics Post-IPO</h3>
+            <p style="font-size: 1.3em; color: #333; line-height: 1.8;">• Quarterly revenue growth rate (target: 50%+ YoY) • Annual transacting users (target: 200M+ by FY26) • Free cash flow margins (maintain positive) • Contribution margin expansion (target: 6%+ by FY26) • Competitive market share in Tier-2/3 cities</p>
+        </div>
+        <div class="page-number" style="color: white;">15</div>
+        <div class="attribution" style="color: white;">Made by Kunal Singla - Finance Enthusiast</div>
+    </div>
+
+    <!-- Page 16: Summary & Disclaimer -->
+    <div class="page page-16">
+        <h2>Summary &amp; Investment Thesis</h2>
+        <div class="summary-box">
+            <h3>Five-Point Investment Thesis</h3>
+            <ul>
+                <li><strong>WHAT:</strong> Meesho is India's leading reseller-focused e-commerce platform with 175M users, targeting Tier-2/3 cities with unbranded value products</li>
+                <li><strong>WHY NOW:</strong> Company has achieved FCF positive status (₹1,032 Cr in FY25), demonstrating operational maturity. IPO timing coincides with strong growth momentum (64% CAGR) and improving unit economics</li>
+                <li><strong>PRICE:</strong> At ₹111, valuation of 5.6x P/S is reasonable for a high-growth, FCF-positive e-commerce platform. Lower than Swiggy (6.5x), justified by superior growth metrics</li>
+                <li><strong>RISK-REWARD:</strong> Base case scenario (50% probability) projects 15-20% returns in 12 months. Probability-weighted expected return of 11.9%. Downside risk exists if growth decelerates or competition intensifies</li>
+                <li><strong>ACTION:</strong> BUY with 3-year investment horizon. Suitable for aggressive growth investors comfortable with volatility. Stop loss at -15%, take partial profits at +40%</li>
+            </ul>
+        </div>
+        <div style="margin-top: 25px; padding: 25px; background: #d1fae5; border-radius: 10px; border-left: 5px solid #10b981;">
+            <h3 style="font-size: 1.6em; color: #065f46; margin-bottom: 15px; font-weight: 700;">Expected Return Summary</h3>
+            <p style="font-size: 1.4em; color: #065f46; line-height: 1.8;"><strong>12-Month Target Return:</strong> +15% to +20% (Base Case)</p>
+            <p style="font-size: 1.4em; color: #065f46; line-height: 1.8;"><strong>3-Year Target Return:</strong> +50% to +80% (if growth thesis plays out)</p>
+        </div>
+        <div class="disclaimer">
+            <h3>⚠️ DISCLAIMER</h3>
+            <p><strong>Not Investment Advice:</strong> This presentation is for educational and informational purposes only. It does not constitute investment advice, financial advice, trading advice, or any other type of advice. You should not treat any of the presentation's content as such.</p>
+            <p style="margin-top: 10px;"><strong>Risk Warning:</strong> Investing in IPOs and equity markets involves substantial risk including the potential loss of principal. IPO allotments are subject to random allocation and not guaranteed. Past performance does not guarantee future results.</p>
+            <p style="margin-top: 10px;"><strong>Do Your Own Research:</strong> Always conduct your own research, due diligence, and consult with a qualified financial advisor before making any investment decisions. The author/presenter is not responsible for any investment decisions you make.</p>
+            <p style="margin-top: 10px;"><strong>No Guarantee:</strong> There is no guarantee that Meesho will achieve profitability, maintain growth rates, or that the stock price will perform as projected. Regulatory changes, competitive pressures, and macroeconomic factors could adversely impact the company's prospects.</p>
+        </div>
+        <div class="sources">
+            <h3>Sources &amp; References</h3>
+            <p style="font-size: 0.95em;"><strong>Primary Sources:</strong> SEBI DRHP Filing, Meesho Company Filings • <strong>Research &amp; Analysis:</strong> Kotak Securities, JM Financial, Arihant Capital, Motilal Oswal, Angel One • <strong>News &amp; Media:</strong> Economic Times, Mint, Business Today, Moneycontrol, Fortune India, Inc42, TechCrunch India • <strong>IPO Platforms:</strong> Chittorgarh, IPO Central, IPO Watch, Groww, Paytm Money, Investorgain • <strong>Industry Research:</strong> Redseer Reports, AllianceBernstein Research, Feedough Business Models, Canvas Business Model, ReadOn • <strong>Community Analysis:</strong> Substack analysts, Reddit r/IndianStockMarket, LinkedIn finance community • <strong>Additional:</strong> Storyboard18, Voice.lapaas.com, Unlistedzone</p>
+        </div>
+        <div style="margin-top: 25px; padding: 20px; background: #667eea; color: white; border-radius: 8px; text-align: center;">
+            <p style="font-size: 1.3em; font-weight: 600;">For questions or feedback, connect with Kunal Singla</p>
+            <p style="font-size: 1.1em; margin-top: 8px;">Finance Enthusiast | December 2025</p>
+        </div>
+        <div class="page-number">16</div>
+        <div class="attribution">Made by Kunal Singla - Finance Enthusiast</div>
+    </div>
+
+</body>
+</html>

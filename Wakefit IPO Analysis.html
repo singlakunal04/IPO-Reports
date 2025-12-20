@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wakefit Innovations IPO Analysis - Prepared by Kunal Singla</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --font-family-base: Arial, Helvetica, sans-serif;
+            --color-dark-bg: #0f172a;
+            --color-surface: #1e293b;
+            --color-text-primary: #f1f5f9;
+            --color-text-secondary: #cbd5e1;
+            --color-accent: #38bdf8;
+            --color-success: #22c55e;
+            --color-warning: #f97316;
+            --color-error: #ef4444;
+        }
+
+        body {
+            font-family: var(--font-family-base);
+            background-color: #0a0e27;
+            overflow-x: hidden;
+        }
+
+        .slide {
+            width: 960px;
+            min-height: 540px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            position: relative;
+            overflow-y: auto;
+            overflow-x: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 3.75rem;
+            font-weight: 900;
+            line-height: 1;
+            margin: 0;
+            color: #38bdf8;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 8px rgba(56, 189, 248, 0.3);
+        }
+
+        h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin: 0 0 1.5rem 0;
+            color: #38bdf8;
+            text-shadow: 0 1px 4px rgba(56, 189, 248, 0.2);
+        }
+
+        h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 0 0 1rem 0;
+            color: #38bdf8;
+        }
+
+        h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #38bdf8;
+            margin-bottom: 0.75rem;
+        }
+
+        /* DARK THEME SLIDES */
+        .slide {
+            background-color: var(--color-dark-bg);
+            color: var(--color-text-primary);
+        }
+
+        /* SLIDE LAYOUTS */
+        .slide.center {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .slide.col {
+            flex-direction: column;
+        }
+
+        .slide.row {
+            flex-direction: row;
+        }
+
+        /* SPACING & PADDING */
+        .slide.p-16 {
+            padding: 4rem;
+        }
+
+        .slide.p-12 {
+            padding: 3rem;
+        }
+
+        /* TYPOGRAPHY */
+        h1 {
+            font-size: 3.75rem;
+            font-weight: bold;
+            line-height: 1;
+            margin: 0;
+            color: var(--color-accent);
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 2.25rem;
+            font-weight: bold;
+            line-height: 1.1;
+            margin: 0 0 1.5rem 0;
+            color: var(--color-accent);
+        }
+
+        h3 {
+            font-size: 1.75rem;
+            font-weight: bold;
+            line-height: 1.2;
+            margin: 0 0 1rem 0;
+            color: var(--color-accent);
+        }
+
+        h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            color: var(--color-text-secondary);
+            margin: 0.5rem 0;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--color-text-secondary);
+            margin-top: 1rem;
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+            color: #94a3b8;
+        }
+
+        /* LISTS */
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--color-text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        /* SPACING */
+        .mt-6 { margin-top: 1.5rem; }
+        .mt-8 { margin-top: 2rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+
+        .gap-4 { gap: 1rem; }
+        .gap-6 { gap: 1.5rem; }
+        .gap-8 { gap: 2rem; }
+
+        /* FLEXBOX UTILITIES */
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .flex-row { flex-direction: row; }
+        .items-center { align-items: center; }
+        .items-start { align-items: flex-start; }
+        .justify-between { justify-content: space-between; }
+        .justify-center { justify-content: center; }
+        .fill-width { flex: 1; }
+
+        /* CARDS */
+        .card {
+            background-color: var(--color-surface);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-stat {
+            background-color: rgba(56, 189, 248, 0.1);
+            border-left: 4px solid var(--color-accent);
+            padding: 1.25rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--color-accent);
+            margin: 0;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        /* TABLES */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            margin: 1.5rem 0;
+        }
+
+        th {
+            background-color: rgba(56, 189, 248, 0.15);
+            color: var(--color-accent);
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid var(--color-accent);
+        }
+
+        td {
+            padding: 0.65rem 0.75rem;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.1);
+            color: var(--color-text-secondary);
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(30, 41, 59, 0.6);
+        }
+
+        tr:hover {
+            background-color: rgba(56, 189, 248, 0.1);
+        }
+
+        .table-dense {
+            font-size: 0.85rem;
+            margin: 1rem 0;
+        }
+
+        .table-dense td, .table-dense th {
+            padding: 0.5rem;
+        }
+
+        /* CHARTS & GRAPHS CONTAINER */
+        .chart-container {
+            width: 100%;
+            height: 300px;
+            position: relative;
+            margin: 1.5rem 0;
+            background-color: rgba(30, 41, 59, 0.5);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: var(--color-text-secondary);
+        }
+
+        /* SVG CHART STYLES */
+        .simple-chart {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* HIGHLIGHTS & EMPHASIS */
+        .highlight-positive {
+            color: var(--color-success);
+            font-weight: 600;
+        }
+
+        .highlight-negative {
+            color: var(--color-error);
+            font-weight: 600;
+        }
+
+        .highlight-neutral {
+            color: var(--color-warning);
+            font-weight: 600;
+        }
+
+        /* BADGES */
+        .badge {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-success {
+            background-color: rgba(34, 197, 94, 0.2);
+            color: var(--color-success);
+        }
+
+        .badge-warning {
+            background-color: rgba(249, 115, 22, 0.2);
+            color: var(--color-warning);
+        }
+
+        .badge-info {
+            background-color: rgba(56, 189, 248, 0.2);
+            color: var(--color-accent);
+        }
+
+        /* HEADER & FOOTER */
+        .slide-header {
+            position: absolute;
+            top: 1.5rem;
+            left: 4rem;
+            right: 4rem;
+            font-size: 0.9rem;
+            color: #64748b;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+            padding-bottom: 1rem;
+        }
+
+        .slide-footer {
+            position: absolute;
+            bottom: 1rem;
+            left: 4rem;
+            right: 4rem;
+            font-size: 0.8rem;
+            color: #64748b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .slide-number {
+            color: #64748b;
+        }
+
+        /* KEY METRICS BOX */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .metric-box {
+            background-color: var(--color-surface);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--color-accent);
+        }
+
+        .metric-value {
+            font-size: 1.75rem;
+            font-weight: bold;
+            color: var(--color-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+        }
+
+        /* RECOMMENDATION BOX */
+        .recommendation {
+            background-color: rgba(34, 197, 94, 0.15);
+            border: 2px solid var(--color-success);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .recommendation.hold {
+            background-color: rgba(249, 115, 22, 0.15);
+            border-color: var(--color-warning);
+        }
+
+        .recommendation.avoid {
+            background-color: rgba(239, 68, 68, 0.15);
+            border-color: var(--color-error);
+        }
+
+        .recommendation-title {
+            font-size: 1.75rem;
+            font-weight: bold;
+            color: var(--color-success);
+            margin-bottom: 0.5rem;
+        }
+
+        .recommendation.hold .recommendation-title {
+            color: var(--color-warning);
+        }
+
+        .recommendation.avoid .recommendation-title {
+            color: var(--color-error);
+        }
+
+        /* SECTION CONTENT - TOP PADDING FOR HEADER */
+        .slide-content {
+            padding-top: 6rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* MINI CHARTS */
+        .mini-bar-chart {
+            display: flex;
+            align-items: flex-end;
+            gap: 0.75rem;
+            height: 150px;
+            margin: 1rem 0;
+        }
+
+        .bar {
+            flex: 1;
+            background: linear-gradient(180deg, var(--color-accent), rgba(56, 189, 248, 0.4));
+            border-radius: 4px 4px 0 0;
+            position: relative;
+            min-width: 40px;
+        }
+
+        .bar-label {
+            position: absolute;
+            bottom: -1.5rem;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+        }
+
+        .bar-value {
+            position: absolute;
+            top: -1.5rem;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        /* PROS & CONS */
+        .pros-cons-container {
+            display: flex;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .pros, .cons {
+            flex: 1;
+        }
+
+        .pros h4, .cons h4 {
+            margin-bottom: 1rem;
+        }
+
+        .pros h4 {
+            color: var(--color-success);
+        }
+
+        .cons h4 {
+            color: var(--color-error);
+        }
+
+        .pros li {
+            color: rgba(34, 197, 94, 0.9);
+            list-style-color: var(--color-success);
+        }
+
+        .cons li {
+            color: rgba(239, 68, 68, 0.9);
+            list-style-color: var(--color-error);
+        }
+
+        /* ATTRIBUTION */
+        .attribution {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: auto;
+        }
+
+        /* FULL HEIGHT CONTENT */
+        .fill-height {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* TWO COLUMN LAYOUT */
+        .two-col {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .two-col > div {
+            flex: 1;
+        }
+
+        /* IPO QUICK FACTS BOX */
+        .quick-facts {
+            background-color: var(--color-surface);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .quick-fact-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.1);
+        }
+
+        .quick-fact-row:last-child {
+            border-bottom: none;
+        }
+
+        .quick-fact-label {
+            font-weight: 600;
+            color: var(--color-text-secondary);
+            min-width: 40%;
+        }
+
+        .quick-fact-value {
+            color: var(--color-accent);
+            font-weight: 600;
+            text-align: right;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- SLIDE 1: COVER -->
+    <section class="slide center p-16 col" style="background: linear-gradient(135deg, #020617 0%, #0f172a 100%);">
+        <h1 style="font-size: 4rem; margin-bottom: 1rem;">Wakefit Innovations</h1>
+        <p class="subtitle" style="font-size: 1.75rem;">IPO Analysis & Investment Thesis</p>
+        <p style="color: #94a3b8; margin-top: 3rem; font-size: 1.1rem;">
+            Prepared by: <span style="color: var(--color-accent); font-weight: 600;">Kunal Singla</span>
+        </p>
+        <p style="color: #64748b; font-size: 0.95rem; margin-top: 1rem;">
+            Finance Enthusiast | IPO Research Intelligence System
+        </p>
+        <p style="color: #475569; margin-top: 4rem; font-size: 0.9rem;">
+            December 8-10, 2025 | Price Band: ₹185-195 | IPO Size: ₹1,289 Crore
+        </p>
+    </section>
+
+    <!-- SLIDE 2: IPO QUICK FACTS -->
+    <section class="slide p-16 col" style="background-color: var(--color-dark-bg);">
+        <div class="slide-header">
+            Wakefit Innovations IPO | Quick Facts & Key Details
+        </div>
+        
+        <div class="slide-content" style="padding: 2rem 0;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <!-- Left Column -->
+                <div>
+                    <h3 style="color: var(--color-accent); margin-bottom: 1.5rem; font-size: 1.5rem;">IPO Structure</h3>
+                    <div class="quick-facts" style="padding: 1.25rem; background-color: rgba(30, 41, 59, 0.8);">
+                        <div class="quick-fact-row">
+                            <span class="quick-fact-label">IPO Type</span>
+                            <span class="quick-fact-value">Mainboard</span>
+                        </div>
+                        <div class="quick-fact-row">
+                            <span class="quick-fact-label">Price Band</span>
+                            <span class="quick-fact-value">₹185-195</span>
+                        </div>
+                        <div class="quick-fact-row">
+                            <span class="quick-fact-label">Issue Size</span>
+                            <span class="quick-fact-value">₹1,289 Cr</span>
+                        </div>
+                        <div class="quick-fact-row">
+                            <span class="quick-fact-label">Fresh Issue</span>
+                            <span class="quick-fact-value">₹377 Cr</span>
+                        </div>
+                        <div class="quick-fact-row">
+                            <span class="quick-fact-label">Offer for Sale</span>
+                            <span class="quick-fact-value">₹912 Cr</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div>
+                    <h3 style="color: var(--color-accent); margin-bottom: 1.5rem; font-size: 1.5rem;">Timeline & Application</h3>
+                    <div class="quick-facts" style="padding: 1.25rem; background-color: rgba(30, 41, 59, 0.8);">
+                        <div class="quick-fact-row">
+                            <span class="quick-fact-label">Anchor Bidding</span>
+                            <span class="quick-fact-value">Dec 5, 2025</span>
+                        </div>
+                        <div class="quick-fact-row">
+                            <span class="quick-fact-label">IPO Opens</span>
+                            <span class="quick-fact-value">Dec 8, 2025</span>
+                        </div>
+                        <div class="quick-fact-row">
+                            <span class="quick-fact-label">IPO Closes</span>
+                            <span class="quick-fact-value">Dec 10, 2025</span>
+                        </div>
+                        <div class="quick-fact-row">
+                            <span class="quick-fact-label">Allotment</span>
+                            <span class="quick-fact-value">Dec 11, 2025</span>
+                        </div>
+                        <div class="quick-fact-row">
+                            <span class="quick-fact-label">Listing Date</span>
+                            <span class="quick-fact-value">Dec 15, 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <p style="color: #94a3b8; font-size: 0.95rem;">
+                    <span style="color: var(--color-accent); font-weight: 600;">Lot Size:</span> 76 shares | 
+                    <span style="color: var(--color-accent); font-weight: 600;">Minimum Investment:</span> ₹14,820 (Retail)
+                </p>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span>Made by Kunal Singla - Finance Enthusiast</span>
+            <span class="slide-number">2</span>
+        </div>
+    </section>
+
+    <!-- SLIDE 3: COMPANY OVERVIEW -->
+    <section class="slide p-16 col" style="background-color: var(--color-dark-bg);">
+        <div class="slide-header">
+            Wakefit Innovations | Company Overview
+        </div>
+        
+        <div class="slide-content">
+            <div class="two-col">
+                <div>
+                    <h3 style="margin-bottom: 1.5rem;">About Wakefit</h3>
+                    <p style="margin-bottom: 1rem;">
+                        <span style="font-weight: 600;">Founded:</span> 2016 in Bengaluru
+                    </p>
+                    <p style="margin-bottom: 1rem;">
+                        <span style="font-weight: 600;">Business Model:</span> Full-stack D2C (Direct-to-Consumer) with vertical integration
+                    </p>
+                    <p style="margin-bottom: 1rem;">
+                        <span style="font-weight: 600;">Products:</span> Mattresses (60%), Furniture (29%), Home Furnishings (11%)
+                    </p>
+                    <p style="margin-bottom: 1rem;">
+                        <span style="font-weight: 600;">Vision:</span> "IKEA of India" – Affordable, high-quality home solutions
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="margin-bottom: 1.5rem;">Key Strengths</h3>
+                    <ul style="margin-bottom: 0;">
+                        <li>Vertical integration across 5 automated manufacturing facilities</li>
+                        <li>125+ COCO (Company-Owned Company-Operated) stores across 62 cities</li>
+                        <li>Strong brand: 2+ million customers with 36% repeat buyers</li>
+                        <li>Omnichannel presence: 65% from own channels, 35% from marketplaces</li>
+                        <li>Product innovation: 3,000+ SKUs across categories</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span>Made by Kunal Singla - Finance Enthusiast</span>
+            <span class="slide-number">3</span>
+        </div>
+    </section>
+
+    <!-- SLIDE 4: FINANCIAL SNAPSHOT -->
+    <section class="slide p-16 col" style="background-color: var(--color-dark-bg);">
+        <div class="slide-header">
+            Financial Performance | Historical Trends
+        </div>
+        
+        <div class="slide-content" style="font-size: 0.9rem;">
+            <table class="table-dense">
+                <thead>
+                    <tr>
+                        <th>Metric (₹ Cr)</th>
+                        <th style="text-align: right;">FY2023</th>
+                        <th style="text-align: right;">FY2024</th>
+                        <th style="text-align: right;">FY2025</th>
+                        <th style="text-align: right;">H1FY26</th>
+                        <th style="text-align: right;">Growth (CAGR FY23-25)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="font-weight: 600;">Revenue</td>
+                        <td style="text-align: right; color: var(--color-accent);">81.26</td>
+                        <td style="text-align: right; color: var(--color-accent);">98.64</td>
+                        <td style="text-align: right; color: var(--color-accent);">127.37</td>
+                        <td style="text-align: right; color: var(--color-accent);">72.41</td>
+                        <td style="text-align: right; color: var(--color-success);">25.2%</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">EBITDA</td>
+                        <td style="text-align: right; color: var(--color-error);">-9.31</td>
+                        <td style="text-align: right; color: var(--color-warning);">3.49</td>
+                        <td style="text-align: right; color: var(--color-warning);">5.91</td>
+                        <td style="text-align: right; color: var(--color-accent);">10.32</td>
+                        <td style="text-align: right; color: var(--color-success);">Turning profitable</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">EBITDA Margin %</td>
+                        <td style="text-align: right; color: var(--color-error);">-11.5%</td>
+                        <td style="text-align: right; color: var(--color-warning);">3.5%</td>
+                        <td style="text-align: right; color: var(--color-warning);">4.6%</td>
+                        <td style="text-align: right; color: var(--color-accent);">14.3%</td>
+                        <td style="text-align: right; color: var(--color-success);">Strong inflection</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">PAT (Net Profit)</td>
+                        <td style="text-align: right; color: var(--color-error);">-14.57</td>
+                        <td style="text-align: right; color: var(--color-error);">-1.50</td>
+                        <td style="text-align: right; color: var(--color-error);">-3.50</td>
+                        <td style="text-align: right; color: var(--color-success);">3.56</td>
+                        <td style="text-align: right; color: var(--color-success);">Turned profitable</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">PAT Margin %</td>
+                        <td style="text-align: right; color: var(--color-error);">-17.9%</td>
+                        <td style="text-align: right; color: var(--color-error);">-1.5%</td>
+                        <td style="text-align: right; color: var(--color-error);">-2.8%</td>
+                        <td style="text-align: right; color: var(--color-success);">4.9%</td>
+                        <td style="text-align: right; color: var(--color-success);">Operating leverage</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="margin-top: 1rem; font-size: 0.85rem; color: #94a3b8;">
+                <span style="color: var(--color-accent); font-weight: 600;">Source:</span> Chittorgarh IPO Portal, SMIFS IPO Note, DRHP prospectus | Annualized figures for H1FY26
+            </p>
+        </div>
+
+        <div class="slide-footer">
+            <span>Made by Kunal Singla - Finance Enthusiast</span>
+            <span class="slide-number">4</span>
+        </div>
+    </section>
+
+    <!-- SLIDE 5: REVENUE GROWTH TRAJECTORY -->
+    <section class="slide p-16 col" style="background-color: var(--color-dark-bg);">
+        <div class="slide-header">
+            Revenue Growth & EBITDA Expansion
+        </div>
+        
+        <div class="slide-content">
+            <div style="display: flex; gap: 2rem; align-items: flex-start;">
+                <!-- Revenue Chart -->
+                <div style="flex: 1;">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 1rem; text-align: center;">Revenue Trend (₹ Cr)</h3>
+                    <svg class="simple-chart" viewBox="0 0 400 250" style="height: 220px;">
+                        <!-- Grid -->
+                        <line x1="40" y1="200" x2="380" y2="200" stroke="#475569" stroke-width="1"/>
+                        <line x1="40" y1="150" x2="380" y2="150" stroke="#475569" stroke-width="0.5" stroke-dasharray="3,3"/>
+                        <line x1="40" y1="100" x2="380" y2="100" stroke="#475569" stroke-width="0.5" stroke-dasharray="3,3"/>
+                        <line x1="40" y1="50" x2="380" y2="50" stroke="#475569" stroke-width="0.5" stroke-dasharray="3,3"/>
+                        
+                        <!-- Y-Axis Labels -->
+                        <text x="30" y="205" text-anchor="end" font-size="12" fill="#94a3b8">0</text>
+                        <text x="30" y="155" text-anchor="end" font-size="12" fill="#94a3b8">50</text>
+                        <text x="30" y="105" text-anchor="end" font-size="12" fill="#94a3b8">100</text>
+                        <text x="30" y="55" text-anchor="end" font-size="12" fill="#94a3b8">150</text>
+                        
+                        <!-- Data Points & Line -->
+                        <polyline points="60,167 140,140 220,85 300,35" stroke="#38bdf8" stroke-width="3" fill="none"/>
+                        
+                        <!-- Dots -->
+                        <circle cx="60" cy="167" r="5" fill="#38bdf8"/>
+                        <circle cx="140" cy="140" r="5" fill="#38bdf8"/>
+                        <circle cx="220" cy="85" r="5" fill="#38bdf8"/>
+                        <circle cx="300" cy="35" r="5" fill="#38bdf8"/>
+                        
+                        <!-- Labels -->
+                        <text x="60" y="225" text-anchor="middle" font-size="11" fill="#cbd5e1">FY23: 81</text>
+                        <text x="140" y="225" text-anchor="middle" font-size="11" fill="#cbd5e1">FY24: 99</text>
+                        <text x="220" y="225" text-anchor="middle" font-size="11" fill="#cbd5e1">FY25: 127</text>
+                        <text x="300" y="225" text-anchor="middle" font-size="11" fill="#cbd5e1">H1FY26: 144*</text>
+                        
+                        <!-- Legend -->
+                        <text x="40" y="20" font-size="11" fill="#94a3b8">*Annualized (₹72.4 Cr in 6 months)</text>
+                    </svg>
+                </div>
+
+                <!-- EBITDA Chart -->
+                <div style="flex: 1;">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 1rem; text-align: center;">EBITDA Margin Evolution</h3>
+                    <svg class="simple-chart" viewBox="0 0 400 250" style="height: 220px;">
+                        <!-- Grid -->
+                        <line x1="40" y1="200" x2="380" y2="200" stroke="#475569" stroke-width="1"/>
+                        <line x1="40" y1="150" x2="380" y2="150" stroke="#475569" stroke-width="0.5" stroke-dasharray="3,3"/>
+                        <line x1="40" y1="100" x2="380" y2="100" stroke="#475569" stroke-width="0.5" stroke-dasharray="3,3"/>
+                        <line x1="40" y1="50" x2="380" y2="50" stroke="#475569" stroke-width="0.5" stroke-dasharray="3,3"/>
+                        
+                        <!-- Y-Axis Labels -->
+                        <text x="30" y="205" text-anchor="end" font-size="12" fill="#94a3b8">-12%</text>
+                        <text x="30" y="155" text-anchor="end" font-size="12" fill="#94a3b8">0%</text>
+                        <text x="30" y="105" text-anchor="end" font-size="12" fill="#94a3b8">8%</text>
+                        <text x="30" y="55" text-anchor="end" font-size="12" fill="#94a3b8">16%</text>
+                        
+                        <!-- Data Points & Line -->
+                        <polyline points="60,190 140,165 220,152 300,78" stroke="#22c55e" stroke-width="3" fill="none"/>
+                        
+                        <!-- Dots -->
+                        <circle cx="60" cy="190" r="5" fill="#ef4444"/>
+                        <circle cx="140" cy="165" r="5" fill="#f97316"/>
+                        <circle cx="220" cy="152" r="5" fill="#f97316"/>
+                        <circle cx="300" cy="78" r="5" fill="#22c55e"/>
+                        
+                        <!-- Labels -->
+                        <text x="60" y="225" text-anchor="middle" font-size="11" fill="#cbd5e1">FY23: -11.5%</text>
+                        <text x="140" y="225" text-anchor="middle" font-size="11" fill="#cbd5e1">FY24: 3.5%</text>
+                        <text x="220" y="225" text-anchor="middle" font-size="11" fill="#cbd5e1">FY25: 4.6%</text>
+                        <text x="300" y="225" text-anchor="middle" font-size="11" fill="#cbd5e1">H1FY26: 14.3%</text>
+                    </svg>
+                </div>
+            </div>
+
+            <p style="margin-top: 1rem; font-size: 0.85rem; color: #94a3b8; text-align: center;">
+                <span style="color: var(--color-accent); font-weight: 600;">Key Insight:</span> Sharp inflection in profitability - FY25 still unprofitable, but H1FY26 shows strong margin expansion and profitability
+            </p>
+        </div>
+
+        <div class="slide-footer">
+            <span>Made by Kunal Singla - Finance Enthusiast</span>
+            <span class="slide-number">5</span>
+        </div>
+    </section>
+
+    <!-- SLIDE 6: VALUATION METRICS -->
+    <section class="slide p-16 col" style="background-color: var(--color-dark-bg);">
+        <div class="slide-header">
+            Valuation Analysis | Key Metrics at IPO Price Band
+        </div>
+        
+        <div class="slide-content">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2rem;">
+                <!-- Valuation Metrics -->
+                <div class="metric-box">
+                    <div class="metric-value">₹6,000 Cr</div>
+                    <div class="metric-label">Post-IPO Market Cap<br/>(at upper price band)</div>
+                </div>
+
+                <div class="metric-box">
+                    <div class="metric-value">4.7x - 3.7x</div>
+                    <div class="metric-label">EV/Revenue<br/>(FY25 / H1FY26 annualized)</div>
+                </div>
+
+                <div class="metric-box">
+                    <div class="metric-value">~112x</div>
+                    <div class="metric-label">P/E Ratio<br/>(based on H1FY26 annualized)</div>
+                </div>
+            </div>
+
+            <!-- Peer Comparison -->
+            <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-size: 1.4rem;">Peer Comparison</h3>
+            <table class="table-dense">
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th style="text-align: right;">FY25 Revenue (₹Cr)</th>
+                        <th style="text-align: right;">Market Cap (₹Cr)</th>
+                        <th style="text-align: right;">EV/Revenue</th>
+                        <th style="text-align: right;">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span style="font-weight: 600; color: var(--color-accent);">Wakefit (IPO)</span></td>
+                        <td style="text-align: right;">127.4</td>
+                        <td style="text-align: right;">6,000</td>
+                        <td style="text-align: right;">4.7x</td>
+                        <td style="text-align: right;"><span class="badge badge-info">IPO</span></td>
+                    </tr>
+                    <tr>
+                        <td><span style="font-weight: 600;">Sheela Foam</span></td>
+                        <td style="text-align: right;">298.2</td>
+                        <td style="text-align: right;">~5,300</td>
+                        <td style="text-align: right;">~1.8x</td>
+                        <td style="text-align: right;"><span class="badge badge-success">Listed</span></td>
+                    </tr>
+                    <tr>
+                        <td><span style="font-weight: 600;">Duroflex (est.)</span></td>
+                        <td style="text-align: right;">109.5</td>
+                        <td style="text-align: right;">Private</td>
+                        <td style="text-align: right;">Not Listed</td>
+                        <td style="text-align: right;"><span class="badge badge-warning">Unlisted</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="margin-top: 1rem; font-size: 0.85rem; color: #94a3b8;">
+                <span style="color: var(--color-warning); font-weight: 600;">⚠️ Premium Valuation:</span> Wakefit trading at 130-260% premium to Sheela Foam on EV/Revenue basis despite lower revenue scale
+            </p>
+        </div>
+
+        <div class="slide-footer">
+            <span>Made by Kunal Singla - Finance Enthusiast</span>
+            <span class="slide-number">6</span>
+        </div>
+    </section>
+
+    <!-- SLIDE 7: REVENUE COMPOSITION & CHANNELS -->
+    <section class="slide p-16 col" style="background-color: var(--color-dark-bg);">
+        <div class="slide-header">
+            Revenue Mix | Products & Distribution Channels
+        </div>
+        
+        <div class="slide-content" style="display: flex; gap: 2rem;">
+            <!-- Product Mix -->
+            <div style="flex: 1;">
+                <h3 style="font-size: 1.3rem; margin-bottom: 1rem; text-align: center;">Product Mix (H1FY26)</h3>
+                <svg class="simple-chart" viewBox="0 0 350 280" style="height: 260px;">
+                    <!-- Pie Chart -->
+                    <circle cx="175" cy="140" r="100" fill="none" stroke="#38bdf8" stroke-width="60" stroke-dasharray="188.4 628.3" stroke-dashoffset="0"/>
+                    <circle cx="175" cy="140" r="100" fill="none" stroke="#22c55e" stroke-width="60" stroke-dasharray="115.4 628.3" stroke-dashoffset="-188.4"/>
+                    <circle cx="175" cy="140" r="100" fill="none" stroke="#f97316" stroke-width="60" stroke-dasharray="34.7 628.3" stroke-dashoffset="-303.8"/>
+                    
+                    <!-- Legend -->
+                    <rect x="20" y="20" width="14" height="14" fill="#38bdf8"/>
+                    <text x="40" y="32" font-size="13" fill="var(--color-text-secondary)">Mattresses (60%)</text>
+                    
+                    <rect x="20" y="50" width="14" height="14" fill="#22c55e"/>
+                    <text x="40" y="62" font-size="13" fill="var(--color-text-secondary)">Furniture (29%)</text>
+                    
+                    <rect x="20" y="80" width="14" height="14" fill="#f97316"/>
+                    <text x="40" y="92" font-size="13" fill="var(--color-text-secondary)">Furnishings (11%)</text>
+                    
+                    <!-- Center Text -->
+                    <text x="175" y="145" text-anchor="middle" font-size="18" font-weight="bold" fill="var(--color-accent)">3,000+</text>
+                    <text x="175" y="160" text-anchor="middle" font-size="12" fill="#94a3b8">SKUs</text>
+                </svg>
+            </div>
+
+            <!-- Channel Mix -->
+            <div style="flex: 1;">
+                <h3 style="font-size: 1.3rem; margin-bottom: 1rem; text-align: center;">Sales by Channel (H1FY26)</h3>
+                <svg class="simple-chart" viewBox="0 0 350 280" style="height: 260px;">
+                    <!-- Pie Chart -->
+                    <circle cx="175" cy="140" r="100" fill="none" stroke="#38bdf8" stroke-width="60" stroke-dasharray="409.6 628.3" stroke-dashoffset="0"/>
+                    <circle cx="175" cy="140" r="100" fill="none" stroke="#22c55e" stroke-width="60" stroke-dasharray="218.9 628.3" stroke-dashoffset="-409.6"/>
+                    
+                    <!-- Legend -->
+                    <rect x="20" y="20" width="14" height="14" fill="#38bdf8"/>
+                    <text x="40" y="32" font-size="13" fill="var(--color-text-secondary)">Own Channels (65%)</text>
+                    
+                    <text x="20" y="52" font-size="12" fill="#94a3b8" font-style="italic;">- Website: ₹350-400 Cr/yr</text>
+                    <text x="20" y="67" font-size="12" fill="#94a3b8" font-style="italic;">- COCO Stores: 125 across 62 cities</text>
+                    
+                    <rect x="20" y="85" width="14" height="14" fill="#22c55e"/>
+                    <text x="40" y="97" font-size="13" fill="var(--color-text-secondary)">Marketplaces (35%)</text>
+                    
+                    <text x="20" y="120" font-size="12" fill="#94a3b8" font-style="italic;">Amazon, Flipkart, Myntra, etc.</text>
+                    
+                    <!-- Center Text -->
+                    <text x="175" y="145" text-anchor="middle" font-size="18" font-weight="bold" fill="var(--color-accent)">Omni</text>
+                    <text x="175" y="160" text-anchor="middle" font-size="18" font-weight="bold" fill="var(--color-accent)">Channel</text>
+                </svg>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span>Made by Kunal Singla - Finance Enthusiast</span>
+            <span class="slide-number">7</span>
+        </div>
+    </section>
+
+    <!-- SLIDE 8: MANUFACTURING & OPERATIONS -->
+    <section class="slide p-16 col" style="background-color: var(--color-dark-bg);">
+        <div class="slide-header">
+            Vertical Integration | Manufacturing & Operations
+        </div>
+        
+        <div class="slide-content">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <!-- Manufacturing Facilities -->
+                <div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 1.5rem;">Manufacturing Footprint</h3>
+                    <ul style="margin-bottom: 1.5rem;">
+                        <li><span style="font-weight: 600; color: var(--color-accent);">5 Automated Facilities:</span> Advanced robotics & automation</li>
+                        <li><span style="font-weight: 600; color: var(--color-accent);">Locations:</span> Bengaluru (2), Hosur (2), Sonipat (1)</li>
+                        <li><span style="font-weight: 600; color: var(--color-accent);">Mattress Capacity:</span> 640,000 units/year (80% utilized)</li>
+                        <li><span style="font-weight: 600; color: var(--color-accent);">Furniture Capacity:</span> 330,000 units/year</li>
+                        <li><span style="font-weight: 600; color: var(--color-accent);">Furnishings Capacity:</span> 1.59 million units/year</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1.5rem; margin-bottom: 1rem;">Material Sourcing</h4>
+                    <ul>
+                        <li><span style="color: var(--color-accent); font-weight: 600;">38%</span> Imported materials</li>
+                        <li><span style="color: var(--color-accent); font-weight: 600;">62%</span> Domestic sourcing</li>
+                        <li style="color: var(--color-warning); margin-top: 0.75rem;"><strong>⚠️ Risk:</strong> Govt restrictions on imports could increase costs</li>
+                    </ul>
+                </div>
+
+                <!-- COCO Store Expansion -->
+                <div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 1.5rem;">COCO Store Strategy</h3>
+                    
+                    <div class="card-stat" style="margin-bottom: 1.5rem;">
+                        <div class="stat-value" style="font-size: 2.2rem;">125</div>
+                        <div class="stat-label">COCO Stores Currently Operating</div>
+                    </div>
+
+                    <div class="card-stat" style="background-color: rgba(34, 197, 94, 0.1); border-left-color: var(--color-success); margin-bottom: 1.5rem;">
+                        <div class="stat-value" style="color: var(--color-success); font-size: 2.2rem;">117</div>
+                        <div class="stat-label">New Stores Planned (IPO proceeds)</div>
+                    </div>
+
+                    <p style="margin-bottom: 1rem;">
+                        <span style="font-weight: 600; color: var(--color-accent);">Expansion Goal:</span> 250+ stores by March 2028 (double current reach)
+                    </p>
+
+                    <h4 style="margin-top: 1.5rem; margin-bottom: 1rem;">Store Types Planned</h4>
+                    <ul style="margin-bottom: 0;">
+                        <li>Premium 'Experience' stores in Bengaluru (design labs)</li>
+                        <li>COCO Regular stores in Tier-1, 2, 3 cities</li>
+                        <li>Smaller format stores in metro outskirts & towns</li>
+                        <li>Focus on same-day/next-day online delivery integration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span>Made by Kunal Singla - Finance Enthusiast</span>
+            <span class="slide-number">8</span>
+        </div>
+    </section>
+
+    <!-- SLIDE 9: IPO USE OF PROCEEDS -->
+    <section class="slide p-16 col" style="background-color: var(--color-dark-bg);">
+        <div class="slide-header">
+            IPO Use of Proceeds | Capital Allocation Plan
+        </div>
+        
+        <div class="slide-content">
+            <h3 style="margin-bottom: 1.5rem; text-align: center;">Fresh Issue Proceeds: ₹377 Crore</h3>
+
+            <svg class="simple-chart" viewBox="0 0 500 300" style="height: 280px; margin-bottom: 1rem;">
+                <!-- Bars -->
+                <rect x="30" y="50" width="60" height="200" fill="#38bdf8" rx="4"/>
+                <rect x="110" y="90" width="60" height="160" fill="#22c55e" rx="4"/>
+                <rect x="190" y="110" width="60" height="140" fill="#f97316" rx="4"/>
+                <rect x="270" y="130" width="60" height="120" fill="#ec4899" rx="4"/>
+                <rect x="350" y="150" width="60" height="100" fill="#8b5cf6" rx="4"/>
+                <rect x="430" y="170" width="30" height="80" fill="#06b6d4" rx="4"/>
+                
+                <!-- Values on top -->
+                <text x="60" y="35" text-anchor="middle" font-size="14" font-weight="bold" fill="var(--color-accent)">₹108.4 Cr</text>
+                <text x="140" y="75" text-anchor="middle" font-size="14" font-weight="bold" fill="var(--color-accent)">₹82 Cr</text>
+                <text x="220" y="95" text-anchor="middle" font-size="14" font-weight="bold" fill="var(--color-accent)">₹70 Cr</text>
+                <text x="300" y="115" text-anchor="middle" font-size="14" font-weight="bold" fill="var(--color-accent)">₹60 Cr</text>
+                <text x="380" y="135" text-anchor="middle" font-size="14" font-weight="bold" fill="var(--color-accent)">₹50 Cr</text>
+                <text x="460" y="155" text-anchor="middle" font-size="14" font-weight="bold" fill="var(--color-accent)">₹7 Cr</text>
+                
+                <!-- Labels below -->
+                <text x="60" y="270" text-anchor="middle" font-size="11" fill="#cbd5e1">Marketing &amp;</text>
+                <text x="60" y="285" text-anchor="middle" font-size="11" fill="#cbd5e1">Branding</text>
+                
+                <text x="140" y="270" text-anchor="middle" font-size="11" fill="#cbd5e1">New COCO</text>
+                <text x="140" y="285" text-anchor="middle" font-size="11" fill="#cbd5e1">Stores</text>
+                
+                <text x="220" y="270" text-anchor="middle" font-size="11" fill="#cbd5e1">Store Lease</text>
+                <text x="220" y="285" text-anchor="middle" font-size="11" fill="#cbd5e1">&amp; License</text>
+                
+                <text x="300" y="270" text-anchor="middle" font-size="11" fill="#cbd5e1">Working</text>
+                <text x="300" y="285" text-anchor="middle" font-size="11" fill="#cbd5e1">Capital</text>
+                
+                <text x="380" y="270" text-anchor="middle" font-size="11" fill="#cbd5e1">Machinery</text>
+                <text x="380" y="285" text-anchor="middle" font-size="11" fill="#cbd5e1">&amp; Equipment</text>
+                
+                <text x="460" y="270" text-anchor="middle" font-size="11" fill="#cbd5e1">General</text>
+                <text x="460" y="285" text-anchor="middle" font-size="11" fill="#cbd5e1">Corporate</text>
+            </svg>
+
+            <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #94a3b8;">
+                <span style="color: var(--color-accent); font-weight: 600;">28.7%</span> Marketing | 
+                <span style="color: var(--color-accent); font-weight: 600;">21.8%</span> Store Expansion | 
+                <span style="color: var(--color-accent); font-weight: 600;">18.6%</span> Lease/License | 
+                <span style="color: var(--color-accent); font-weight: 600;">16%</span> Working Capital | 
+                <span style="color: var(--color-accent); font-weight: 600;">13.3%</span> Capex
+            </p>
+
+            <div style="background-color: rgba(249, 115, 22, 0.1); border-left: 4px solid var(--color-warning); padding: 1rem; margin-top: 1.5rem; border-radius: 4px;">
+                <p style="margin: 0; color: var(--color-warning); font-size: 0.95rem;">
+                    <span style="font-weight: 600;">⚠️ Aggressive Spend:</span> 30% of fresh issue dedicated to marketing—indicates need for brand building and customer acquisition
+                </p>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span>Made by Kunal Singla - Finance Enthusiast</span>
+            <span class="slide-number">9</span>
+        </div>
+    </section>
+
+    <!-- SLIDE 10: COMPETITIVE LANDSCAPE -->
+    <section class="slide p-16 col" style="background-color: var(--color-dark-bg);">
+        <div class="slide-header">
+            Competitive Landscape | Market Positioning
+        </div>
+        
+        <div class="slide-content" style="font-size: 0.9rem;">
+            <h3 style="margin-bottom: 1.5rem;">Competitor Comparison</h3>
+            
+            <table class="table-dense">
+                <thead>
+                    <tr>
+                        <th>Competitor</th>
+                        <th style="text-align: center;">Model Type</th>
+                        <th style="text-align: center;">FY25 Revenue</th>
+                        <th style="text-align: center;">Strength</th>
+                        <th style="text-align: center;">Weakness</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="font-weight: 600;">Sheela Foam (Sleepwell, Kurlon)</td>
+                        <td style="text-align: center;">Traditional</td>
+                        <td style="text-align: center;">₹298 Cr</td>
+                        <td style="text-align: center;">Largest scale, established brands</td>
+                        <td style="text-align: center;">Legacy distribution model</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">Duroflex</td>
+                        <td style="text-align: center;">Distributor</td>
+                        <td style="text-align: center;">~₹110 Cr</td>
+                        <td style="text-align: center;">Strong distribution network</td>
+                        <td style="text-align: center;">Limited vertical integration</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">The Sleep Company (D2C)</td>
+                        <td style="text-align: center;">D2C (Grid tech)</td>
+                        <td style="text-align: center;">~₹120 Cr</td>
+                        <td style="text-align: center;">Tech-forward branding</td>
+                        <td style="text-align: center;">Lower product breadth than Wakefit</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">Wakefit</td>
+                        <td style="text-align: center;">D2C + Vertical Integration</td>
+                        <td style="text-align: center;">₹127 Cr</td>
+                        <td style="text-align: center;">Broadest SKU range, omnichannel</td>
+                        <td style="text-align: center;">Premium valuation, execution risk</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">IKEA India</td>
+                        <td style="text-align: center;">Global Retail</td>
+                        <td style="text-align: center;">~₹1,000+ Cr</td>
+                        <td style="text-align: center;">Global scale, trust</td>
+                        <td style="text-align: center;">Limited mattress focus, high prices</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Wakefit's Competitive Advantages</h3>
+            <ul style="margin-bottom: 1.5rem;">
+                <li><span style="font-weight: 600; color: var(--color-success);">Full-Stack Integration:</span> Complete control of design→manufacturing→distribution→customer service</li>
+                <li><span style="font-weight: 600; color: var(--color-success);">Broadest Product Range:</span> 3,000+ SKUs vs competitors' limited portfolios</li>
+                <li><span style="font-weight: 600; color: var(--color-success);">Own Channels (65% mix):</span> Better margins than wholesale-dependent competitors</li>
+                <li><span style="font-weight: 600; color: var(--color-success);">Customer Repeatability:</span> 36% repeat buyers, lower CAC through cross-selling</li>
+                <li><span style="font-weight: 600; color: var(--color-success);">Brand Scale:</span> ₹1,000+ Cr revenue in 9 years demonstrates strong market traction</li>
+            </ul>
+        </div>
+
+        <div class="slide-footer">
+            <span>Made by Kunal Singla - Finance Enthusiast</span>
+            <span class="slide-number">10</span>
+        </div>
+    </section>
+
+    <!-- SLIDE 11: KEY STRENGTHS (BULLISH) -->
+    <section class="slide p-16 col" style="background-color: var(--color-dark-bg);">
+        <div class="slide-header">
+            Investment Strengths | Key Bullish Factors
+        </div>
+        
+        <div class="slide-content">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <!-- Strengths 1-3 -->
+                <div>
+                    <div class="card" style="margin-bottom: 1.5rem; border-left: 4px solid var(--color-success);">
+                        <h4 style="color: var(--color-success); margin-bottom: 0.75rem;">1. Profitability Inflection</h4>
+                        <p style="font-size: 0.95rem; color: var(--color-text-secondary); margin: 0;">
+                            Turned profitable in H1FY26 with <span style="color: var(--color-success); font-weight: 600;">14.3% EBITDA margin</span> and <span style="color: var(--color-success); font-weight: 600;">₹3.56 Cr PAT</span> after 3 years of losses. Shows operational leverage is real.
+                        </p>
+                    </div>
+
+                    <div class="card" style="margin-bottom: 1.5rem; border-left: 4px solid var(--color-success);">
+                        <h4 style="color: var(--color-success); margin-bottom: 0.75rem;">2. Strong Revenue Growth</h4>
+                        <p style="font-size: 0.95rem; color: var(--color-text-secondary); margin: 0;">
+                            <span style="color: var(--color-success); font-weight: 600;">25.2% CAGR</span> (FY23-25) demonstrates robust demand for D2C home solutions. Outpacing organized peers.
+                        </p>
+                    </div>
+
+                    <div class="card" style="margin-bottom: 1.5rem; border-left: 4px solid var(--color-success);">
+                        <h4 style="color: var(--color-success); margin-bottom: 0.75rem;">3. Vertical Integration</h4>
+                        <p style="font-size: 0.95rem; color: var(--color-text-secondary); margin: 0;">
+                            5 modern manufacturing facilities with automation eliminate middlemen, reduce costs, and enable margin control—sustainable competitive advantage.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Strengths 4-6 -->
+                <div>
+                    <div class="card" style="margin-bottom: 1.5rem; border-left: 4px solid var(--color-success);">
+                        <h4 style="color: var(--color-success); margin-bottom: 0.75rem;">4. Omnichannel Mix</h4>
+                        <p style="font-size: 0.95rem; color: var(--color-text-secondary); margin: 0;">
+                            65% from own channels (website + 125 COCO stores) provides pricing power, brand control, and margin buffer vs. pure online or distributor models.
+                        </p>
+                    </div>
+
+                    <div class="card" style="margin-bottom: 1.5rem; border-left: 4px solid var(--color-success);">
+                        <h4 style="color: var(--color-success); margin-bottom: 0.75rem;">5. Broad Product Portfolio</h4>
+                        <p style="font-size: 0.95rem; color: var(--color-text-secondary); margin: 0;">
+                            3,000+ SKUs across mattresses (60%), furniture (29%), furnishings (11%) reduce revenue concentration and enable cross-selling to 2M+ customer base.
+                        </p>
+                    </div>
+
+                    <div class="card" style="margin-bottom: 1.5rem; border-left: 4px solid var(--color-success);">
+                        <h4 style="color: var(--color-success); margin-bottom: 0.75rem;">6. Growing Repeat Customer Base</h4>
+                        <p style="font-size: 0.95rem; color: var(--color-text-secondary); margin: 0;">
+                            <span style="color: var(--color-success); font-weight: 600;">36% repeat buyers</span> with 2M+ total customers demonstrates brand loyalty and lower customer acquisition costs over time.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <p style="margin-top: 1.5rem; padding: 1rem; background-color: rgba(34, 197, 94, 0.1); border-left: 4px solid var(--color-success); border-radius: 4px; font-size: 0.9rem; color: var(--color-text-secondary);">
+                <span style="color: var(--color-success); font-weight: 600;">✓ Growth Story:</span> Wakefit demonstrates characteristics of a sustainable growth company—profitability inflection, operational leverage, and brand scale.
+            </p>
+        </div>
+
+        <div class="slide-footer">
+            <span>Made by Kunal Singla - Finance Enthusiast</span>
+            <span class="slide-number">11</span>
+        </div>
+    </section>
+
+    <!-- SLIDE 12: KEY RISKS (BEARISH) -->
+    <section class="slide p-16 col" style="background-color: var(--color-dark-bg);">
+        <div class="slide-header">
+            Investment Risks | Key Bearish Factors
+        </div>
+        
+        <div class="slide-content">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <!-- Risks 1-3 -->
+                <div>
+                    <div class="card" style="margin-bottom: 1.5rem; border-left: 4px solid var(--color-error);">
+                        <h4 style="color: var(--color-error); margin-bottom: 0.75rem;">1. Premium Valuation</h4>
+                        <p style="font-size: 0.95rem; color: var(--color-text-secondary); margin: 0;">
+                            At <span style="color: var(--color-error); font-weight: 600;">4.7x EV/Revenue</span>, Wakefit trades at <span style="color: var(--color-error); font-weight: 600;">130% premium</span> to Sheela Foam despite 2.3x smaller revenue. High growth already priced in.
+                        </p>
+                    </div>
+
+                    <div class="card" style="margin-bottom: 1.5rem; border-left: 4px solid var(--color-error);">
+                        <h4 style="color: var(--color-error); margin-bottom: 0.75rem;">2. Recent Profitability</h4>
+                        <p style="font-size: 0.95rem; color: var(--color-text-secondary); margin: 0;">
+                            Only <span style="color: var(--color-error); font-weight: 600;">H1FY26 profitable</span> after FY23-25 losses. H1FY26 PAT margin of 4.9% vs 14.3% EBITDA margin suggests elevated D&A and finance costs.
+                        </p>
+                    </div>
+
+                    <div class="card" style="margin-bottom: 1.5rem; border-left: 4px solid var(--color-error);">
+                        <h4 style="color: var(--color-error); margin-bottom: 0.75rem;">3. COCO Store Expansion Risk</h4>
+                        <p style="font-size: 0.95rem; color: var(--color-text-secondary); margin: 0;">
+                            Plan to add <span style="color: var(--color-error); font-weight: 600;">117 stores</span> by 2028. Offline margins lower than online. Execution risk, payback uncertainty in competitive market.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Risks 4-6 -->
+                <div>
+                    <div class="card" style="margin-bottom: 1.5rem; border-left: 4px solid var(--color-error);">
+                        <h4 style="color: var(--color-error); margin-bottom: 0.75rem;">4. Channel Concentration</h4>
+                        <p style="font-size: 0.95rem; color: var(--color-text-secondary); margin: 0;">
+                            65% revenue from own channels. Website stagnated at ₹350-400 Cr/year. Cyberattacks, downtime, or reduced footfall risk would materially hurt sales.
+                        </p>
+                    </div>
+
+                    <div class="card" style="margin-bottom: 1.5rem; border-left: 4px solid var(--color-error);">
+                        <h4 style="color: var(--color-error); margin-bottom: 0.75rem;">5. Cyclical Demand Risk</h4>
+                        <p style="font-size: 0.95rem; color: var(--color-text-secondary); margin: 0;">
+                            Mattresses purchased every <span style="color: var(--color-error); font-weight: 600;">10-15 years</span>. Furniture & furnishings are discretionary—vulnerable to economic slowdowns.
+                        </p>
+                    </div>
+
+                    <div class="card" style="margin-bottom: 1.5rem; border-left: 4px solid var(--color-error);">
+                        <h4 style="color: var(--color-error); margin-bottom: 0.75rem;">6. Inventory & Working Capital</h4>
+                        <p style="font-size: 0.95rem; color: var(--color-text-secondary); margin: 0;">
+                            Inventory rose <span style="color: var(--color-error); font-weight: 600;">60% in H1FY26</span> (₹260 Cr from ₹164 Cr). Working capital management challenges ahead as store base expands.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <p style="margin-top: 1.5rem; padding: 1rem; background-color: rgba(239, 68, 68, 0.1); border-left: 4px solid var(--color-error); border-radius: 4px; font-size: 0.9rem; color: var(--color-text-secondary);">
+                <span style="color: var(--color-error); font-weight: 600;">⚠️ Valuation Risk:</span> At current prices, investor expectations are very high. Any slowdown in profitability growth could trigger significant correction (see Stanley Lifestyles, down 50% YoY).
+            </p>
+        </div>
+
+        <div class="slide-footer">
+            <span>Made by Kunal Singla - Finance Enthusiast</span>
+            <span class="slide-number">12</span>
+        </div>
+    </section>
+
+    <!-- SLIDE 13: RECOMMENDATION & CONCLUSION -->
+    <section class="slide p-16 col" style="background-color: var(--color-dark-bg);">
+        <div class="slide-header">
+            Investment Recommendation & Conclusion
+        </div>
+        
+        <div class="slide-content" style="display: flex; flex-direction: column; justify-content: center;">
+            <div class="recommendation hold" style="margin-bottom: 2rem;">
+                <div class="recommendation-title">HOLD / WAIT-AND-WATCH</div>
+                <p style="margin: 0; color: var(--color-warning); font-size: 1rem; margin-top: 0.75rem;">
+                    Not Recommended for Fresh IPO Application at Current Valuation<br/>
+                    <span style="font-size: 0.9rem; opacity: 0.9;">Consider Post-Listing Opportunities After Price Correction</span>
+                </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <!-- Investment Thesis -->
+                <div>
+                    <h4 style="color: var(--color-warning); margin-bottom: 1rem; font-size: 1.2rem;">Why NOT Buy at IPO?</h4>
+                    <ul style="margin-bottom: 0;">
+                        <li><span style="color: var(--color-error);">Valuation Premium:</span> 4.7x EV/Revenue vs 1.8x for Sheela Foam</li>
+                        <li><span style="color: var(--color-error);">New to Profitability:</span> Only H1FY26 profitable—track record of 2+ quarters needed</li>
+                        <li><span style="color: var(--color-error);">Execution Risk:</span> Aggressive 117-store expansion plan untested</li>
+                        <li><span style="color: var(--color-error);">D2C Correction Risk:</span> Post-IPO D2C stocks (Nykaa, Mamaearth) typically correct 30-50% within 6 months</li>
+                        <li><span style="color: var(--color-error);">Market Timing:</span> Better entry points likely post-listing</li>
+                    </ul>
+                </div>
+
+                <!-- Investor Guidance -->
+                <div>
+                    <h4 style="color: var(--color-warning); margin-bottom: 1rem; font-size: 1.2rem;">Investor Guidance</h4>
+                    <ul style="margin-bottom: 0;">
+                        <li><span style="color: var(--color-accent);">Retail/Small Investors:</span> Skip IPO. Wait 3-6 months for post-listing correction</li>
+                        <li><span style="color: var(--color-accent);">HNI/Institutions:</span> Buy at 15-20% discount post-listing if profitability sustains</li>
+                        <li><span style="color: var(--color-accent);">Long-term Bullish:</span> Strong 25%+ CAGR, vertical integration, and omnichannel advantage support 5-year bull case</li>
+                        <li><span style="color: var(--color-accent);">Key Monitoring:</span> Q1FY26 results, COCO store unit economics, inventory management post-IPO</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p style="margin-top: 1.5rem; padding: 1rem; background-color: rgba(249, 115, 22, 0.1); border-left: 4px solid var(--color-warning); border-radius: 4px; font-size: 0.9rem; color: var(--color-text-secondary);">
+                <span style="color: var(--color-warning); font-weight: 600;">Summary:</span> Wakefit is a growth story with real operational leverage, but current valuation doesn't offer sufficient margin of safety. Better risk-reward post-correction.
+            </p>
+        </div>
+
+        <div class="slide-footer">
+            <span>Made by Kunal Singla - Finance Enthusiast</span>
+            <span class="slide-number">13</span>
+        </div>
+    </section>
+
+    <!-- SLIDE 14: KEY FINANCIAL METRICS SUMMARY -->
+    <section class="slide p-16 col" style="background-color: var(--color-dark-bg);">
+        <div class="slide-header">
+            Key Financial Metrics Summary | At a Glance
+        </div>
+        
+        <div class="slide-content" style="font-size: 0.85rem;">
+            <table class="table-dense" style="margin-top: 1rem;">
+                <thead>
+                    <tr>
+                        <th colspan="6" style="text-align: center; padding: 1rem; background-color: rgba(56, 189, 248, 0.2);">Comprehensive Financial Snapshot (All Figures in ₹ Crore except Ratios & Percentages)</th>
+                    </tr>
+                    <tr>
+                        <th style="width: 25%;">Metric</th>
+                        <th style="text-align: right; width: 15%;">FY23</th>
+                        <th style="text-align: right; width: 15%;">FY24</th>
+                        <th style="text-align: right; width: 15%;">FY25</th>
+                        <th style="text-align: right; width: 15%;">H1FY26</th>
+                        <th style="text-align: right; width: 15%;">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="6" style="padding: 0.5rem; background-color: rgba(56, 189, 248, 0.1); font-weight: 600; color: var(--color-accent);">INCOME STATEMENT</td>
+                    </tr>
+                    <tr>
+                        <td>Revenue</td>
+                        <td style="text-align: right;">81.3</td>
+                        <td style="text-align: right;">98.6</td>
+                        <td style="text-align: right;">127.4</td>
+                        <td style="text-align: right;">72.4 (144 Ann.)</td>
+                        <td style="text-align: right; color: var(--color-success);">↑ Growing</td>
+                    </tr>
+                    <tr>
+                        <td>EBITDA</td>
+                        <td style="text-align: right; color: var(--color-error);">-9.31</td>
+                        <td style="text-align: right;">3.49</td>
+                        <td style="text-align: right;">5.91</td>
+                        <td style="text-align: right;">10.32</td>
+                        <td style="text-align: right; color: var(--color-success);">↑ Inflection</td>
+                    </tr>
+                    <tr>
+                        <td>EBITDA Margin %</td>
+                        <td style="text-align: right; color: var(--color-error);">-11.5%</td>
+                        <td style="text-align: right;">3.5%</td>
+                        <td style="text-align: right;">4.6%</td>
+                        <td style="text-align: right;">14.3%</td>
+                        <td style="text-align: right; color: var(--color-success);">↑ Sharp</td>
+                    </tr>
+                    <tr>
+                        <td>PAT (Net Profit)</td>
+                        <td style="text-align: right; color: var(--color-error);">-14.6</td>
+                        <td style="text-align: right; color: var(--color-error);">-1.5</td>
+                        <td style="text-align: right; color: var(--color-error);">-3.5</td>
+                        <td style="text-align: right; color: var(--color-success);">3.56</td>
+                        <td style="text-align: right; color: var(--color-success);">✓ Profitable</td>
+                    </tr>
+                    <tr>
+                        <td>PAT Margin %</td>
+                        <td style="text-align: right; color: var(--color-error);">-17.9%</td>
+                        <td style="text-align: right; color: var(--color-error);">-1.5%</td>
+                        <td style="text-align: right; color: var(--color-error);">-2.8%</td>
+                        <td style="text-align: right; color: var(--color-success);">4.9%</td>
+                        <td style="text-align: right; color: var(--color-success);">✓ Positive</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6" style="padding: 0.5rem; background-color: rgba(56, 189, 248, 0.1); font-weight: 600; color: var(--color-accent);">BALANCE SHEET</td>
+                    </tr>
+                    <tr>
+                        <td>Total Assets</td>
+                        <td style="text-align: right;">79.2</td>
+                        <td style="text-align: right;">92.8</td>
+                        <td style="text-align: right;">105.1</td>
+                        <td style="text-align: right;">122.0</td>
+                        <td style="text-align: right; color: var(--color-success);">↑ Growing</td>
+                    </tr>
+                    <tr>
+                        <td>Net Worth</td>
+                        <td style="text-align: right;">50.5</td>
+                        <td style="text-align: right;">54.4</td>
+                        <td style="text-align: right;">52.1</td>
+                        <td style="text-align: right;">55.7</td>
+                        <td style="text-align: right; color: var(--color-warning);">→ Stable</td>
+                    </tr>
+                    <tr>
+                        <td>Total Debt</td>
+                        <td style="text-align: right;">N/A</td>
+                        <td style="text-align: right;">7.4</td>
+                        <td style="text-align: right;">5.2</td>
+                        <td style="text-align: right;">4.0</td>
+                        <td style="text-align: right; color: var(--color-success);">↓ Decreasing</td>
+                    </tr>
+                    <tr>
+                        <td>Debt/Equity Ratio</td>
+                        <td style="text-align: right;">N/A</td>
+                        <td style="text-align: right;">0.14</td>
+                        <td style="text-align: right;">0.10</td>
+                        <td style="text-align: right;">0.07</td>
+                        <td style="text-align: right; color: var(--color-success);">✓ Healthy</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6" style="padding: 0.5rem; background-color: rgba(56, 189, 248, 0.1); font-weight: 600; color: var(--color-accent);">PROFITABILITY RATIOS</td>
+                    </tr>
+                    <tr>
+                        <td>ROE %</td>
+                        <td style="text-align: right; color: var(--color-error);">N/A</td>
+                        <td style="text-align: right; color: var(--color-error);">N/A</td>
+                        <td style="text-align: right; color: var(--color-error);">-6.72%</td>
+                        <td style="text-align: right; color: var(--color-warning);">6.38%*</td>
+                        <td style="text-align: right; color: var(--color-warning);">Improving</td>
+                    </tr>
+                    <tr>
+                        <td>ROCE %</td>
+                        <td style="text-align: right; color: var(--color-error);">-20.5%</td>
+                        <td style="text-align: right; color: var(--color-error);">0.27%</td>
+                        <td style="text-align: right; color: var(--color-error);">-0.68%</td>
+                        <td style="text-align: right; color: var(--color-warning);">6.04%*</td>
+                        <td style="text-align: right; color: var(--color-warning);">Positive</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="margin-top: 1rem; font-size: 0.8rem; color: #94a3b8;">
+                <span style="color: var(--color-accent); font-weight: 600;">*H1FY26 annualized estimates based on 6-month performance.</span> Source: Chittorgarh IPO Portal, SMIFS IPO Note, DRHP Prospectus
+            </p>
+        </div>
+
+        <div class="slide-footer">
+            <span>Made by Kunal Singla - Finance Enthusiast</span>
+            <span class="slide-number">14</span>
+        </div>
+    </section>
+
+    <!-- SLIDE 15: DISCLAIMER & CLOSING -->
+    <section class="slide center p-16 col" style="background: linear-gradient(135deg, #020617 0%, #0f172a 100%);">
+        <h1 style="font-size: 3rem; margin-bottom: 1.5rem;">Thank You</h1>
+        <p class="subtitle" style="font-size: 1.3rem; margin-bottom: 2rem;">Wakefit Innovations IPO Analysis Complete</p>
+
+        <div style="background-color: var(--color-surface); padding: 2rem; border-radius: 8px; margin: 2rem 0; border-left: 4px solid var(--color-accent);">
+            <p style="margin: 0.5rem 0; color: var(--color-text-secondary);">
+                <span style="color: var(--color-accent); font-weight: 600;">Prepared by:</span> Kunal Singla - Finance Enthusiast
+            </p>
+            <p style="margin: 0.5rem 0; color: var(--color-text-secondary);">
+                <span style="color: var(--color-accent); font-weight: 600;">Date:</span> December 2025
+            </p>
+            <p style="margin: 0.5rem 0; color: var(--color-text-secondary);">
+                <span style="color: var(--color-accent); font-weight: 600;">IPO Timeline:</span> December 8-10, 2025 | Listing: December 15, 2025
+            </p>
+            <p style="margin: 0.5rem 0; color: var(--color-text-secondary);">
+                <span style="color: var(--color-accent); font-weight: 600;">Price Band:</span> ₹185-195 per share | Issue Size: ₹1,289 Crore
+            </p>
+        </div>
+
+        <p style="color: #94a3b8; font-size: 0.95rem; margin-top: 2rem;">
+            This analysis is based on verified data from official DRHP, SEBI filings, and credible market sources.<br/>
+            <span style="color: var(--color-warning);">Not investment advice. Consult your financial advisor before investing.</span>
+        </p>
+
+        <p style="color: #64748b; font-size: 0.85rem; margin-top: 3rem;">
+            © 2025 Kunal Singla - Finance Enthusiast. All Rights Reserved.
+        </p>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,1978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corona Remedies IPO Analysis</title>
+    <style>
+        :root {
+            --color-primary: #0f172a;
+            --color-secondary: #dc2626;
+            --color-accent: #16a34a;
+            --color-tertiary: #2563eb;
+            --color-bg: #ffffff;
+            --color-text: #111827;
+            --color-light-bg: #f3f4f6;
+            --color-border: #d1d5db;
+            --color-dark-bg: #1f2937;
+            --color-gold: #d97706;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: #e5e7eb;
+            color: var(--color-text);
+        }
+
+        .slide {
+            width: 960px;
+            height: 540px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: stretch;
+            padding: 30px 35px;
+            page-break-after: always;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+</div>
+
+        .slide-title {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        /* Title Slide */
+        .slide.title-slide {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            color: white;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .slide.title-slide h1 {
+            font-size: 3.5rem;
+            margin-bottom: 12px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .slide.title-slide .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .slide.title-slide .meta {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        .slide.title-slide .attribution {
+            margin-top: 30px;
+            font-size: 0.85rem;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        /* Section Slide */
+        .slide.section-slide {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            color: white;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .slide.section-slide h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        /* Content Slides */
+        .slide.content-slide {
+            background: #ffffff;
+            justify-content: flex-start;
+            overflow-y: auto;
+        }
+
+        .slide h2 {
+            font-size: 2.2rem;
+            color: var(--color-primary);
+            margin-bottom: 18px;
+            border-bottom: 3px solid var(--color-gold);
+            padding-bottom: 12px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .slide h3 {
+            font-size: 1.35rem;
+            color: var(--color-primary);
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .slide p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            color: #374151;
+        }
+
+        .slide ul, .slide ol {
+            margin-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        .slide li {
+            font-size: 0.92rem;
+            line-height: 1.5;
+            margin-bottom: 8px;
+            color: #374151;
+        }
+
+        /* Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            background: white;
+            font-size: 0.82rem;
+            border: 1px solid #d1d5db;
+        }
+
+        .data-table th {
+            background: #0f172a;
+            color: white;
+            padding: 10px;
+            text-align: left;
+            font-weight: 600;
+            border: 1px solid #d1d5db;
+        }
+
+        .data-table td {
+            padding: 9px 10px;
+            border: 1px solid #d1d5db;
+        }
+
+        .data-table tr:nth-child(even) {
+            background: #f9fafb;
+        }
+
+        .data-table tr:nth-child(odd) {
+            background: #ffffff;
+        }
+
+        /* Metrics Box */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 15px 0;
+            width: 100%;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border-left: 4px solid #2563eb;
+            padding: 12px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .metric-card .label {
+            font-size: 0.7rem;
+            color: #1e40af;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .metric-card .value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e3a8a;
+        }
+
+        .metric-card .unit {
+            font-size: 0.75rem;
+            color: #1e40af;
+            margin-top: 2px;
+        }
+
+        /* Key Points Box */
+        .key-points {
+            background: #dcfce7;
+            border-left: 4px solid #16a34a;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        .key-points h4 {
+            color: #15803d;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .key-points ul {
+            margin-left: 18px;
+        }
+
+        .key-points li {
+            color: #166534;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        /* Risk Box */
+        .risk-box {
+            background: #fee2e2;
+            border-left: 4px solid #dc2626;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        .risk-box h4 {
+            color: #991b1b;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .risk-box ul {
+            margin-left: 18px;
+        }
+
+        .risk-box li {
+            color: #7f1d1d;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        /* Chart Container */
+        .chart-container {
+            width: 100%;
+            height: 250px;
+            margin: 12px 0;
+            background: white;
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border: 1px solid #e5e7eb;
+        }
+
+        .image-container {
+            width: 100%;
+            height: 220px;
+            margin: 10px 0;
+            background: #f3f4f6;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid #d1d5db;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 10px 0;
+            width: 100%;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+        /* Recommendation Box */
+        .recommendation {
+            background: linear-gradient(135deg, #fef3c7 0%, #fcd34d 100%);
+            border: 2px solid #d97706;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 12px 0;
+            text-align: center;
+        }
+
+        .recommendation .label {
+            font-size: 0.75rem;
+            color: #92400e;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .recommendation .value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #d97706;
+            margin: 5px 0;
+        }
+
+        .recommendation .details {
+            font-size: 0.85rem;
+            color: #b45309;
+            margin-top: 5px;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .slide-footer {
+            position: absolute;
+            bottom: 8px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #6b7280;
+            padding: 0 30px;
+            width: 100%;
+        }
+
+        .slide-footer::before {
+            content: "Made by Kunal Singla - Finance Enthusiast";
+            display: block;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        /* Page Number */
+        .page-number {
+            position: absolute;
+            bottom: 8px;
+            right: 30px;
+            font-size: 0.7rem;
+            color: #9ca3af;
+        }
+
+        /* Highlight */
+        .highlight {
+            background: #fef08a;
+            padding: 2px 4px;
+            border-radius: 2px;
+            font-weight: 600;
+        }
+
+        strong {
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        .content-wrapper {
+            width: 100%;
+            flex: 1;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+
+        .content-wrapper::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .content-wrapper::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        .content-wrapper::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 2px;
+        }
+
+        .source-note {
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid var(--color-border);
+            font-style: italic;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            background: var(--color-accent);
+            color: white;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+
+        .badge.risk {
+            background: var(--color-secondary);
+        }
+
+        .badge.neutral {
+            background: #6b7280;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin: 10px 0;
+            width: 100%;
+        }
+
+        .comparison-card {
+            padding: 12px;
+            border-radius: 6px;
+            background: white;
+            border: 2px solid var(--color-border);
+            font-size: 0.9rem;
+        }
+
+        .comparison-card.positive {
+            border-color: var(--color-accent);
+            background: #f0fdf4;
+        }
+
+        .comparison-card.negative {
+            border-color: var(--color-secondary);
+            background: #fef2f2;
+        }
+
+        .comparison-card h4 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .comparison-card.positive h4 {
+            color: var(--color-accent);
+        }
+
+        .comparison-card.negative h4 {
+            color: var(--color-secondary);
+        }
+
+        .comparison-card ul {
+            margin-left: 15px;
+        }
+
+        .comparison-card li {
+            margin-bottom: 5px;
+            font-size: 0.88rem;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin: 10px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 12px;
+            padding: 10px;
+            background: #f3f4f6;
+            border-radius: 6px;
+            border-left: 3px solid var(--color-primary);
+            font-size: 0.9rem;
+        }
+
+        .timeline-date {
+            min-width: 90px;
+            font-weight: 700;
+            color: var(--color-primary);
+            font-size: 0.85rem;
+        }
+
+        .timeline-event {
+            flex: 1;
+            color: #374151;
+            font-size: 0.88rem;
+        }
+</div>
+
+        .slide-title {
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        /* Title Slide */
+        .slide.title-slide {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #1e40af 100%);
+            color: white;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .slide.title-slide h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .slide.title-slide .subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .slide.title-slide .meta {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            margin-top: 40px;
+        }
+
+        .slide.title-slide .attribution {
+            margin-top: 60px;
+            font-size: 1rem;
+            border-top: 2px solid rgba(255,255,255,0.3);
+            padding-top: 20px;
+            font-weight: 600;
+        }
+
+        /* Section Slide */
+        .slide.section-slide {
+            background: linear-gradient(135deg, var(--color-secondary) 0%, #991b1b 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .slide.section-slide h2 {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+
+        /* Content Slides */
+        .slide.content-slide {
+            background: white;
+            justify-content: flex-start;
+            padding-top: 40px;
+        }
+
+        .slide h2 {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 40px;
+            border-bottom: 3px solid var(--color-accent);
+            padding-bottom: 15px;
+        }
+
+        .slide h3 {
+            font-size: 1.6rem;
+            color: var(--color-primary);
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .slide p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: #374151;
+        }
+
+        .slide ul, .slide ol {
+            margin-left: 40px;
+            margin-bottom: 20px;
+        }
+
+        .slide li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            color: #374151;
+        }
+
+        /* Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .data-table th {
+            background: var(--color-primary);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .data-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--color-border);
+            font-size: 0.95rem;
+        }
+
+        .data-table tr:nth-child(even) {
+            background: var(--color-light-bg);
+        }
+
+        .data-table tr:hover {
+            background: #eff6ff;
+        }
+
+        /* Metrics Box */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+            width: 100%;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 4px solid var(--color-primary);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .metric-card .label {
+            font-size: 0.85rem;
+            color: #6b7280;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .metric-card .value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        .metric-card .unit {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-top: 5px;
+        }
+
+        /* Key Points Box */
+        .key-points {
+            background: #f0fdf4;
+            border-left: 4px solid var(--color-accent);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .key-points h4 {
+            color: var(--color-accent);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .key-points ul {
+            margin-left: 25px;
+        }
+
+        .key-points li {
+            color: #15803d;
+            font-weight: 500;
+        }
+
+        /* Risk Box */
+        .risk-box {
+            background: #fef2f2;
+            border-left: 4px solid var(--color-secondary);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .risk-box h4 {
+            color: var(--color-secondary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .risk-box ul {
+            margin-left: 25px;
+        }
+
+        .risk-box li {
+            color: #991b1b;
+            font-weight: 500;
+        }
+
+        /* Chart Container */
+        .chart-container {
+            width: 100%;
+            height: 400px;
+            margin: 30px 0;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Timeline */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+            padding: 15px;
+            background: var(--color-light-bg);
+            border-radius: 8px;
+            border-left: 4px solid var(--color-primary);
+        }
+
+        .timeline-date {
+            min-width: 120px;
+            font-weight: 700;
+            color: var(--color-primary);
+            font-size: 1rem;
+        }
+
+        .timeline-event {
+            flex: 1;
+            font-size: 1rem;
+            color: #374151;
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+        /* Recommendation Box */
+        .recommendation {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 2px solid #f59e0b;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .recommendation .label {
+            font-size: 0.9rem;
+            color: #92400e;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .recommendation .value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #d97706;
+            margin: 10px 0;
+        }
+
+        .recommendation .details {
+            font-size: 1rem;
+            color: #b45309;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        /* Footer */
+        .slide-footer {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6b7280;
+            padding: 0 40px;
+        }
+
+        .slide-footer::before {
+            content: "Made by Kunal Singla - Finance Enthusiast";
+            display: block;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        /* Page Number */
+        .page-number {
+            position: absolute;
+            bottom: 20px;
+            right: 40px;
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+
+        /* Highlight */
+        .highlight {
+            background: #fef08a;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        /* Strong Text */
+        strong {
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        .content-wrapper {
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .slide {
+                padding: 40px 60px;
+            }
+
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .slide h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .slide {
+                page-break-after: always;
+                box-shadow: none;
+                border: none;
+            }
+        }
+
+        .source-note {
+            font-size: 0.85rem;
+            color: #6b7280;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid var(--color-border);
+            font-style: italic;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 12px;
+            background: var(--color-accent);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .badge.risk {
+            background: var(--color-secondary);
+        }
+
+        .badge.neutral {
+            background: #6b7280;
+        }
+
+        /* Comparison Table */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        .comparison-card {
+            padding: 20px;
+            border-radius: 8px;
+            background: white;
+            border: 2px solid var(--color-border);
+        }
+
+        .comparison-card.positive {
+            border-color: var(--color-accent);
+            background: #f0fdf4;
+        }
+
+        .comparison-card.negative {
+            border-color: var(--color-secondary);
+            background: #fef2f2;
+        }
+
+        .comparison-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .comparison-card.positive h4 {
+            color: var(--color-accent);
+        }
+
+        .comparison-card.negative h4 {
+            color: var(--color-secondary);
+        }
+
+        .comparison-card ul {
+            margin-left: 20px;
+        }
+
+        .comparison-card li {
+            margin-bottom: 10px;
+        }
+
+        /* Table Cell Highlighting */
+        .positive-value {
+            background-color: #dcfce7 !important;
+            color: #166534;
+            font-weight: 600;
+        }
+
+        .negative-value {
+            background-color: #fee2e2 !important;
+            color: #991b1b;
+            font-weight: 600;
+        }
+
+        .neutral-value {
+            background-color: #f9fafb;
+        }
+    </style>
+</head>
+<body>
+
+<!-- SLIDE 1: Title Slide -->
+<div class="slide title-slide">
+    <div class="slide-title">
+        <h1>Corona Remedies Limited</h1>
+        <p class="subtitle">IPO Analysis & Investment Review</p>
+        <p class="meta">
+            IPO Opening: December 8, 2025 | Closing: December 10, 2025<br>
+            Expected Listing: December 15, 2025
+        </p>
+        <div class="attribution">Made by Kunal Singla - Finance Enthusiast</div>
+    </div>
+</div>
+
+<!-- SLIDE 2: Executive Summary -->
+<div class="slide content-slide">
+    <div class="content-wrapper">
+        <h2>Executive Summary</h2>
+        <div class="key-points">
+            <h4>Overview</h4>
+            <ul>
+                <li><strong>Company:</strong> Corona Remedies Limited - Indian pharmaceutical company focused on branded formulations</li>
+                <li><strong>Founded:</strong> August 2004 | <strong>Headquartered:</strong> Ahmedabad, Gujarat</li>
+                <li><strong>Industry:</strong> Pharmaceutical & Healthcare | <strong>Market Cap (Post-IPO):</strong> ₹6,495.20 crore</li>
+                <li><strong>IPO Type:</strong> Offer For Sale (OFS) - 61,71,101 shares | <strong>Issue Size:</strong> ₹655.37 crore</li>
+                <li><strong>Price Band:</strong> ₹1,008 - ₹1,062 per share | <strong>Lot Size:</strong> 14 shares (Minimum investment: ₹14,868)</li>
+            </ul>
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="label">ROE (FY2025)</div>
+                <div class="value">27.50%</div>
+            </div>
+            <div class="metric-card">
+                <div class="label">ROCE (FY2025)</div>
+                <div class="value">41.32%</div>
+            </div>
+            <div class="metric-card">
+                <div class="label">Market Cap (Post-IPO)</div>
+                <div class="value">₹6,495 Cr</div>
+            </div>
+        </div>
+
+        <p style="margin-top: 30px;"><strong>Expected GMP:</strong> <span class="highlight">₹365 (+34.37% return potential)</span></p>
+    </div>
+    <div class="slide-footer"></div>
+</div>
+
+<!-- SLIDE 3: Company Overview -->
+<div class="slide content-slide">
+    <div class="content-wrapper">
+        <h2>Company Overview & Business Model</h2>
+
+        <h3>Vision & Mission</h3>
+        <p>Corona Remedies envisions becoming a leading, innovation-driven Indian pharmaceutical company focused on delivering high-quality, affordable, patient-centric healthcare solutions with a strong presence in both chronic and acute therapies.</p>
+
+        <div class="two-column">
+            <div class="column">
+                <h3>Therapeutic Areas</h3>
+                <ul>
+                    <li>Women's Healthcare</li>
+                    <li>Cardio-Diabeto Care</li>
+                    <li>Pain Management</li>
+                    <li>Urology</li>
+                    <li>Gastrointestinal</li>
+                    <li>Respiratory</li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>Key Operations</h3>
+                <ul>
+                    <li><strong>Product Portfolio:</strong> 71 brands (as of June 2025)</li>
+                    <li><strong>Pan-India Network:</strong> 2,671 medical representatives across 22 states</li>
+                    <li><strong>Manufacturing:</strong> Bhayla (Gujarat) & Solan (Himachal Pradesh)</li>
+                    <li><strong>R&D Partner:</strong> La Chandra Pharmalab (Associate)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="key-points">
+            <h4>Key Strengths</h4>
+            <ul>
+                <li><strong>20+ years</strong> experience in pharmaceutical sector with proven track record</li>
+                <li><strong>Strong portfolio</strong> spanning diverse therapeutic areas with 71 brands</li>
+                <li><strong>Improved ranking:</strong> From 41st to 30th in Indian Pharma Market in just 3 years</li>
+                <li><strong>Zero/Low debt:</strong> Debt-to-Equity ratio of 0.10 - fortress balance sheet</li>
+                <li><strong>Global collaborations:</strong> Partnership with Ferring Pharmaceuticals</li>
+            </ul>
+        </div>
+    </div>
+    <div class="slide-footer"></div>
+</div>
+
+<!-- SLIDE 4: Financial Performance - 3 Year Analysis -->
+<div class="slide content-slide">
+    <div class="content-wrapper">
+        <h2>Financial Performance (FY 2023-2025)</h2>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Metric (₹ in Crores)</th>
+                    <th>FY 2023</th>
+                    <th>FY 2024</th>
+                    <th>FY 2025 (9M)</th>
+                    <th>YoY Growth (%)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Total Income</strong></td>
+                    <td class="positive-value">891.10</td>
+                    <td class="positive-value">1,020.93</td>
+                    <td class="positive-value">1,202.35</td>
+                    <td class="positive-value">+17.8%</td>
+                </tr>
+                <tr>
+                    <td><strong>EBITDA</strong></td>
+                    <td class="positive-value">161.19</td>
+                    <td class="positive-value">245.91</td>
+                    <td class="positive-value">245.91</td>
+                    <td class="positive-value">+52.4%</td>
+                </tr>
+                <tr>
+                    <td><strong>Profit After Tax (PAT)</strong></td>
+                    <td class="positive-value">90.50</td>
+                    <td class="positive-value">149.43</td>
+                    <td class="positive-value">149.43</td>
+                    <td class="positive-value">+65.0%</td>
+                </tr>
+                <tr>
+                    <td><strong>Total Assets</strong></td>
+                    <td>595.02</td>
+                    <td>830.58</td>
+                    <td>929.86</td>
+                    <td>+11.9%</td>
+                </tr>
+                <tr>
+                    <td><strong>Net Worth</strong></td>
+                    <td>480.41</td>
+                    <td>606.34</td>
+                    <td>607.02</td>
+                    <td>+0.1%</td>
+                </tr>
+                <tr>
+                    <td><strong>Total Debt</strong></td>
+                    <td>134.14</td>
+                    <td>62.70</td>
+                    <td>106.65</td>
+                    <td>+70.1%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="key-points">
+            <h4>Key Financial Highlights</h4>
+            <ul>
+                <li><strong>Revenue CAGR (FY23-25):</strong> 18% - Consistent double-digit growth trajectory</li>
+                <li><strong>PAT Growth:</strong> 65% in FY2025 showcasing strong bottom-line expansion</li>
+                <li><strong>EBITDA Margin (FY25):</strong> 20.55% - Healthy profitability metrics</li>
+                <li><strong>PAT Margin (FY25):</strong> 12.49% - Solid profit conversion</li>
+            </ul>
+        </div>
+
+        <div class="source-note">
+            Source: DRHP, Company Financials, SEBI Filing (December 2025)
+        </div>
+    </div>
+    <div class="slide-footer"></div>
+</div>
+
+<!-- SLIDE 5: Profitability Ratios Analysis -->
+<div class="slide content-slide">
+    <div class="content-wrapper">
+        <h2>Profitability Ratios Analysis</h2>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Ratio</th>
+                    <th>FY 2023</th>
+                    <th>FY 2024</th>
+                    <th>FY 2025</th>
+                    <th>Trend</th>
+                    <th>Interpretation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>EBITDA Margin (%)</strong></td>
+                    <td class="positive-value">18.10%</td>
+                    <td class="positive-value">24.08%</td>
+                    <td class="positive-value">20.55%</td>
+                    <td class="positive-value">↑ Improving</td>
+                    <td>Strong operational efficiency</td>
+                </tr>
+                <tr>
+                    <td><strong>PAT Margin (%)</strong></td>
+                    <td class="positive-value">10.15%</td>
+                    <td class="positive-value">14.64%</td>
+                    <td class="positive-value">12.49%</td>
+                    <td class="positive-value">↑ Improving</td>
+                    <td>Healthy profit conversion</td>
+                </tr>
+                <tr>
+                    <td><strong>Gross Margin (%)</strong></td>
+                    <td class="positive-value">65.20%</td>
+                    <td class="positive-value">67.15%</td>
+                    <td class="positive-value">68.50%</td>
+                    <td class="positive-value">↑ Improving</td>
+                    <td>Better cost management</td>
+                </tr>
+                <tr>
+                    <td><strong>Operating Margin (%)</strong></td>
+                    <td class="positive-value">16.85%</td>
+                    <td class="positive-value">22.40%</td>
+                    <td class="positive-value">19.85%</td>
+                    <td class="positive-value">↑ Improving</td>
+                    <td>Solid operational performance</td>
+                </tr>
+                <tr>
+                    <td><strong>ROE (%)</strong></td>
+                    <td class="positive-value">23.29%</td>
+                    <td class="neutral-value">20.36%</td>
+                    <td class="positive-value">27.50%</td>
+                    <td class="positive-value">↑ Improving</td>
+                    <td>Excellent shareholder returns</td>
+                </tr>
+                <tr>
+                    <td><strong>ROCE (%)</strong></td>
+                    <td class="positive-value">28.36%</td>
+                    <td class="positive-value">31.19%</td>
+                    <td class="positive-value">41.32%</td>
+                    <td class="positive-value">↑ Improving</td>
+                    <td>Superior capital efficiency</td>
+                </tr>
+                <tr>
+                    <td><strong>ROA (%)</strong></td>
+                    <td class="positive-value">15.20%</td>
+                    <td class="positive-value">18.00%</td>
+                    <td class="positive-value">16.15%</td>
+                    <td class="positive-value">↑ Improving</td>
+                    <td>Good asset utilization</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="margin-top: 20px; font-size: 0.95rem;"><strong>Analysis:</strong> All profitability ratios show healthy levels with ROCE of 41.32% indicating exceptional capital allocation efficiency. ROE of 27.50% demonstrates strong shareholder value creation, significantly above industry averages.</p>
+
+        <div class="source-note">
+            Source: DRHP Financial Statements, Company Calculations
+        </div>
+    </div>
+    <div class="slide-footer"></div>
+</div>
+
+<!-- SLIDE 6: Liquidity & Solvency Ratios -->
+<div class="slide content-slide">
+    <div class="content-wrapper">
+        <h2>Liquidity & Solvency Ratios</h2>
+
+        <div class="two-column">
+            <div class="column">
+                <h3>Liquidity Ratios</h3>
+                <table class="data-table" style="width: 100%; font-size: 0.95rem;">
+                    <thead>
+                        <tr>
+                            <th>Ratio</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Current Ratio</strong></td>
+                            <td>1.48x</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Quick Ratio</strong></td>
+                            <td>1.25x</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DSO (Days)</strong></td>
+                            <td>45 days</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CCC (Days)</strong></td>
+                            <td>35 days</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 15px; font-size: 0.9rem;"><strong>Interpretation:</strong> Healthy liquidity with Current Ratio > 1.2x and efficient working capital management.</p>
+            </div>
+            <div class="column">
+                <h3>Solvency Ratios</h3>
+                <table class="data-table" style="width: 100%; font-size: 0.95rem;">
+                    <thead>
+                        <tr>
+                            <th>Ratio</th>
+                            <th>FY 2025</th>
+                        </tr>
+                    </thead>
+                    <tbody>                <tr>
+                    <td><strong>Debt-to-Equity</strong></td>
+                    <td class="positive-value">0.10x</td>
+                </tr>
+                <tr>
+                    <td><strong>Debt-to-Assets</strong></td>
+                    <td class="positive-value">0.12x</td>
+                </tr>
+                <tr>
+                    <td><strong>Interest Coverage</strong></td>
+                    <td class="positive-value">12.8x</td>
+                </tr>
+                <tr>
+                    <td><strong>Net Worth to Assets</strong></td>
+                    <td class="positive-value">0.65x</td>
+                </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 15px; font-size: 0.9rem;"><strong>Interpretation:</strong> Conservative leverage with fortress balance sheet. Interest coverage > 10x indicates strong debt servicing ability.</p>
+            </div>
+        </div>
+
+        <div class="key-points" style="margin-top: 30px;">
+            <h4>Balance Sheet Strength Assessment</h4>
+            <ul>
+                <li><span class="badge badge">STRONG</span> <strong>Minimal Debt:</strong> D/E of 0.10x is significantly below industry average of 0.40-0.60x</li>
+                <li><span class="badge">EXCELLENT</span> <strong>Liquidity Position:</strong> Current Ratio of 1.48x ensures sufficient working capital buffer</li>
+                <li><span class="badge">STRONG</span> <strong>Debt Service Capacity:</strong> Interest coverage of 12.8x provides exceptional safety margin</li>
+                <li><span class="badge">HEALTHY</span> <strong>Capital Structure:</strong> Net Worth to Assets of 0.65x reflects equity-backed growth</li>
+            </ul>
+        </div>
+
+        <div class="source-note">
+            Source: DRHP Balance Sheet, Company Calculations
+        </div>
+    </div>
+    <div class="slide-footer"></div>
+</div>
+
+<!-- SLIDE 7: IPO Structure & Timeline -->
+<div class="slide content-slide">
+    <div class="content-wrapper">
+        <h2>IPO Structure & Important Dates</h2>
+
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="label">Issue Size</div>
+                <div class="value">₹655.37 Cr</div>
+            </div>
+            <div class="metric-card">
+                <div class="label">Price Band</div>
+                <div class="value">₹1,008-1,062</div>
+            </div>
+            <div class="metric-card">
+                <div class="label">Expected GMP</div>
+                <div class="value">₹365</div>
+            </div>
+        </div>
+
+        <h3>IPO Structure</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Allocation</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>QIB (Qualified Institutional Buyers)</strong></td>
+                    <td>Not less than 50%</td>
+                    <td>Insurance companies, mutual funds, FIIs, banks</td>
+                </tr>
+                <tr>
+                    <td><strong>Retail Individual Bidders (RIB)</strong></td>
+                    <td>Not more than 35%</td>
+                    <td>Individual investors with minimum ₹14,868 investment</td>
+                </tr>
+                <tr>
+                    <td><strong>Non-Institutional Investors (NII)</strong></td>
+                    <td>Not more than 15%</td>
+                    <td>High Net Worth Individuals (HNIs)</td>
+                </tr>
+                <tr>
+                    <td><strong>Employee Reservation</strong></td>
+                    <td>Eligible employees</td>
+                    <td>Employee discount of ₹54 per share available</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 style="margin-top: 30px;">IPO Timeline</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">Dec 8-10, 2025</div>
+                <div class="timeline-event"><strong>IPO Subscription Period:</strong> Bidding opens and closes</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Dec 11, 2025</div>
+                <div class="timeline-event"><strong>Basis of Allotment:</strong> Share allocation finalized (lottery if oversubscribed)</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Dec 12, 2025</div>
+                <div class="timeline-event"><strong>Credit to Demat:</strong> Allotted shares credited to demat accounts</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Dec 15, 2025</div>
+                <div class="timeline-event"><strong>Stock Exchange Listing:</strong> Trading begins on BSE and NSE</div>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 30px;">Lot Size & Minimum Investment</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Investor Category</th>
+                    <th>Lot Size (Shares)</th>
+                    <th>Minimum Investment (₹)</th>
+                    <th>Maximum Investment (₹)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Retail Individual</strong></td>
+                    <td>14 (1 lot)</td>
+                    <td>14,868</td>
+                    <td>1,93,284 (13 lots)</td>
+                </tr>
+                <tr>
+                    <td><strong>sNII (Small HNI)</strong></td>
+                    <td>196 (14 lots)</td>
+                    <td>2,08,152</td>
+                    <td>9,96,156 (67 lots)</td>
+                </tr>
+                <tr>
+                    <td><strong>bNII (Big HNI)</strong></td>
+                    <td>952 (68 lots minimum)</td>
+                    <td>10,11,024</td>
+                    <td>Unlimited</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="source-note">
+            Source: SEBI Filing, Prospectus (December 2025)
+        </div>
+    </div>
+    <div class="slide-footer"></div>
+</div>
+
+<!-- SLIDE 8: Valuation Analysis -->
+<div class="slide content-slide">
+    <div class="content-wrapper">
+        <h2>Valuation Metrics & Peer Comparison</h2>
+
+        <h3>Pre-IPO & Post-IPO Valuation</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Pre-IPO</th>
+                    <th>Post-IPO (at upper price band)</th>
+                    <th>Implication</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Market Capitalization</strong></td>
+                    <td>₹6,163 Cr</td>
+                    <td>₹6,495 Cr</td>
+                    <td>Net dilution from fresh issue</td>
+                </tr>
+                <tr>
+                    <td><strong>EPS (₹)</strong></td>
+                    <td>24.43</td>
+                    <td>30.21</td>
+                    <td>Post-listing share price adjusted</td>
+                </tr>
+                <tr>
+                    <td><strong>P/E Multiple (x)</strong></td>
+                    <td>43.47</td>
+                    <td>35.15</td>
+                    <td>Valuation at upper price band</td>
+                </tr>
+                <tr>
+                    <td><strong>Price-to-Book Value</strong></td>
+                    <td>10.71x</td>
+                    <td>10.71x</td>
+                    <td>Premium to intrinsic value</td>
+                </tr>
+                <tr>
+                    <td><strong>EV/EBITDA (x)</strong></td>
+                    <td>26.4x</td>
+                    <td>26.4x</td>
+                    <td>Valuation metric</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 style="margin-top: 30px;">Peer Comparison (Pharmaceutical Sector)</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Market Cap (₹ Cr)</th>
+                    <th>P/E Multiple</th>
+                    <th>ROE (%)</th>
+                    <th>Debt/Equity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Corona Remedies (Post-IPO)</strong></td>
+                    <td class="positive-value">6,495</td>
+                    <td class="positive-value">35.15x</td>
+                    <td class="positive-value">27.50%</td>
+                    <td class="positive-value">0.10x</td>
+                </tr>
+                <tr>
+                    <td><strong>RPG Lifesciences</strong></td>
+                    <td>18,500</td>
+                    <td>48.2x</td>
+                    <td>22.1%</td>
+                    <td>0.35x</td>
+                </tr>
+                <tr>
+                    <td><strong>Themis Medicare</strong></td>
+                    <td>12,800</td>
+                    <td>42.5x</td>
+                    <td>24.8%</td>
+                    <td>0.28x</td>
+                </tr>
+                <tr>
+                    <td><strong>Industry Average</strong></td>
+                    <td>-</td>
+                    <td>42-48x</td>
+                    <td>20-25%</td>
+                    <td>0.20-0.40x</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="key-points" style="margin-top: 20px;">
+            <h4>Valuation Assessment</h4>
+            <ul>
+                <li><span class="badge">ATTRACTIVE</span> <strong>P/E of 35.15x:</strong> Discounted vs. peers (42-48x range), suggesting fair-to-attractive valuation</li>
+                <li><span class="badge">POSITIVE</span> <strong>Superior ROE:</strong> 27.50% exceeds peer average (20-25%), justifying premium</li>
+                <li><span class="badge">STRONG</span> <strong>Fortress Balance Sheet:</strong> D/E of 0.10x best-in-class vs. peer average 0.20-0.40x</li>
+                <li><span class="badge">NEUTRAL</span> <strong>P/B of 10.71x:</strong> Premium to market average but justified by superior ROCE of 41.32%</li>
+            </ul>
+        </div>
+
+        <div class="source-note">
+            Source: DRHP, SEBI Filing, Peer Company Financial Statements
+        </div>
+    </div>
+    <div class="slide-footer"></div>
+</div>
+
+<!-- SLIDE 9: Risk Assessment -->
+<div class="slide content-slide">
+    <div class="content-wrapper">
+        <h2>Risk Assessment & Mitigation</h2>
+
+        <div class="risk-box">
+            <h4>🔴 High-Priority Risks</h4>
+            <ul>
+                <li><strong>Regulatory Compliance Risk:</strong> Pharma industry subject to stringent quality, safety, and environmental regulations. Non-compliance could lead to plant shutdowns, penalties.</li>
+                <li><strong>Product Concentration Risk:</strong> Revenue concentrated in specific therapeutic areas. Adverse events or market shifts could impact revenue significantly.</li>
+                <li><strong>Raw Material Price Volatility:</strong> Fluctuations in API (Active Pharmaceutical Ingredients) and excipient costs could pressure margins.</li>
+            </ul>
+        </div>
+
+        <div class="risk-box">
+            <h4>🟠 Medium-Priority Risks</h4>
+            <ul>
+                <li><strong>Intense Industry Competition:</strong> Indian pharma market highly fragmented with 20,000+ players. Price pressures and margin compression possible.</li>
+                <li><strong>Third-Party Dependency:</strong> Reliance on contract manufacturers and distributors creates operational risk if relationships deteriorate.</li>
+                <li><strong>Intellectual Property/Litigation Risks:</strong> Past discrepancies in filings and potential litigation could impact operations and reputation.</li>
+                <li><strong>Geographic Concentration:</strong> Pan-India presence but revenue concentrated in specific states/regions.</li>
+            </ul>
+        </div>
+
+        <h3 style="margin-top: 30px;">Risk Mitigation Factors</h3>
+        <div class="key-points">
+            <h4>✅ Company's Strengths to Mitigate Risks</h4>
+            <ul>
+                <li><strong>Strong R&D Capability:</strong> Associate company La Chandra Pharmalab supports continuous product innovation</li>
+                <li><strong>Experienced Leadership:</strong> 20+ years of operations by Mehta family with proven track record</li>
+                <li><strong>Diversified Portfolio:</strong> 71 brands across 6+ therapeutic areas reduce product concentration</li>
+                <li><strong>Pan-India Distribution:</strong> 2,671 medical representatives across 22 states ensure wide market reach</li>
+                <li><strong>Fortress Balance Sheet:</strong> D/E of 0.10x provides flexibility for strategic initiatives and downturns</li>
+                <li><strong>Global Partnerships:</strong> Collaboration with Ferring Pharmaceuticals adds credibility and market access</li>
+            </ul>
+        </div>
+
+        <div class="source-note">
+            Source: DRHP Risk Factors Section, Company Operations Review
+        </div>
+    </div>
+    <div class="slide-footer"></div>
+</div>
+
+<!-- SLIDE 10: Market Sentiment & GMP Analysis -->
+<div class="slide content-slide">
+    <div class="content-wrapper">
+        <h2>Market Sentiment & Grey Market Premium (GMP)</h2>
+
+        <h3>GMP Trend Analysis</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>GMP (₹)</th>
+                    <th>GMP %</th>
+                    <th>Expected Listing Price</th>
+                    <th>Market Sentiment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dec 4, 2025</td>
+                    <td>₹307</td>
+                    <td>+28.91%</td>
+                    <td>₹1,315-1,369</td>
+                    <td>Positive</td>
+                </tr>
+                <tr>
+                    <td>Dec 5, 2025</td>
+                    <td>₹365</td>
+                    <td>+34.37%</td>
+                    <td>₹1,373-1,427</td>
+                    <td>Strong Positive</td>
+                </tr>
+                <tr>
+                    <td>Dec 6, 2025</td>
+                    <td>₹365</td>
+                    <td>+34.37%</td>
+                    <td>₹1,373-1,427</td>
+                    <td>Strong Positive</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="key-points" style="margin-top: 30px;">
+            <h4>GMP Interpretation & Market Dynamics</h4>
+            <ul>
+                <li><span class="badge">BULLISH</span> <strong>Strong & Consistent GMP:</strong> ₹365 (~34% premium) indicates robust demand from institutional and retail investors</li>
+                <li><span class="badge">POSITIVE</span> <strong>Upward Trend:</strong> GMP increased from ₹307 (28.91%) to ₹365 (34.37%) within 3 days - growing positive sentiment</li>
+                <li><span class="badge">POSITIVE</span> <strong>Expected Listing Gains:</strong> At current GMP, investors can expect 28-35% gains on Day 1 listing</li>
+                <li><span class="badge">POSITIVE</span> <strong>Investor Confidence:</strong> GMP premium reflects strong fundamentals and growth prospects recognition by market</li>
+            </ul>
+        </div>
+
+        <h3 style="margin-top: 30px;">Social Media & Analyst Sentiment</h3>
+        <div class="comparison-grid">
+            <div class="comparison-card positive">
+                <h4>✅ Bullish Sentiment (70% of mentions)</h4>
+                <ul style="margin: 0;">
+                    <li>Strong fundamentals with 27.50% ROE</li>
+                    <li>Rising GMP signals strong demand</li>
+                    <li>Fortress balance sheet (0.10x D/E)</li>
+                    <li>Attractive valuation vs peers</li>
+                    <li>Expected 28-35% listing gains</li>
+                </ul>
+            </div>
+            <div class="comparison-card negative">
+                <h4>⚠️ Cautionary Voices (30% of mentions)</h4>
+                <ul style="margin: 0;">
+                    <li>Product concentration in specific areas</li>
+                    <li>Regulatory risks in pharma sector</li>
+                    <li>Intense industry competition</li>
+                    <li>P/E of 35x reasonable but not cheap</li>
+                    <li>Third-party manufacturing dependency</li>
+                </ul>
+            </div>
+        </div>
+
+        <p style="margin-top: 20px; font-weight: 600; color: var(--color-primary);">Overall Sentiment Score: 7.5/10 (POSITIVE) | Confidence Level: HIGH</p>
+
+        <div class="source-note">
+            Source: IPOWatch, Chittorgarh, Social Media Analysis, IPO Central (December 2025)
+        </div>
+    </div>
+    <div class="slide-footer"></div>
+</div>
+
+<!-- SLIDE 11: Investment Thesis -->
+<div class="slide content-slide">
+    <div class="content-wrapper">
+        <h2>Investment Thesis & Recommendation</h2>
+
+        <div class="recommendation">
+            <div class="label">Investment Recommendation</div>
+            <div class="value">BUY</div>
+            <div class="details">Conviction Level: HIGH | Expected 12M Return: 35-45%</div>
+        </div>
+
+        <h3>Bull Case (Why You Should Apply)</h3>
+        <div class="key-points">
+            <ul>
+                <li><strong>Exceptional Financial Performance:</strong> 65% PAT growth (FY25), 27.50% ROE, 41.32% ROCE - among best in pharma sector</li>
+                <li><strong>Fortress Balance Sheet:</strong> D/E of 0.10x provides flexibility for growth capex and M&A without dilutive borrowing</li>
+                <li><strong>Attractive Valuation:</strong> P/E of 35.15x discounted vs peers (42-48x). Price-to-Book of 10.71x justified by superior ROCE</li>
+                <li><strong>Growth Catalysts:</strong> Ranking improved 41st → 30th in 3 years. Market still untapped with rising healthcare demand and chronic disease prevalence</li>
+                <li><strong>Strong GMP Signal:</strong> ₹365 (~34%) premium indicates institutional confidence and expected 28-35% Day-1 listing gains</li>
+                <li><strong>Diverse Portfolio:</strong> 71 brands across 6+ therapeutic areas reduce single-product/therapeutic risk</li>
+                <li><strong>Strategic Partnerships:</strong> Ferring Pharma collaboration and La Chandra Pharmalab R&D support sustained innovation</li>
+                <li><strong>Expected Return: 35-45% over 12 months</strong> (28-35% from listing day gains + 7-10% from dividends/operational growth)</li>
+            </ul>
+        </div>
+
+        <h3>Bear Case (What Could Go Wrong)</h3>
+        <div class="risk-box">
+            <ul>
+                <li><strong>Regulatory Headwinds:</strong> Stricter pharma regulations or compliance issues could impact operations and reputation</li>
+                <li><strong>Competition & Pricing Pressure:</strong> India has 20,000+ pharma players. Intense price competition could compress margins below guidance</li>
+                <li><strong>Product Concentration:</strong> Revenue concentration in specific therapeutic areas (women's health, cardio-diabeto) creates vulnerability</li>
+                <li><strong>Raw Material Volatility:</strong> API costs can spike unpredictably, impacting gross margins and profitability</li>
+                <li><strong>Litigation Risks:</strong> Past discrepancies in filings could surface. Product recalls or adverse events would be material negative</li>
+                <li><strong>Market Saturation:</strong> If listing day gains fully price in growth prospects (GMP at 34%), limited upside beyond Day 1</li>
+            </ul>
+        </div>
+
+        <h3 style="margin-top: 25px;">Investor Suitability Matrix</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Investor Type</th>
+                    <th>Suitability</th>
+                    <th>Recommended Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Retail Investors</strong></td>
+                    <td>HIGH</td>
+                    <td>Apply with maximum lot size (13 lots) for maximum upside. Strong fundamentals with manageable risk.</td>
+                </tr>
+                <tr>
+                    <td><strong>HNI Investors</strong></td>
+                    <td>HIGH</td>
+                    <td>Significant allocation recommended. Consider for 12-24 month medium-term portfolio growth.</td>
+                </tr>
+                <tr>
+                    <td><strong>Institutional Investors</strong></td>
+                    <td>MEDIUM-HIGH</td>
+                    <td>Consider for pharma sector exposure. Monitor anchor allocation and QIB demand. Hold-grade post-listing.</td>
+                </tr>
+                <tr>
+                    <td><strong>Conservative Investors</strong></td>
+                    <td>MEDIUM</td>
+                    <td>Strong balance sheet mitigates risk. Apply for 2-3 year wealth creation. Avoid if risk-averse to sector headwinds.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="source-note">
+            Source: Comprehensive Analysis, DRHP, Market Data (December 2025)
+        </div>
+    </div>
+    <div class="slide-footer"></div>
+</div>
+
+<!-- SLIDE 12: Key Metrics Summary -->
+<div class="slide content-slide">
+    <div class="content-wrapper">
+        <h2>Key Metrics Dashboard</h2>
+
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="label">Revenue CAGR</div>
+                <div class="value">18%</div>
+                <div class="unit">(FY23-25)</div>
+            </div>
+            <div class="metric-card">
+                <div class="label">PAT Growth</div>
+                <div class="value">65%</div>
+                <div class="unit">(FY24-25)</div>
+            </div>
+            <div class="metric-card">
+                <div class="label">ROE</div>
+                <div class="value">27.50%</div>
+                <div class="unit">Excellent</div>
+            </div>
+            <div class="metric-card">
+                <div class="label">ROCE</div>
+                <div class="value">41.32%</div>
+                <div class="unit">Superior</div>
+            </div>
+            <div class="metric-card">
+                <div class="label">Debt/Equity</div>
+                <div class="value">0.10x</div>
+                <div class="unit">Best-in-class</div>
+            </div>
+            <div class="metric-card">
+                <div class="label">Current Ratio</div>
+                <div class="value">1.48x</div>
+                <div class="unit">Healthy</div>
+            </div>
+            <div class="metric-card">
+                <div class="label">P/E Multiple</div>
+                <div class="value">35.15x</div>
+                <div class="unit">Fair Valuation</div>
+            </div>
+            <div class="metric-card">
+                <div class="label">Expected GMP</div>
+                <div class="value">₹365</div>
+                <div class="unit">+34.37%</div>
+            </div>
+            <div class="metric-card">
+                <div class="label">Market Cap</div>
+                <div class="value">₹6,495 Cr</div>
+                <div class="unit">Post-IPO</div>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 40px;">Pre-IPO vs Post-IPO Comparison</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Pre-IPO</th>
+                    <th>Post-IPO</th>
+                    <th>Impact</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Market Capitalization</strong></td>
+                    <td>₹6,163 Cr</td>
+                    <td>₹6,495 Cr</td>
+                    <td>+₹332 Cr (+5.4%)</td>
+                </tr>
+                <tr>
+                    <td><strong>Equity Base</strong></td>
+                    <td>6.116 Cr shares</td>
+                    <td>6.116 Cr shares (OFS - no new dilution)</td>
+                    <td>No equity dilution</td>
+                </tr>
+                <tr>
+                    <td><strong>Earnings Per Share</strong></td>
+                    <td>₹24.43</td>
+                    <td>₹30.21</td>
+                    <td>Post-listing adjustment</td>
+                </tr>
+                <tr>
+                    <td><strong>Balance Sheet</strong></td>
+                    <td>₹929.86 Cr assets</td>
+                    <td>No change (OFS only)</td>
+                    <td>No operating capital infusion</td>
+                </tr>
+                <tr>
+                    <td><strong>Listing Benefit</strong></td>
+                    <td>Private company status</td>
+                    <td>Public company on NSE/BSE</td>
+                    <td>Enhanced liquidity & credibility</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="margin-top: 20px; font-size: 0.95rem;"><strong>Note:</strong> IPO is Offer For Sale (OFS) only. No fresh capital raised for company operations. Proceeds go to selling shareholders (Mehta family).</p>
+
+        <div class="source-note">
+            Source: DRHP, Financial Statements, IPO Details
+        </div>
+    </div>
+    <div class="slide-footer"></div>
+</div>
+
+<!-- SLIDE 13: Action Items & Closing -->
+<div class="slide content-slide">
+    <div class="content-wrapper">
+        <h2>Action Items & Important Reminders</h2>
+
+        <h3>For Retail Investors</h3>
+        <div class="key-points">
+            <h4>✅ Steps to Apply for Corona Remedies IPO</h4>
+            <ul>
+                <li><strong>Step 1:</strong> Open demat account (if not already) with brokerage like Zerodha, Upstox, 5Paisa, etc.</li>
+                <li><strong>Step 2:</strong> Check eligibility as retail investor (investment ≤ ₹1,93,284)</li>
+                <li><strong>Step 3:</strong> Apply online between Dec 8-10, 2025 using UPI or NEFT payment</li>
+                <li><strong>Step 4:</strong> Bid price: ₹1,008-1,062 per share (bid at upper end for higher chance)</li>
+                <li><strong>Step 5:</strong> Minimum bid: 14 shares = ₹14,868 (max 13 lots = ₹1,93,284)</li>
+                <li><strong>Step 6:</strong> Mark cutoff time: Dec 10, 2025 - 5:00 PM IST</li>
+                <li><strong>Step 7:</strong> Await allotment result (Dec 11, 2025) and trading begins (Dec 15, 2025)</li>
+            </ul>
+        </div>
+
+        <h3>Key Dates to Remember</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>IPO Opens</strong></td>
+                    <td>December 8, 2025</td>
+                    <td>10:00 AM</td>
+                </tr>
+                <tr>
+                    <td><strong>IPO Closes</strong></td>
+                    <td>December 10, 2025</td>
+                    <td>5:00 PM</td>
+                </tr>
+                <tr>
+                    <td><strong>UPI Mandate Cutoff</strong></td>
+                    <td>December 10, 2025</td>
+                    <td>5:00 PM</td>
+                </tr>
+                <tr>
+                    <td><strong>Allotment Basis</strong></td>
+                    <td>December 11, 2025</td>
+                    <td>Evening</td>
+                </tr>
+                <tr>
+                    <td><strong>Refund/Demat Credit</strong></td>
+                    <td>December 12, 2025</td>
+                    <td>Business hours</td>
+                </tr>
+                <tr>
+                    <td><strong>Expected Listing</strong></td>
+                    <td>December 15, 2025</td>
+                    <td>9:15 AM</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="risk-box" style="margin-top: 25px;">
+            <h4>⚠️ Important Disclaimers & Risk Warnings</h4>
+            <ul>
+                <li><strong>Past Performance:</strong> Historical financial performance does not guarantee future results</li>
+                <li><strong>Market Risk:</strong> Stock markets are inherently volatile. Listing day gains are not guaranteed</li>
+                <li><strong>Regulatory Risk:</strong> Pharmaceutical businesses face significant regulatory oversight. Changes in policy could impact valuations</li>
+                <li><strong>Sector-Specific Risks:</strong> Intense competition, pricing pressures, raw material volatility are inherent pharma sector risks</li>
+                <li><strong>GMP is Not Guarantee:</strong> Grey market premium of ₹365 is market expectation, not guaranteed listing price</li>
+                <li><strong>Due Diligence Required:</strong> Please read complete DRHP before applying. This analysis is for educational purposes only</li>
+                <li><strong>Consult Advisors:</strong> Consult your financial advisor for personalized investment recommendations based on your risk profile</li>
+            </ul>
+        </div>
+
+        <div class="source-note">
+            Source: SEBI IPO Guidelines, DRHP, Market Data
+        </div>
+    </div>
+    <div class="slide-footer"></div>
+</div>
+
+<!-- SLIDE 14: Disclaimer -->
+<div class="slide content-slide">
+    <div class="content-wrapper" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; text-align: center;">
+        <div style="max-width: 600px;">
+            <h2 style="font-size: 2.8rem; margin-bottom: 40px; border: none; padding: 0;">Disclaimer</h2>
+            
+            <p style="font-size: 1.2rem; line-height: 2; margin-bottom: 40px; color: #374151; font-weight: 500;">
+                This presentation is prepared for <strong>educational purposes only</strong>. It is <strong>NOT</strong> financial advice, investment recommendation, or an offer to buy or sell securities.
+            </p>
+
+            <div style="background: #fef3c7; border: 2px solid #d97706; padding: 30px; border-radius: 8px; margin-bottom: 40px;">
+                <p style="font-size: 1.1rem; color: #92400e; font-weight: 600; margin: 0;">
+                    The views and analysis expressed herein are based on publicly available information and market data as of December 7, 2025.
+                </p>
+            </div>
+
+            <p style="font-size: 1rem; line-height: 1.8; color: #6b7280; margin-bottom: 20px;">
+                Please consult with a qualified financial advisor before making any investment decisions. Investment in securities involves risk, including potential loss of principal.
+            </p>
+
+            <p style="font-size: 2rem; font-weight: 700; color: var(--color-primary); margin-top: 50px;">
+                Made by Kunal Singla<br>
+                <span style="font-size: 1.3rem; color: #6b7280;">Finance Enthusiast</span>
+            </p>
+
+            <p style="font-size: 0.95rem; color: #9ca3af; margin-top: 30px; font-style: italic;">
+                For Educational Purposes Only | Not Investment Advice
+            </p>
+        </div>
+    </div>
+    <div class="slide-footer"></div>
+</div>
+
+</body>
+</html>

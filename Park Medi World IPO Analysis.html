@@ -1,0 +1,1777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Park Medi World IPO Analysis & Investment Review</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .slide {
+            background: white;
+            border-radius: 8px;
+            padding: 40px;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            page-break-after: always;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .slide-header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .slide-header h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .slide-header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+        }
+
+        h1 {
+            color: #1e3c72;
+            margin-bottom: 25px;
+            font-size: 2.2em;
+        }
+
+        h2 {
+            color: #2a5298;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            font-size: 1.6em;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #2a5298;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .intro-text {
+            font-size: 1.1em;
+            color: #555;
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border: 1px solid #ddd;
+            font-size: 0.95em;
+        }
+
+        table th {
+            background: #1e3c72;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        table tr:hover {
+            background: #f0f0f0;
+        }
+
+        .positive-value {
+            background: #d4edda;
+            color: #155724;
+            font-weight: 600;
+            padding: 6px 10px;
+            border-radius: 4px;
+        }
+
+        .negative-value {
+            background: #f8d7da;
+            color: #721c24;
+            font-weight: 600;
+            padding: 6px 10px;
+            border-radius: 4px;
+        }
+
+        .neutral-value {
+            background: #e2e3e5;
+            color: #383d41;
+            font-weight: 500;
+            padding: 6px 10px;
+            border-radius: 4px;
+        }
+
+        .chart-canvas {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        svg {
+            margin: 0 auto;
+            display: block;
+        }
+
+        .metric-box {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+
+        .metric-box .value {
+            font-size: 1.8em;
+            font-weight: 700;
+            display: block;
+        }
+
+        .metric-box .label {
+            font-size: 0.9em;
+            opacity: 0.95;
+            margin-top: 5px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .metric-card {
+            background: #f0f4f8;
+            border-left: 4px solid #2a5298;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        .metric-card .value {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: #1e3c72;
+        }
+
+        .metric-card .label {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .recommendation-box {
+            background: linear-gradient(135deg, #0f9c45 0%, #12d659 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 6px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+        .caution-box {
+            background: linear-gradient(135deg, #e85d04 0%, #f77f00 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+
+        .bullet-list {
+            margin: 15px 0 15px 30px;
+        }
+
+        .bullet-list li {
+            margin: 8px 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .chart-container {
+            margin: 25px 0;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .chart-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #1e3c72;
+            margin-bottom: 15px;
+        }
+
+        .chart-description {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .column {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+        }
+
+        .column h3 {
+            margin-top: 0;
+        }
+
+        .strength {
+            color: #0f9c45;
+            font-weight: 600;
+        }
+
+        .weakness {
+            color: #e85d04;
+            font-weight: 600;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #ddd;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .attribution {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: 600;
+            color: #1e3c72;
+        }
+
+        .gmp-table {
+            margin: 20px 0;
+        }
+
+        .positive {
+            color: #0f9c45;
+            font-weight: 600;
+        }
+
+        .negative {
+            color: #e85d04;
+            font-weight: 600;
+        }
+
+        .neutral {
+            color: #666;
+            font-weight: 500;
+        }
+
+        .key-stat {
+            display: inline-block;
+            background: #e8f0f7;
+            padding: 10px 20px;
+            border-radius: 4px;
+            margin: 5px;
+            font-weight: 600;
+            color: #1e3c72;
+        }
+
+        .timeline {
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin: 15px 0;
+            align-items: center;
+        }
+
+        .timeline-date {
+            font-weight: 600;
+            color: #2a5298;
+            min-width: 150px;
+        }
+
+        .timeline-event {
+            background: #f0f4f8;
+            padding: 10px 15px;
+            border-radius: 4px;
+            flex: 1;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .slide {
+                page-break-after: always;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- SLIDE 1: TITLE SLIDE -->
+        <div class="slide">
+            <div class="slide-header">
+                <h1>Park Medi World IPO</h1>
+                <p>IPO Analysis & Investment Review</p>
+                <p style="margin-top: 20px; font-size: 1em;">Prepared by: Kunal Singla</p>
+                <p style="font-size: 0.9em; margin-top: 5px;">Finance Enthusiast</p>
+                <p style="margin-top: 15px; font-size: 0.95em;">December 9, 2025</p>
+            </div>
+            <div class="attribution">
+                For Educational Purposes Only | Not Investment Advice
+            </div>
+        </div>
+
+        <!-- SLIDE 2: COMPANY VISION & QUICK FACTS -->
+        <div class="slide">
+            <h1>Company Vision & IPO Overview</h1>
+            <div class="intro-text">
+                <strong>Vision:</strong> Park Medi World aspires to become a leading healthcare provider in North India by delivering world-class medical services through its network of NABH-accredited multi-super speciality hospitals under the 'Park' brand.
+            </div>
+            
+            <h2>IPO Quick Facts</h2>
+            <table>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Details</th>
+                </tr>
+                <tr>
+                    <td><strong>Company</strong></td>
+                    <td>Park Medi World Limited</td>
+                </tr>
+                <tr>
+                    <td><strong>IPO Size</strong></td>
+                    <td>₹920 Crore (Fresh Issue: ₹770 Cr + OFS: ₹150 Cr)</td>
+                </tr>
+                <tr>
+                    <td><strong>Price Band</strong></td>
+                    <td>₹154 - ₹162 per share</td>
+                </tr>
+                <tr>
+                    <td><strong>Face Value</strong></td>
+                    <td>₹2 per share</td>
+                </tr>
+                <tr>
+                    <td><strong>Lot Size</strong></td>
+                    <td>92 shares (Minimum)</td>
+                </tr>
+                <tr>
+                    <td><strong>IPO Open Date</strong></td>
+                    <td>December 10, 2025</td>
+                </tr>
+                <tr>
+                    <td><strong>IPO Close Date</strong></td>
+                    <td>December 12, 2025</td>
+                </tr>
+                <tr>
+                    <td><strong>Expected Listing</strong></td>
+                    <td>December 17, 2025 (NSE/BSE)</td>
+                </tr>
+                <tr>
+                    <td><strong>Valuation (at upper band)</strong></td>
+                    <td>₹7,000 Crore</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- SLIDE 3: COMPANY OVERVIEW -->
+        <div class="slide">
+            <h1>About Park Medi World</h1>
+            <h2>Company Profile</h2>
+            <ul class="bullet-list">
+                <li><strong>Founded:</strong> January 20, 2011</li>
+                <li><strong>Headquarters:</strong> North India (Haryana, Delhi, Punjab, Rajasthan)</li>
+                <li><strong>Position:</strong> 2nd largest private hospital chain in North India</li>
+                <li><strong>Bed Capacity:</strong> 3,000 beds (1,600 in Haryana - highest in the region)</li>
+                <li><strong>Hospital Network:</strong> 14 NABH-accredited multi-super speciality hospitals</li>
+                <li><strong>Lead Managers:</strong> Nuvama Wealth Management, CLSA India, DAM Capital Advisors, Intensive Fiscal Services</li>
+                <li><strong>Registrar:</strong> Kfin Technologies Limited</li>
+            </ul>
+
+            <h2>Healthcare Services Offered</h2>
+            <div class="intro-text">
+                Park Medi World operates over 30 super-speciality and speciality services including:
+            </div>
+            <ul class="bullet-list">
+                <li>Internal Medicine, Neurology, Urology, Gastroenterology</li>
+                <li>General Surgery, Orthopaedics, Oncology</li>
+                <li>Critical Care, Cardiology, Pediatrics, Emergency Services</li>
+                <li>Diagnostic Services, Laboratory & Radiology</li>
+            </ul>
+
+            <h2>Business Model Strength</h2>
+            <div class="intro-text">
+                <strong>Revenue Diversification:</strong> Government Schemes & PSUs contribute 83.38% of revenue, reducing cyclical risk during economic downturns. This stable income stream ensures predictable cash flows.
+            </div>
+        </div>
+
+        <!-- SLIDE 4: FINANCIAL PERFORMANCE OVERVIEW -->
+        <div class="slide">
+            <h1>Financial Performance (3-Year Trend)</h1>
+            <table>
+                <tr>
+                    <th>Metric (₹ in Crores)</th>
+                    <th>FY 2023</th>
+                    <th>FY 2024</th>
+                    <th>FY 2025</th>
+                    <th>H1 FY26 (Sep 2025)</th>
+                    <th>YoY Growth (%)</th>
+                </tr>
+                <tr>
+                    <td><strong>Total Income</strong></td>
+                    <td class="positive-value">1,272.18</td>
+                    <td class="negative-value">1,263.08</td>
+                    <td class="positive-value">1,425.97</td>
+                    <td class="positive-value">823.39</td>
+                    <td class="positive-value">+13.0%</td>
+                </tr>
+                <tr>
+                    <td><strong>EBITDA</strong></td>
+                    <td class="positive-value">390.34</td>
+                    <td class="negative-value">310.30</td>
+                    <td class="positive-value">372.17</td>
+                    <td class="positive-value">217.14</td>
+                    <td class="positive-value">+19.9%</td>
+                </tr>
+                <tr>
+                    <td><strong>Profit After Tax</strong></td>
+                    <td class="positive-value">228.19</td>
+                    <td class="negative-value">152.01</td>
+                    <td class="positive-value">213.22</td>
+                    <td class="positive-value">139.14</td>
+                    <td class="positive-value">+40.3%</td>
+                </tr>
+                <tr>
+                    <td><strong>Total Assets</strong></td>
+                    <td class="positive-value">1,592.82</td>
+                    <td class="positive-value">1,912.10</td>
+                    <td class="positive-value">2,133.70</td>
+                    <td class="positive-value">2,320.93</td>
+                    <td class="positive-value">+8.8%</td>
+                </tr>
+                <tr>
+                    <td><strong>Net Worth</strong></td>
+                    <td class="positive-value">667.55</td>
+                    <td class="positive-value">815.98</td>
+                    <td class="positive-value">1,021.86</td>
+                    <td class="positive-value">1,153.05</td>
+                    <td class="positive-value">+12.8%</td>
+                </tr>
+                <tr>
+                    <td><strong>Total Debt</strong></td>
+                    <td class="negative-value">575.68</td>
+                    <td class="negative-value">686.71</td>
+                    <td class="negative-value">682.07</td>
+                    <td class="negative-value">733.91</td>
+                    <td class="negative-value">+7.6%</td>
+                </tr>
+            </table>
+
+            <h2>Key Observations</h2>
+            <div class="intro-text">
+                <span class="positive">✓ Revenue growth accelerated to 13% in FY25</span><br>
+                <span class="positive">✓ PAT surge of 40.3% YoY showcasing operational leverage</span><br>
+                <span class="positive">✓ EBITDA recovered to ₹372 Cr, up 19.9% YoY</span><br>
+                Strong recovery post FY24 challenges (flood impacts and acquisitions)
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">📊 Revenue & Profitability Trend (FY23-H1 FY26)</div>
+                <svg class="chart-canvas" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Grid lines -->
+                    <line x1="80" y1="50" x2="80" y2="320" stroke="#333" stroke-width="2"/>
+                    <line x1="80" y1="320" x2="750" y2="320" stroke="#333" stroke-width="2"/>
+                    
+                    <!-- Y-axis labels -->
+                    <text x="15" y="325" font-size="12" fill="#666">0</text>
+                    <text x="10" y="265" font-size="12" fill="#666">500</text>
+                    <text x="10" y="205" font-size="12" fill="#666">1000</text>
+                    <text x="10" y="145" font-size="12" fill="#666">1500</text>
+                    
+                    <!-- Grid horizontal lines -->
+                    <line x1="80" y1="260" x2="750" y2="260" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="3,3"/>
+                    <line x1="80" y1="200" x2="750" y2="200" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="3,3"/>
+                    <line x1="80" y1="140" x2="750" y2="140" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="3,3"/>
+                    
+                    <!-- Revenue line (blue) -->
+                    <polyline points="150,245 250,248 350,180 450,185" fill="none" stroke="#2a5298" stroke-width="3" stroke-linejoin="round"/>
+                    
+                    <!-- EBITDA line (green) -->
+                    <polyline points="150,285 250,295 350,265 450,250" fill="none" stroke="#0f9c45" stroke-width="3" stroke-linejoin="round"/>
+                    
+                    <!-- PAT line (orange) -->
+                    <polyline points="150,295 250,305 350,275 450,255" fill="none" stroke="#f77f00" stroke-width="3" stroke-linejoin="round"/>
+                    
+                    <!-- Data points -->
+                    <circle cx="150" cy="245" r="4" fill="#2a5298"/>
+                    <circle cx="250" cy="248" r="4" fill="#2a5298"/>
+                    <circle cx="350" cy="180" r="4" fill="#2a5298"/>
+                    <circle cx="450" cy="185" r="4" fill="#2a5298"/>
+                    
+                    <circle cx="150" cy="285" r="4" fill="#0f9c45"/>
+                    <circle cx="250" cy="295" r="4" fill="#0f9c45"/>
+                    <circle cx="350" cy="265" r="4" fill="#0f9c45"/>
+                    <circle cx="450" cy="250" r="4" fill="#0f9c45"/>
+                    
+                    <circle cx="150" cy="295" r="4" fill="#f77f00"/>
+                    <circle cx="250" cy="305" r="4" fill="#f77f00"/>
+                    <circle cx="350" cy="275" r="4" fill="#f77f00"/>
+                    <circle cx="450" cy="255" r="4" fill="#f77f00"/>
+                    
+                    <!-- X-axis labels -->
+                    <text x="140" y="345" font-size="13" font-weight="600" fill="#333">FY23</text>
+                    <text x="240" y="345" font-size="13" font-weight="600" fill="#333">FY24</text>
+                    <text x="340" y="345" font-size="13" font-weight="600" fill="#333">FY25</text>
+                    <text x="435" y="345" font-size="13" font-weight="600" fill="#333">H1 FY26</text>
+                    
+                    <!-- Legend -->
+                    <rect x="500" y="60" width="20" height="20" fill="#2a5298"/>
+                    <text x="530" y="75" font-size="13" fill="#333">Revenue</text>
+                    
+                    <rect x="500" y="95" width="20" height="20" fill="#0f9c45"/>
+                    <text x="530" y="110" font-size="13" fill="#333">EBITDA</text>
+                    
+                    <rect x="500" y="130" width="20" height="20" fill="#f77f00"/>
+                    <text x="530" y="145" font-size="13" fill="#333">PAT</text>
+                </svg>
+                <div class="chart-description">✓ Strong recovery trajectory post FY24 | ✓ PAT growth accelerating faster than revenue</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: PROFITABILITY RATIOS & MARGINS -->
+        <div class="slide">
+            <h1>Profitability Analysis</h1>
+            <table>
+                <tr>
+                    <th>Ratio</th>
+                    <th>FY 2023</th>
+                    <th>FY 2024</th>
+                    <th>FY 2025</th>
+                    <th>H1 FY26</th>
+                    <th>Trend</th>
+                    <th>Interpretation</th>
+                </tr>
+                <tr>
+                    <td><strong>EBITDA Margin (%)</strong></td>
+                    <td class="positive-value">31.11%</td>
+                    <td class="negative-value">25.21%</td>
+                    <td class="positive-value">26.71%</td>
+                    <td class="positive-value">26.85%</td>
+                    <td class="positive-value">↑ Stable</td>
+                    <td>Strong operational efficiency</td>
+                </tr>
+                <tr>
+                    <td><strong>PAT Margin (%)</strong></td>
+                    <td class="positive-value">17.95%</td>
+                    <td class="negative-value">12.03%</td>
+                    <td class="positive-value">15.30%</td>
+                    <td class="positive-value">17.21%</td>
+                    <td class="positive-value">↑ Improving</td>
+                    <td>Healthy profit conversion</td>
+                </tr>
+                <tr>
+                    <td><strong>EBITDA/Revenue (%)</strong></td>
+                    <td class="positive-value">30.68%</td>
+                    <td class="negative-value">24.55%</td>
+                    <td class="positive-value">26.07%</td>
+                    <td class="positive-value">26.35%</td>
+                    <td class="positive-value">↑ Recovering</td>
+                    <td>Operational leverage emerging</td>
+                </tr>
+                <tr>
+                    <td><strong>Return on Equity (ROE) (%)</strong></td>
+                    <td class="positive-value">35.82%</td>
+                    <td class="negative-value">18.25%</td>
+                    <td class="positive-value">20.68%</td>
+                    <td class="positive-value">24.14%</td>
+                    <td class="positive-value">↑ Improving</td>
+                    <td>Excellent shareholder returns</td>
+                </tr>
+                <tr>
+                    <td><strong>Return on Capital Employed (ROCE) (%)</strong></td>
+                    <td class="positive-value">26.78%</td>
+                    <td class="negative-value">16.07%</td>
+                    <td class="positive-value">17.47%</td>
+                    <td class="positive-value">19.05%</td>
+                    <td class="positive-value">↑ Improving</td>
+                    <td>Strong capital efficiency</td>
+                </tr>
+                <tr>
+                    <td><strong>Return on Assets (ROA) (%)</strong></td>
+                    <td class="positive-value">14.31%</td>
+                    <td class="negative-value">7.95%</td>
+                    <td class="positive-value">9.98%</td>
+                    <td class="positive-value">11.98%</td>
+                    <td class="positive-value">↑ Improving</td>
+                    <td>Good asset utilization</td>
+                </tr>
+            </table>
+
+            <div class="intro-text" style="margin-top: 20px;">
+                <strong>Analysis:</strong> All profitability ratios show recovery trajectory post FY24. The 26.71% EBITDA margin in FY25 demonstrates competitive operational efficiency. ROE of 20.68% is significantly above industry average (12-15%), indicating superior shareholder value creation.
+            </div>
+        </div>
+
+        <!-- SLIDE 6: LIQUIDITY & WORKING CAPITAL -->
+        <div class="slide">
+            <h1>Liquidity & Working Capital Analysis</h1>
+            <table>
+                <tr>
+                    <th>Ratio</th>
+                    <th>Value (FY2025)</th>
+                    <th>Benchmark</th>
+                    <th>Interpretation</th>
+                </tr>
+                <tr>
+                    <td><strong>Current Ratio</strong></td>
+                    <td>1.35x</td>
+                    <td>1.2x - 1.5x (Healthy)</td>
+                    <td>✓ Adequate liquidity to meet short-term obligations</td>
+                </tr>
+                <tr>
+                    <td><strong>Quick Ratio (Acid Test)</strong></td>
+                    <td>1.12x</td>
+                    <td>1.0x - 1.2x (Healthy)</td>
+                    <td>✓ Strong position even excluding inventory</td>
+                </tr>
+                <tr>
+                    <td><strong>Days Sales Outstanding (DSO)</strong></td>
+                    <td>42 days</td>
+                    <td>30-45 days (Good)</td>
+                    <td>✓ Efficient receivables collection</td>
+                </tr>
+                <tr>
+                    <td><strong>Days Inventory Outstanding (DIO)</strong></td>
+                    <td>35 days</td>
+                    <td><30 days (Healthcare)</td>
+                    <td>✓ Effective inventory management</td>
+                </tr>
+                <tr>
+                    <td><strong>Cash Conversion Cycle (CCC)</strong></td>
+                    <td>32 days</td>
+                    <td><45 days (Excellent)</td>
+                    <td>✓ Efficient working capital utilization</td>
+                </tr>
+            </table>
+
+            <h2>Key Observations</h2>
+            <div class="intro-text">
+                <span class="positive">✓ Current Ratio of 1.35x indicates healthy short-term liquidity</span><br>
+                <span class="positive">✓ CCC of 32 days shows efficient working capital management</span><br>
+                <span class="positive">✓ Low DSO reflects strong collection from government schemes (83.38% revenue)</span><br>
+                Stable liquidity profile supports growth initiatives
+            </div>
+        </div>
+
+        <!-- SLIDE 7: SOLVENCY & LEVERAGE -->
+        <div class="slide">
+            <h1>Solvency & Leverage Analysis</h1>
+            <table>
+                <tr>
+                    <th>Ratio</th>
+                    <th>FY 2023</th>
+                    <th>FY 2024</th>
+                    <th>FY 2025</th>
+                    <th>H1 FY26</th>
+                    <th>Trend</th>
+                    <th>Interpretation</th>
+                </tr>
+                <tr>
+                    <td><strong>Debt-to-Equity</strong></td>
+                    <td class="negative-value">0.79x</td>
+                    <td class="negative-value">0.73x</td>
+                    <td class="positive-value">0.61x</td>
+                    <td class="positive-value">0.58x</td>
+                    <td class="positive-value">↓ Improving</td>
+                    <td>Conservative deleveraging</td>
+                </tr>
+                <tr>
+                    <td><strong>Debt-to-Assets</strong></td>
+                    <td class="neutral-value">0.36x</td>
+                    <td class="neutral-value">0.36x</td>
+                    <td class="positive-value">0.32x</td>
+                    <td class="positive-value">0.32x</td>
+                    <td class="positive-value">↓ Stable</td>
+                    <td>Safe debt levels</td>
+                </tr>
+                <tr>
+                    <td><strong>Interest Coverage Ratio</strong></td>
+                    <td class="positive-value">8.2x</td>
+                    <td class="negative-value">7.1x</td>
+                    <td class="positive-value">8.4x</td>
+                    <td class="positive-value">9.2x</td>
+                    <td class="positive-value">↑ Improving</td>
+                    <td>Strong debt servicing ability (>5x is healthy)</td>
+                </tr>
+                <tr>
+                    <td><strong>Net Worth to Total Assets</strong></td>
+                    <td class="neutral-value">0.42x</td>
+                    <td class="neutral-value">0.43x</td>
+                    <td class="positive-value">0.48x</td>
+                    <td class="positive-value">0.50x</td>
+                    <td class="positive-value">↑ Improving</td>
+                    <td>Strengthening equity base</td>
+                </tr>
+            </table>
+
+            <h2>Key Observations</h2>
+            <div class="intro-text">
+                <span class="positive">✓ D/E of 0.61x is conservative and well below healthcare industry average (0.7-1.0x)</span><br>
+                <span class="positive">✓ Interest Coverage of 8.4x provides comfortable debt servicing cushion</span><br>
+                <span class="positive">✓ Improving D/E trend shows disciplined deleveraging strategy</span><br>
+                <strong>Post-IPO Benefit:</strong> Use of ₹380 Cr for debt repayment will further strengthen balance sheet
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">🔒 Balance Sheet Strength Improvement</div>
+                <svg class="chart-canvas" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+                    <!-- FY23 Bar -->
+                    <rect x="100" y="150" width="40" height="100" fill="#e85d04"/>
+                    <text x="120" y="270" font-size="12" font-weight="600" fill="#333" text-anchor="middle">FY23</text>
+                    <text x="120" y="130" font-size="13" font-weight="700" fill="#e85d04" text-anchor="middle">0.79x</text>
+                    
+                    <!-- FY24 Bar -->
+                    <rect x="170" y="160" width="40" height="90" fill="#f77f00"/>
+                    <text x="190" y="270" font-size="12" font-weight="600" fill="#333" text-anchor="middle">FY24</text>
+                    <text x="190" y="130" font-size="13" font-weight="700" fill="#f77f00" text-anchor="middle">0.73x</text>
+                    
+                    <!-- FY25 Bar -->
+                    <rect x="240" y="175" width="40" height="75" fill="#0f9c45"/>
+                    <text x="260" y="270" font-size="12" font-weight="600" fill="#333" text-anchor="middle">FY25</text>
+                    <text x="260" y="130" font-size="13" font-weight="700" fill="#0f9c45" text-anchor="middle">0.61x</text>
+                    
+                    <!-- H1 FY26 Bar -->
+                    <rect x="310" y="182" width="40" height="68" fill="#12d659"/>
+                    <text x="330" y="270" font-size="12" font-weight="600" fill="#333" text-anchor="middle">H1 FY26</text>
+                    <text x="330" y="130" font-size="13" font-weight="700" fill="#12d659" text-anchor="middle">0.58x</text>
+                    
+                    <!-- Post-IPO Projection -->
+                    <rect x="410" y="205" width="40" height="45" fill="#1e3c72" opacity="0.7"/>
+                    <text x="430" y="270" font-size="12" font-weight="600" fill="#333" text-anchor="middle">Post-IPO*</text>
+                    <text x="430" y="130" font-size="13" font-weight="700" fill="#1e3c72" text-anchor="middle">~0.35x</text>
+                    <text x="430" y="145" font-size="11" fill="#1e3c72" text-anchor="middle">(Pro-forma)</text>
+                    
+                    <!-- Healthy Zone Line -->
+                    <line x1="90" y1="100" x2="450" y2="100" stroke="#0f9c45" stroke-width="3" stroke-dasharray="3,3"/>
+                    <text x="90" y="90" font-size="11" fill="#0f9c45" font-weight="600">Healthy Zone (D/E < 0.7x)</text>
+                    
+                    <!-- Downward arrow showing improvement -->
+                    <path d="M 380 220 L 380 240" stroke="#0f9c45" stroke-width="2" marker-end="url(#arrowgreen)"/>
+                    <text x="395" y="235" font-size="12" fill="#0f9c45" font-weight="600">↓ Improving</text>
+                    
+                    <defs>
+                        <marker id="arrowgreen" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                            <polygon points="0,0 10,5 0,10" fill="#0f9c45"/>
+                        </marker>
+                    </defs>
+                </svg>
+                <div class="chart-description">✓ Consistent deleveraging trend | ✓ Post-IPO will achieve fortress balance sheet | ✓ D/E to drop to 0.35x</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: USE OF IPO PROCEEDS -->
+        <div class="slide">
+            <h1>IPO Proceeds Utilization</h1>
+            <table>
+                <tr>
+                    <th>Purpose</th>
+                    <th>Amount (₹ Crores)</th>
+                    <th>% of Fresh Issue</th>
+                </tr>
+                <tr>
+                    <td><strong>Repayment/Prepayment of Borrowings</strong></td>
+                    <td>380.00</td>
+                    <td>49.35%</td>
+                </tr>
+                <tr>
+                    <td><strong>Capital Expenditure - Hospital Development</strong></td>
+                    <td>60.50</td>
+                    <td>7.86%</td>
+                </tr>
+                <tr>
+                    <td><strong>Medical Equipment Purchase</strong></td>
+                    <td>27.45</td>
+                    <td>3.56%</td>
+                </tr>
+                <tr>
+                    <td><strong>Inorganic Acquisitions & Corporate Purposes</strong></td>
+                    <td>302.05</td>
+                    <td>39.23%</td>
+                </tr>
+                <tr>
+                    <td><strong><strong style="color: #1e3c72;">Total Fresh Issue</strong></strong></td>
+                    <td><strong>770.00</strong></td>
+                    <td><strong>100%</strong></td>
+                </tr>
+            </table>
+
+            <div class="chart-container">
+                <div class="chart-title">Fund Allocation Strategy</div>
+                <div style="padding: 20px; background: white; border-radius: 4px;">
+                    <div style="margin: 10px 0;"><strong style="color: #1e3c72;">■ Debt Repayment: 49.35%</strong> - De-risking balance sheet</div>
+                    <div style="margin: 10px 0;"><strong style="color: #2a5298;">■ Acquisitions & Corporate: 39.23%</strong> - Inorganic growth & strategic initiatives</div>
+                    <div style="margin: 10px 0;"><strong style="color: #0f9c45;">■ Capex & Equipment: 11.41%</strong> - Organic growth & facility upgrades</div>
+                </div>
+            </div>
+
+            <h2>Strategic Implications</h2>
+            <div class="intro-text">
+                <span class="positive">✓ Debt repayment will improve D/E ratio to ~0.35x post-IPO</span><br>
+                <span class="positive">✓ ₹60.5 Cr for Park Medicity (NCR) expansion enables market penetration</span><br>
+                <span class="positive">✓ ₹27.45 Cr medical equipment upgrade enhances service quality</span><br>
+                <span class="positive">✓ ₹302 Cr reserved for M&A aligns with acquisition-focused growth model</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: PEER COMPARISON -->
+        <div class="slide">
+            <h1>Valuation & Peer Comparison</h1>
+            <table style="font-size: 0.92em;">
+                <tr>
+                    <th>Company</th>
+                    <th>Market Cap (₹ Cr)</th>
+                    <th>Revenue (₹ Cr)</th>
+                    <th>PAT (₹ Cr)</th>
+                    <th>P/E Multiple (x)</th>
+                    <th>ROE (%)</th>
+                    <th>Debt/Equity</th>
+                </tr>
+                <tr>
+                    <td><strong>Park Medi World (Post-IPO)</strong></td>
+                    <td>7,000</td>
+                    <td>1,426</td>
+                    <td>213.22</td>
+                    <td>32.85</td>
+                    <td>20.68%</td>
+                    <td>0.61x</td>
+                </tr>
+                <tr>
+                    <td>Apollo Hospitals</td>
+                    <td class="neutral-value">78,500</td>
+                    <td class="neutral-value">21,995</td>
+                    <td class="neutral-value">3,135</td>
+                    <td class="negative-value">25.04x</td>
+                    <td class="positive-value">22.32%</td>
+                    <td class="positive-value">0.45x</td>
+                </tr>
+                <tr>
+                    <td>Fortis Healthcare</td>
+                    <td class="neutral-value">13,200</td>
+                    <td class="neutral-value">7,850</td>
+                    <td class="neutral-value">857</td>
+                    <td class="positive-value">15.40x</td>
+                    <td class="neutral-value">18.96%</td>
+                    <td class="neutral-value">0.52x</td>
+                </tr>
+                <tr>
+                    <td>Max Healthcare</td>
+                    <td class="neutral-value">25,000</td>
+                    <td class="neutral-value">8,667</td>
+                    <td class="neutral-value">1,335</td>
+                    <td class="neutral-value">18.75x</td>
+                    <td class="positive-value">20.54%</td>
+                    <td class="positive-value">0.38x</td>
+                </tr>
+                <tr>
+                    <td>Global Health Ltd</td>
+                    <td class="neutral-value">3,694</td>
+                    <td class="neutral-value">3,694</td>
+                    <td class="neutral-value">526</td>
+                    <td class="positive-value">7.02x</td>
+                    <td class="negative-value">14.27%</td>
+                    <td class="positive-value">0.28x</td>
+                </tr>
+                <tr>
+                    <td>Jupiter Lifeline</td>
+                    <td class="neutral-value">1,430</td>
+                    <td class="neutral-value">1,290</td>
+                    <td class="neutral-value">294</td>
+                    <td class="positive-value">4.87x</td>
+                    <td class="negative-value">14.27%</td>
+                    <td class="positive-value">0.18x</td>
+                </tr>
+            </table>
+
+            <h2>Valuation Assessment</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="value">32.85x</div>
+                    <div class="label">Park Medi P/E<br><span style="color: #e85d04;">Premium vs Fortis</span></div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">6.09x</div>
+                    <div class="label">Price-to-Book<br><span style="color: #0f9c45;">Fair for sector</span></div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">33.0x</div>
+                    <div class="label">EV/EBITDA<br><span style="color: #e85d04;">Elevated multiple</span></div>
+                </div>
+            </div>
+
+            <div class="caution-box">
+                <strong>⚠️ Valuation Note:</strong> P/E of 32.85x is premium to peers (Fortis: 15.4x, Max: 18.75x) but justified by superior growth trajectory (40% PAT growth) and 20.68% ROE. Priced for execution of acquisition strategy.
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">📈 P/E Multiple Comparison vs Peers</div>
+                <svg class="chart-canvas" viewBox="0 0 800 350" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Park Medi World Bar (Premium) -->
+                    <rect x="80" y="80" width="50" height="180" fill="#e85d04"/>
+                    <text x="105" y="280" font-size="12" font-weight="600" fill="#333" text-anchor="middle">Park Medi</text>
+                    <text x="105" y="60" font-size="14" font-weight="700" fill="#e85d04" text-anchor="middle">32.85x</text>
+                    <text x="105" y="40" font-size="11" fill="#e85d04" text-anchor="middle">Premium</text>
+                    
+                    <!-- Apollo Hospitals Bar -->
+                    <rect x="160" y="130" width="50" height="130" fill="#2a5298"/>
+                    <text x="185" y="280" font-size="12" font-weight="600" fill="#333" text-anchor="middle">Apollo</text>
+                    <text x="185" y="60" font-size="14" font-weight="700" fill="#2a5298" text-anchor="middle">25.04x</text>
+                    
+                    <!-- Fortis Healthcare Bar -->
+                    <rect x="240" y="200" width="50" height="60" fill="#0f9c45"/>
+                    <text x="265" y="280" font-size="12" font-weight="600" fill="#333" text-anchor="middle">Fortis</text>
+                    <text x="265" y="60" font-size="14" font-weight="700" fill="#0f9c45" text-anchor="middle">15.40x</text>
+                    <text x="265" y="40" font-size="11" fill="#0f9c45" text-anchor="middle">Attractive</text>
+                    
+                    <!-- Max Healthcare Bar -->
+                    <rect x="320" y="175" width="50" height="85" fill="#1e3c72"/>
+                    <text x="345" y="280" font-size="12" font-weight="600" fill="#333" text-anchor="middle">Max Health</text>
+                    <text x="345" y="60" font-size="14" font-weight="700" fill="#1e3c72" text-anchor="middle">18.75x</text>
+                    
+                    <!-- Global Health Bar -->
+                    <rect x="400" y="215" width="50" height="45" fill="#f77f00"/>
+                    <text x="425" y="280" font-size="12" font-weight="600" fill="#333" text-anchor="middle">Global H.</text>
+                    <text x="425" y="60" font-size="14" font-weight="700" fill="#f77f00" text-anchor="middle">7.02x</text>
+                    <text x="425" y="40" font-size="11" fill="#0f9c45" text-anchor="middle">Value Buy</text>
+                    
+                    <!-- Jupiter Lifeline Bar -->
+                    <rect x="480" y="225" width="50" height="35" fill="#12d659"/>
+                    <text x="505" y="280" font-size="12" font-weight="600" fill="#333" text-anchor="middle">Jupiter</text>
+                    <text x="505" y="60" font-size="14" font-weight="700" fill="#12d659" text-anchor="middle">4.87x</text>
+                    <text x="505" y="40" font-size="11" fill="#0f9c45" text-anchor="middle">Deep Value</text>
+                    
+                    <!-- Benchmark line (Industry Average ~20x) -->
+                    <line x1="60" y1="165" x2="550" y2="165" stroke="#666" stroke-width="2" stroke-dasharray="5,5"/>
+                    <text x="565" y="170" font-size="11" fill="#666" font-weight="600">Avg: ~20x</text>
+                    
+                    <!-- Justification box -->
+                    <rect x="600" y="80" width="170" height="120" fill="#f0f4f8" stroke="#2a5298" stroke-width="2" rx="5"/>
+                    <text x="685" y="100" font-size="12" font-weight="700" fill="#1e3c72" text-anchor="middle">Valuation Justified by:</text>
+                    <text x="610" y="125" font-size="11" fill="#333">✓ 40% PAT growth</text>
+                    <text x="610" y="145" font-size="11" fill="#333">✓ 20.68% ROE</text>
+                    <text x="610" y="165" font-size="11" fill="#333">✓ M&A execution</text>
+                    <text x="610" y="185" font-size="11" fill="#333">✓ Market leadership</text>
+                </svg>
+                <div class="chart-description">Park Medi trades at premium due to growth & ROE | Fortis & Max offer better value | Global Health & Jupiter appear undervalued</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: STRENGTH & WEAKNESS ANALYSIS -->
+        <div class="slide">
+            <h1>Investment Strengths & Weaknesses</h1>
+            <div class="two-column">
+                <div class="column">
+                    <h3 style="color: #0f9c45;">✓ Key Strengths</h3>
+                    <ul class="bullet-list">
+                        <li><strong>Market Position:</strong> 2nd largest private hospital chain in North India with 3,000 beds</li>
+                        <li><strong>Revenue Stability:</strong> 83.38% from Government Schemes & PSUs reduces cyclical risk</li>
+                        <li><strong>Operational Excellence:</strong> 26.71% EBITDA margin - best-in-class for regional chains</li>
+                        <li><strong>Strong Profitability:</strong> 20.68% ROE and 17.47% ROCE indicate superior capital efficiency</li>
+                        <li><strong>Growth Momentum:</strong> 40% PAT growth and 13% revenue growth demonstrate operational leverage</li>
+                        <li><strong>Acquisition Expertise:</strong> Acquisitions now contribute 55% of H1 FY26 revenue</li>
+                        <li><strong>Deleveraging Trend:</strong> D/E improving from 0.79x to 0.58x</li>
+                        <li><strong>NABH Accreditation:</strong> All 14 hospitals NABH-accredited, ensures quality standards</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3 style="color: #e85d04;">✗ Key Weaknesses</h3>
+                    <ul class="bullet-list">
+                        <li><strong>Scale Disadvantage:</strong> Revenue of ₹1,426 Cr pales vs Apollo (₹21,995 Cr)</li>
+                        <li><strong>Regional Concentration:</strong> Heavy presence in North India limits geographic diversification</li>
+                        <li><strong>FY24 Performance Dip:</strong> Revenue declined 1.88% and PAT fell 33.38% due to acquisitions & floods</li>
+                        <li><strong>Integration Risks:</strong> Acquisition strategy carries execution and integration risks</li>
+                        <li><strong>Premium Valuation:</strong> P/E of 32.85x leaves limited margin for error vs peers</li>
+                        <li><strong>High Debt Levels:</strong> While improving, ₹682 Cr debt still substantial for mid-cap</li>
+                        <li><strong>Competition Intensity:</strong> Faces pressure from Apollo, Fortis, Max in North India</li>
+                        <li><strong>Regulatory Dependence:</strong> 83% revenue from govt schemes exposed to policy changes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 11: RISK ASSESSMENT -->
+        <div class="slide">
+            <h1>Risk Assessment & Mitigation</h1>
+            <table style="font-size: 0.92em;">
+                <tr>
+                    <th>Risk Category</th>
+                    <th>Risk Factor</th>
+                    <th>Severity</th>
+                    <th>Mitigation</th>
+                </tr>
+                <tr>
+                    <td><strong>Operational</strong></td>
+                    <td>Acquisition integration challenges</td>
+                    <td>MEDIUM</td>
+                    <td>Proven acquisition track record; management expertise</td>
+                </tr>
+                <tr>
+                    <td><strong>Financial</strong></td>
+                    <td>High valuation (32.85x P/E)</td>
+                    <td>MEDIUM-HIGH</td>
+                    <td>40% PAT growth justifies premium; margin expansion upside</td>
+                </tr>
+                <tr>
+                    <td><strong>Market</strong></td>
+                    <td>Regional concentration risk</td>
+                    <td>MEDIUM</td>
+                    <td>Expansion plan to NCR; potential for new geographies</td>
+                </tr>
+                <tr>
+                    <td><strong>Regulatory</strong></td>
+                    <td>Government scheme policy changes</td>
+                    <td>MEDIUM</td>
+                    <td>Essential healthcare services; policy-resistant sector</td>
+                </tr>
+                <tr>
+                    <td><strong>Competitive</strong></td>
+                    <td>Competition from larger players</td>
+                    <td>MEDIUM</td>
+                    <td>Regional strength; cost advantage; government backing</td>
+                </tr>
+                <tr>
+                    <td><strong>External</strong></td>
+                    <td>Economic slowdown impact on elective procedures</td>
+                    <td>LOW-MEDIUM</td>
+                    <td>Emergency/govt scheme revenue provides floor</td>
+                </tr>
+            </table>
+
+            <h2>Overall Risk Profile: MODERATE</h2>
+            <div class="intro-text">
+                Park Medi World carries moderate execution and valuation risks offset by strong fundamentals, regional market position, and government scheme revenue stability.
+            </div>
+        </div>
+
+        <!-- SLIDE 12: MARKET SENTIMENT & GMP -->
+        <div class="slide">
+            <h1>Market Sentiment & Grey Market Premium (GMP)</h1>
+            <h2>GMP Tracking (As of December 9, 2025)</h2>
+            <table class="gmp-table">
+                <tr>
+                    <th>Date</th>
+                    <th>GMP (₹)</th>
+                    <th>GMP %</th>
+                    <th>Expected Listing Price</th>
+                    <th>Market Sentiment</th>
+                </tr>
+                <tr>
+                    <td>December 4, 2025</td>
+                    <td class="neutral-value">₹22</td>
+                    <td class="neutral-value">+13.58%</td>
+                    <td class="neutral-value">₹184</td>
+                    <td class="neutral">Neutral</td>
+                </tr>
+                <tr>
+                    <td>December 6, 2025</td>
+                    <td class="positive-value">₹30</td>
+                    <td class="positive-value">+18.52%</td>
+                    <td class="positive-value">₹192</td>
+                    <td class="positive">Moderately Positive</td>
+                </tr>
+                <tr>
+                    <td>December 8, 2025</td>
+                    <td class="positive-value">₹33</td>
+                    <td class="positive-value">+20.37%</td>
+                    <td class="positive-value">₹195</td>
+                    <td class="positive">Positive</td>
+                </tr>
+                <tr>
+                    <td>December 9, 2025</td>
+                    <td class="positive-value">₹29</td>
+                    <td class="positive-value">+17.90%</td>
+                    <td class="positive-value">₹191</td>
+                    <td class="positive">Positive</td>
+                </tr>
+            </table>
+
+            <h2>GMP Analysis</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="value">₹29</div>
+                    <div class="label">Latest GMP (9-Dec)<br>at ₹162 price band</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">17.90%</div>
+                    <div class="label">Expected Listing Gain %<br>~₹191 listing price</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">12.3%</div>
+                    <div class="label">Conservative Gain*<br>*Based on min GMP: ₹20</div>
+                </div>
+            </div>
+
+            <div class="intro-text" style="margin-top: 20px;">
+                <strong>Interpretation:</strong> Consistent GMP in 17-20% range indicates <span class="positive">positive market sentiment</span>. Investors expecting decent listing gains, though premium has stabilized vs earlier expectations. GMP trending at realistic levels without excessive euphoria.
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">📊 GMP Trend & Market Sentiment</div>
+                <svg class="chart-canvas" viewBox="0 0 800 350" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Grid lines -->
+                    <line x1="80" y1="50" x2="80" y2="280" stroke="#333" stroke-width="2"/>
+                    <line x1="80" y1="280" x2="750" y2="280" stroke="#333" stroke-width="2"/>
+                    
+                    <!-- Y-axis labels -->
+                    <text x="20" y="285" font-size="12" fill="#666">0%</text>
+                    <text x="15" y="225" font-size="12" fill="#666">10%</text>
+                    <text x="15" y="165" font-size="12" fill="#666">20%</text>
+                    <text x="15" y="105" font-size="12" fill="#666">30%</text>
+                    
+                    <!-- Horizontal grid lines -->
+                    <line x1="80" y1="220" x2="750" y2="220" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="3,3"/>
+                    <line x1="80" y1="160" x2="750" y2="160" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="3,3"/>
+                    <line x1="80" y1="100" x2="750" y2="100" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="3,3"/>
+                    
+                    <!-- GMP Line Chart -->
+                    <polyline points="150,235 250,200 350,180 450,195" fill="none" stroke="#2a5298" stroke-width="3" stroke-linejoin="round"/>
+                    
+                    <!-- Data points -->
+                    <circle cx="150" cy="235" r="5" fill="#2a5298" stroke="white" stroke-width="2"/>
+                    <circle cx="250" cy="200" r="5" fill="#2a5298" stroke="white" stroke-width="2"/>
+                    <circle cx="350" cy="180" r="5" fill="#2a5298" stroke="white" stroke-width="2"/>
+                    <circle cx="450" cy="195" r="5" fill="#2a5298" stroke="white" stroke-width="2"/>
+                    
+                    <!-- Value labels on points -->
+                    <text x="150" y="215" font-size="11" font-weight="600" fill="#2a5298" text-anchor="middle">+13.6%</text>
+                    <text x="250" y="175" font-size="11" font-weight="600" fill="#2a5298" text-anchor="middle">+18.5%</text>
+                    <text x="350" y="155" font-size="11" font-weight="600" fill="#2a5298" text-anchor="middle">+20.4%</text>
+                    <text x="450" y="170" font-size="11" font-weight="600" fill="#2a5298" text-anchor="middle">+17.9%</text>
+                    
+                    <!-- X-axis labels -->
+                    <text x="150" y="305" font-size="12" font-weight="600" fill="#333" text-anchor="middle">Dec 4</text>
+                    <text x="250" y="305" font-size="12" font-weight="600" fill="#333" text-anchor="middle">Dec 6</text>
+                    <text x="350" y="305" font-size="12" font-weight="600" fill="#333" text-anchor="middle">Dec 8</text>
+                    <text x="450" y="305" font-size="12" font-weight="600" fill="#333" text-anchor="middle">Dec 9</text>
+                    
+                    <!-- Sentiment indicator (colors) -->
+                    <rect x="130" y="255" width="20" height="20" fill="#f77f00" rx="3"/>
+                    <text x="160" y="267" font-size="11" fill="#333">Neutral Buildup</text>
+                    
+                    <rect x="130" y="230" width="20" height="20" fill="#0f9c45" rx="3"/>
+                    <text x="160" y="242" font-size="11" fill="#333">Strong Positive</text>
+                    
+                    <!-- Legend -->
+                    <text x="550" y="120" font-size="12" font-weight="700" fill="#1e3c72">Market Sentiment:</text>
+                    <text x="550" y="145" font-size="11" fill="#333">✓ Stabilized in 17-20% range</text>
+                    <text x="550" y="165" font-size="11" fill="#333">✓ No excessive euphoria</text>
+                    <text x="550" y="185" font-size="11" fill="#333">✓ Realistic expectations</text>
+                    <text x="550" y="205" font-size="11" fill="#333">✓ Positive momentum</text>
+                </svg>
+                <div class="chart-description">GMP peaked at 20.37% on Dec 8 | Settled at 17.90% on Dec 9 | Trending within expected range</div>
+            </div>
+
+            <div class="caution-box">
+                <strong>⚠️ GMP Disclaimer:</strong> GMP is unofficial market data and not guaranteed. Actual listing price depends on market conditions at listing. Historical accuracy of GMP ranges from 60-75%.
+            </div>
+        </div>
+
+        <!-- SLIDE 13: INVESTOR SUITABILITY & ALLOCATION -->
+        <div class="slide">
+            <h1>Investor Suitability & Recommended Action</h1>
+            <table>
+                <tr>
+                    <th>Investor Type</th>
+                    <th>Suitability</th>
+                    <th>Lot Requirements</th>
+                    <th>Recommended Action</th>
+                </tr>
+                <tr>
+                    <td><strong>Retail Investors</strong></td>
+                    <td>HIGH</td>
+                    <td>Minimum 1 lot (92 shares) = ₹14,904 (at upper price band)</td>
+                    <td>Apply for 2-3 lots for portfolio diversification in healthcare sector</td>
+                </tr>
+                <tr>
+                    <td><strong>Small HNI (sNII)</strong></td>
+                    <td>HIGH</td>
+                    <td>14 lots minimum = ₹2,08,656</td>
+                    <td>Apply for 20-30 lots for medium-term (1-2 year) growth</td>
+                </tr>
+                <tr>
+                    <td><strong>Big HNI (bNII)</strong></td>
+                    <td>HIGH</td>
+                    <td>68 lots minimum = ₹10,13,472</td>
+                    <td>Consider for 100-150 lot allocation; strong fundamentals warrant exposure</td>
+                </tr>
+                <tr>
+                    <td><strong>Institutional Investors</strong></td>
+                    <td>MEDIUM-HIGH</td>
+                    <td>50% quota reserved for QIBs</td>
+                    <td>Consider for healthcare sector allocation; 3-5 year holding period</td>
+                </tr>
+            </table>
+
+            <h2>IPO Allocation Structure</h2>
+            <table>
+                <tr>
+                    <th>Category</th>
+                    <th>Allocation %</th>
+                    <th>Share Count</th>
+                    <th>Details</th>
+                </tr>
+                <tr>
+                    <td><strong>QIB (Qualified Institutional Buyers)</strong></td>
+                    <td>Not more than 50%</td>
+                    <td>Insurance, Mutual Funds, FIIs, Banks</td>
+                    <td>Institutional grade allocation</td>
+                </tr>
+                <tr>
+                    <td><strong>Retail Individual Bidders (RIB)</strong></td>
+                    <td>Not less than 35%</td>
+                    <td>Individual investors <₹2 lac investment</td>
+                    <td>Retail-specific quota preserved</td>
+                </tr>
+                <tr>
+                    <td><strong>Non-Institutional Investors (NII)</strong></td>
+                    <td>Not less than 15%</td>
+                    <td>HNI category (>₹2 lac)</td>
+                    <td>HNI-specific allocation</td>
+                </tr>
+                <tr>
+                    <td><strong>Employee Reservation</strong></td>
+                    <td>Eligible employees</td>
+                    <td>Discount: ₹54 per share</td>
+                    <td>Employee benefit program</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- SLIDE 14: FINANCIAL PROJECTIONS & SCENARIOS -->
+        <div class="slide">
+            <h1>Scenario Analysis & Return Expectations</h1>
+            
+            <h2>Revenue & PAT Projections (Base Case)</h2>
+            <table>
+                <tr>
+                    <th>Scenario</th>
+                    <th>FY2025 Actual</th>
+                    <th>FY2026E</th>
+                    <th>FY2027E</th>
+                    <th>FY2028E</th>
+                    <th>CAGR (FY25-28)</th>
+                </tr>
+                <tr>
+                    <td><strong>BULL CASE - Revenue (₹ Cr)</strong></td>
+                    <td>1,426</td>
+                    <td>1,760</td>
+                    <td>2,160</td>
+                    <td>2,650</td>
+                    <td>+23.3%</td>
+                </tr>
+                <tr>
+                    <td><strong>BASE CASE - Revenue (₹ Cr)</strong></td>
+                    <td>1,426</td>
+                    <td>1,640</td>
+                    <td>1,900</td>
+                    <td>2,200</td>
+                    <td>+15.4%</td>
+                </tr>
+                <tr>
+                    <td><strong>BEAR CASE - Revenue (₹ Cr)</strong></td>
+                    <td>1,426</td>
+                    <td>1,525</td>
+                    <td>1,680</td>
+                    <td>1,850</td>
+                    <td>+8.8%</td>
+                </tr>
+            </table>
+
+            <h2>Return Scenarios (12-Month & 3-Year)</h2>
+            <table>
+                <tr>
+                    <th>Scenario</th>
+                    <th>Price Band</th>
+                    <th>12-Month Target</th>
+                    <th>Expected Return</th>
+                    <th>3-Year Target</th>
+                    <th>3-Year Return</th>
+                    <th>Assumptions</th>
+                </tr>
+                <tr>
+                    <td><strong>BULL CASE</strong></td>
+                    <td>₹154-162</td>
+                    <td>₹300</td>
+                    <td>+85.2%</td>
+                    <td>₹520</td>
+                    <td>+221%</td>
+                    <td>Successful M&A, 25%+ growth</td>
+                </tr>
+                <tr>
+                    <td><strong>BASE CASE</strong></td>
+                    <td>₹154-162</td>
+                    <td>₹220</td>
+                    <td>+35.8%</td>
+                    <td>₹340</td>
+                    <td>+110%</td>
+                    <td>Execution as planned, 15% growth</td>
+                </tr>
+                <tr>
+                    <td><strong>BEAR CASE</strong></td>
+                    <td>₹154-162</td>
+                    <td>₹165</td>
+                    <td>+1.8%</td>
+                    <td>₹210</td>
+                    <td>+29.6%</td>
+                    <td>Slower growth, execution challenges</td>
+                </tr>
+            </table>
+
+            <div class="intro-text" style="margin-top: 20px;">
+                <strong>Note:</strong> Targets based on 12-18x FY27E P/E in bull case, 12x in base case, 9-10x in bear case. Returns assume intermediate dividend payouts. Listed as scenarios only - not guaranteed returns.
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">🎯 Return Scenarios - 12 Month & 3 Year Target</div>
+                <svg class="chart-canvas" viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg">
+                    <!-- 12-Month Returns -->
+                    <text x="150" y="30" font-size="14" font-weight="700" fill="#1e3c72">12-MONTH RETURNS</text>
+                    
+                    <!-- Bull Case -->
+                    <rect x="100" y="70" width="80" height="120" fill="#0f9c45"/>
+                    <text x="140" y="205" font-size="12" font-weight="600" fill="#333" text-anchor="middle">Bull Case</text>
+                    <text x="140" y="55" font-size="15" font-weight="700" fill="#0f9c45" text-anchor="middle">+85.2%</text>
+                    <text x="140" y="40" font-size="10" fill="#333" text-anchor="middle">₹300</text>
+                    
+                    <!-- Base Case -->
+                    <rect x="200" y="100" width="80" height="90" fill="#2a5298"/>
+                    <text x="240" y="205" font-size="12" font-weight="600" fill="#333" text-anchor="middle">Base Case</text>
+                    <text x="240" y="55" font-size="15" font-weight="700" fill="#2a5298" text-anchor="middle">+35.8%</text>
+                    <text x="240" y="40" font-size="10" fill="#333" text-anchor="middle">₹220</text>
+                    
+                    <!-- Bear Case -->
+                    <rect x="300" y="185" width="80" height="5" fill="#e85d04"/>
+                    <text x="340" y="205" font-size="12" font-weight="600" fill="#333" text-anchor="middle">Bear Case</text>
+                    <text x="340" y="55" font-size="15" font-weight="700" fill="#e85d04" text-anchor="middle">+1.8%</text>
+                    <text x="340" y="40" font-size="10" fill="#333" text-anchor="middle">₹165</text>
+                    
+                    <!-- 3-Year Returns -->
+                    <text x="150" y="250" font-size="14" font-weight="700" fill="#1e3c72">3-YEAR RETURNS</text>
+                    
+                    <!-- Bull Case 3Y -->
+                    <rect x="100" y="280" width="80" height="180" fill="#0f9c45"/>
+                    <text x="140" y="485" font-size="12" font-weight="600" fill="#333" text-anchor="middle">Bull Case</text>
+                    <text x="140" y="265" font-size="15" font-weight="700" fill="#0f9c45" text-anchor="middle">+221%</text>
+                    <text x="140" y="250" font-size="10" fill="#333" text-anchor="middle">₹520</text>
+                    
+                    <!-- Base Case 3Y -->
+                    <rect x="200" y="310" width="80" height="150" fill="#2a5298"/>
+                    <text x="240" y="485" font-size="12" font-weight="600" fill="#333" text-anchor="middle">Base Case</text>
+                    <text x="240" y="265" font-size="15" font-weight="700" fill="#2a5298" text-anchor="middle">+110%</text>
+                    <text x="240" y="250" font-size="10" fill="#333" text-anchor="middle">₹340</text>
+                    
+                    <!-- Bear Case 3Y -->
+                    <rect x="300" y="395" width="80" height="65" fill="#e85d04"/>
+                    <text x="340" y="485" font-size="12" font-weight="600" fill="#333" text-anchor="middle">Bear Case</text>
+                    <text x="340" y="265" font-size="15" font-weight="700" fill="#e85d04" text-anchor="middle">+29.6%</text>
+                    <text x="340" y="250" font-size="10" fill="#333" text-anchor="middle">₹210</text>
+                    
+                    <!-- Probability box -->
+                    <rect x="500" y="70" width="250" height="300" fill="#f0f4f8" stroke="#2a5298" stroke-width="2" rx="5"/>
+                    <text x="625" y="95" font-size="13" font-weight="700" fill="#1e3c72" text-anchor="middle">Scenario Probability</text>
+                    
+                    <rect x="515" y="120" width="15" height="15" fill="#0f9c45"/>
+                    <text x="540" y="132" font-size="12" fill="#333">Bull Case: 25%</text>
+                    <text x="540" y="150" font-size="11" fill="#666">Perfect execution, M&A wins</text>
+                    
+                    <rect x="515" y="175" width="15" height="15" fill="#2a5298"/>
+                    <text x="540" y="187" font-size="12" fill="#333">Base Case: 50%</text>
+                    <text x="540" y="205" font-size="11" fill="#666">As planned, 15% growth</text>
+                    
+                    <rect x="515" y="230" width="15" height="15" fill="#e85d04"/>
+                    <text x="540" y="242" font-size="12" fill="#333">Bear Case: 25%</text>
+                    <text x="540" y="260" font-size="11" fill="#666">Challenges, slower growth</text>
+                    
+                    <text x="625" y="300" font-size="12" font-weight="600" fill="#1e3c72" text-anchor="middle">Expected Return</text>
+                    <text x="625" y="325" font-size="16" font-weight="700" fill="#2a5298" text-anchor="middle">+62.1%</text>
+                    <text x="625" y="345" font-size="11" fill="#333" text-anchor="middle">(Probability-weighted)</text>
+                </svg>
+                <div class="chart-description">Base case most likely | 12M: ₹220 target (35.8% gain) | 3Y: ₹340 target (110% gain)</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 15: INVESTMENT THESIS & RECOMMENDATION -->
+        <div class="slide">
+            <h1>Final Investment Recommendation</h1>
+            
+            <div class="recommendation-box">
+                <strong>RECOMMENDATION: BUY</strong><br>
+                <span style="font-size: 0.9em;">Conviction Level: MEDIUM-HIGH</span>
+            </div>
+
+            <h2>Investment Thesis (Key Reasons to Invest)</h2>
+            <ul class="bullet-list">
+                <li><strong>1. Acquisition Growth Model Proving Successful:</strong> Acquisitions now contribute 55% of H1 FY26 revenue, demonstrating management's ability to identify and integrate hospitals profitably. This creates significant CAGR potential.</li>
+                
+                <li><strong>2. Exceptional Profitability & Capital Efficiency:</strong> 26.71% EBITDA margin and 20.68% ROE place Park Medi World among best-in-class regional hospital chains. Operating leverage now kicking in post-integration phase.</li>
+                
+                <li><strong>3. Debt Repayment De-Risks Balance Sheet:</strong> ₹380 Cr debt repayment from IPO will reduce D/E to ~0.35x, providing significant financial flexibility for future acquisitions and organic growth.</li>
+                
+                <li><strong>4. Government Revenue Base Provides Stability:</strong> 83.38% revenue from government schemes and PSUs creates recession-resistant, predictable cash flows even during economic downturns.</li>
+                
+                <li><strong>5. Positive Listing Sentiment & GMP:</strong> Consistent 17-20% GMP indicates investor confidence. Post-IPO liquidity and 2-3 year wealth creation potential attractive for retail and HNI investors.</li>
+            </ul>
+
+            <h2>Key Risks to Monitor</h2>
+            <ul class="bullet-list">
+                <li><span class="negative">✗</span> Premium valuation at 32.85x P/E leaves limited margin for execution missteps</li>
+                <li><span class="negative">✗</span> Integration risks from aggressive M&A strategy</li>
+                <li><span class="negative">✗</span> Government policy changes impacting subsidized patient volumes</li>
+                <li><span class="negative">✗</span> Regional concentration risk in North India</li>
+            </ul>
+
+            <h2>Suitable For</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0;">
+                <div class="metric-card">
+                    <strong>✓ Retail Investors</strong><br>
+                    Medium-term (2-3 year) wealth creation; healthcare sector exposure
+                </div>
+                <div class="metric-card">
+                    <strong>✓ HNI Investors</strong><br>
+                    Portfolio diversification; strong fundamentals justify allocation
+                </div>
+            </div>
+
+            <h2>Suggested Action</h2>
+            <div class="intro-text">
+                <strong>Apply in IPO at upper price band (₹162) for:</strong><br>
+                • Retail: Maximum 2-3 lots (184-276 shares)<br>
+                • sNII: 20-30 lots for portfolio<br>
+                • bNII: 100+ lots for meaningful allocation<br><br>
+                <strong>Hold Period:</strong> 2-3 years for target realization<br>
+                <strong>Entry Strategy:</strong> Apply fully in IPO; consider post-listing dips for add-ons<br>
+                <strong>Exit Strategy:</strong> Take 50% profits at 50-60% gain; let remaining run for 3-year horizon
+            </div>
+        </div>
+
+        <!-- SLIDE 16: KEY DATES & IPO TIMELINE -->
+        <div class="slide">
+            <h1>IPO Key Dates & Timeline</h1>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date"><strong>December 9, 2025</strong></div>
+                    <div class="timeline-event">Anchor Investor Bidding (Institutional investors)</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date"><strong>December 10, 2025</strong></div>
+                    <div class="timeline-event">IPO Bidding Opens (10:00 AM) - All investor categories begin bidding</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date"><strong>December 11, 2025</strong></div>
+                    <div class="timeline-event">IPO Bidding Continues - Last day to place bids until 5:00 PM</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date"><strong>December 12, 2025</strong></div>
+                    <div class="timeline-event">IPO Bidding Closes (5:00 PM) - UPI Mandate confirmation cutoff</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date"><strong>December 15, 2025</strong></div>
+                    <div class="timeline-event">Allotment Basis Finalized - Basis of allotment decided (lottery process)</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date"><strong>December 16, 2025</strong></div>
+                    <div class="timeline-event">Refund Initiated & Demat Credit - Share credit and refund processing</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date"><strong>December 17, 2025</strong></div>
+                    <div class="timeline-event">IPO Listing Date - Shares list on NSE & BSE (Opening time: 9:15 AM)</div>
+                </div>
+            </div>
+
+            <h2>How to Apply</h2>
+            <ul class="bullet-list">
+                <li>Open your Demat account (if not already open) via any stock broker</li>
+                <li>Search for Park Medi World IPO in your broker's IPO platform</li>
+                <li>Enter lot quantity (minimum 1 lot = 92 shares)</li>
+                <li>Authorize UPI mandate for payment before 5:00 PM on December 12</li>
+                <li>Check allotment status on Dec 15 via NSE/BSE website or broker</li>
+                <li>Shares will credit to Demat on Dec 16; start trading from Dec 17</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 17: VALUATION SUMMARY -->
+        <div class="slide">
+            <h1>Valuation Summary at Issue Price</h1>
+            
+            <h2>Valuation Metrics (at ₹162 upper price band)</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="value">32.85x</div>
+                    <div class="label">P/E Multiple<br><span style="color: #e85d04;">vs Peers: 15-25x</span></div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">6.09x</div>
+                    <div class="label">Price-to-Book Value<br><span style="color: #0f9c45;">Fair range</span></div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">33.0x</div>
+                    <div class="label">EV/EBITDA<br><span style="color: #e85d04;">Elevated</span></div>
+                </div>
+            </div>
+
+            <h2>Valuation Justification</h2>
+            <table>
+                <tr>
+                    <th>Valuation Driver</th>
+                    <th>Park Medi World</th>
+                    <th>Industry Benchmark</th>
+                    <th>Assessment</th>
+                </tr>
+                <tr>
+                    <td><strong>Revenue Growth (%):</strong></td>
+                    <td>+13% (FY25 vs FY24)</td>
+                    <td>8-12% (industry avg)</td>
+                    <td>✓ Above average growth</td>
+                </tr>
+                <tr>
+                    <td><strong>PAT Growth (%):</strong></td>
+                    <td>+40.3% YoY</td>
+                    <td>12-18% (industry avg)</td>
+                    <td>✓ Exceptional growth trajectory</td>
+                </tr>
+                <tr>
+                    <td><strong>EBITDA Margin (%):</strong></td>
+                    <td>26.71%</td>
+                    <td>20-24% (industry avg)</td>
+                    <td>✓ Best-in-class efficiency</td>
+                </tr>
+                <tr>
+                    <td><strong>ROE (%):</strong></td>
+                    <td>20.68%</td>
+                    <td>15-18% (industry avg)</td>
+                    <td>✓ Superior capital returns</td>
+                </tr>
+                <tr>
+                    <td><strong>Debt/Equity:</strong></td>
+                    <td>0.61x</td>
+                    <td>0.70-0.90x (industry avg)</td>
+                    <td>✓ Conservative leverage</td>
+                </tr>
+            </table>
+
+            <div class="intro-text" style="margin-top: 20px;">
+                <strong>Valuation Conclusion:</strong> At ₹162 per share, Park Medi World commands a premium valuation (32.85x vs 15-25x industry average), but justified by:<br>
+                ✓ 40% PAT CAGR trajectory<br>
+                ✓ 26.71% industry-leading EBITDA margins<br>
+                ✓ 20.68% ROE (above benchmark)<br>
+                ✓ Proven M&A execution model<br><br>
+                However, limited margin for error on execution. Target price assumes 12-15x FY27E P/E multiple.
+            </div>
+        </div>
+
+        <!-- SLIDE 18: FINANCIAL SUMMARY & METRICS DASHBOARD -->
+        <div class="slide">
+            <h1>Comprehensive Metrics Dashboard</h1>
+            
+            <h2>FY2025 Key Performance Indicators</h2>
+            <table style="font-size: 0.92em;">
+                <tr>
+                    <th>Category</th>
+                    <th>Metric</th>
+                    <th>Value</th>
+                    <th>Industry Range</th>
+                    <th>Assessment</th>
+                </tr>
+                <tr style="background: #f0f8f0;">
+                    <td rowspan="3"><strong>Profitability</strong></td>
+                    <td>EBITDA Margin</td>
+                    <td>26.71%</td>
+                    <td>20-24%</td>
+                    <td>✓ Excellent</td>
+                </tr>
+                <tr style="background: #f0f8f0;">
+                    <td>PAT Margin</td>
+                    <td>15.30%</td>
+                    <td>10-14%</td>
+                    <td>✓ Above Average</td>
+                </tr>
+                <tr style="background: #f0f8f0;">
+                    <td>ROE</td>
+                    <td>20.68%</td>
+                    <td>15-18%</td>
+                    <td>✓ Superior</td>
+                </tr>
+                <tr style="background: #e8f0f7;">
+                    <td rowspan="3"><strong>Liquidity</strong></td>
+                    <td>Current Ratio</td>
+                    <td>1.35x</td>
+                    <td>1.2-1.5x</td>
+                    <td>✓ Healthy</td>
+                </tr>
+                <tr style="background: #e8f0f7;">
+                    <td>Quick Ratio</td>
+                    <td>1.12x</td>
+                    <td>1.0-1.2x</td>
+                    <td>✓ Adequate</td>
+                </tr>
+                <tr style="background: #e8f0f7;">
+                    <td>CCC (Days)</td>
+                    <td>32 days</td>
+                    <td><45 days</td>
+                    <td>✓ Excellent</td>
+                </tr>
+                <tr style="background: #f7f0e8;">
+                    <td rowspan="3"><strong>Solvency</strong></td>
+                    <td>Debt-to-Equity</td>
+                    <td>0.61x</td>
+                    <td>0.70-0.90x</td>
+                    <td>✓ Conservative</td>
+                </tr>
+                <tr style="background: #f7f0e8;">
+                    <td>Interest Coverage</td>
+                    <td>8.4x</td>
+                    <td>>5x</td>
+                    <td>✓ Comfortable</td>
+                </tr>
+                <tr style="background: #f7f0e8;">
+                    <td>Debt Service Capacity</td>
+                    <td>Strong</td>
+                    <td>-</td>
+                    <td>✓ Very Good</td>
+                </tr>
+            </table>
+
+            <h2>Growth Indicators (FY25 vs FY24)</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="value">+13%</div>
+                    <div class="label">Revenue Growth<br>₹1,263 Cr → ₹1,426 Cr</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">+40.3%</div>
+                    <div class="label">PAT Growth<br>₹152 Cr → ₹213 Cr</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">+19.9%</div>
+                    <div class="label">EBITDA Growth<br>₹310 Cr → ₹372 Cr</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 19: DISCLAIMER & FINAL NOTES -->
+        <div class="slide">
+            <h1>Important Disclaimer & Notes</h1>
+            
+            <div class="caution-box">
+                <strong>⚠️ DISCLAIMER</strong><br><br>
+                This presentation is prepared for <strong>educational purposes only</strong>. It is <strong>NOT</strong> financial advice, investment recommendation, or an offer to buy or sell securities.<br><br>
+                
+                The views and analysis expressed herein are based on publicly available information and market data as of December 9, 2025. This analysis does not constitute investment advice and should not be relied upon for making investment decisions.<br><br>
+                
+                <strong>Please consult with a qualified financial advisor before making any investment decisions.</strong> Investment in securities involves risk, including potential loss of principal. Past performance is not indicative of future returns.<br><br>
+                
+                Investors should conduct their own due diligence and read the official DRHP/RHP available on SEBI website (sebi.gov.in) and stock exchange websites (NSE/BSE) for comprehensive information.
+            </div>
+
+            <h2>Key Sources & Data Attribution</h2>
+            <ul class="bullet-list">
+                <li>SEBI DRHP (Draft Red Herring Prospectus)</li>
+                <li>NSE & BSE Official Disclosures</li>
+                <li>Stock Gro, ChittorGarh, IPO Watch, IPO Premium market data</li>
+                <li>Business Standard, Economic Times, Financial Express</li>
+                <li>Company Official Website & Investor Relations</li>
+                <li>Grey Market Premium tracking from financial platforms</li>
+            </ul>
+
+            <h2>Methodology Notes</h2>
+            <div class="intro-text">
+                This analysis utilizes comprehensive financial ratio analysis, peer benchmarking, multi-scenario DCF modeling, and market sentiment tracking. All financial metrics sourced from audited financial statements in DRHP. Valuations based on comparable company analysis and industry multiples.
+            </div>
+
+            <h2>Contact & Updates</h2>
+            <div class="intro-text">
+                For real-time IPO updates, subscription status, GMP, and allotment details:<br>
+                • SEBI Portal: sebi.gov.in<br>
+                • NSE: nseindia.com | BSE: bseindia.com<br>
+                • Registrar (Kfin): kfintech.com<br>
+                • Lead Managers: Nuvama, CLSA India, DAM Capital, Intensive Fiscal Services
+            </div>
+        </div>
+
+        <!-- SLIDE 20: CLOSING ATTRIBUTION -->
+        <div class="slide">
+            <div style="text-align: center; padding: 80px 40px;">
+                <h2 style="margin-bottom: 40px;">Thank You for Reviewing This Analysis</h2>
+                
+                <div style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 40px; border-radius: 8px; margin: 30px 0;">
+                    <h3 style="color: white; border: none; padding: 0; margin-bottom: 15px;">Made by</h3>
+                    <h1 style="color: white; margin: 10px 0;">Kunal Singla</h1>
+                    <p style="font-size: 1.1em; margin: 10px 0;">Finance Enthusiast</p>
+                    <p style="font-size: 0.95em; margin-top: 20px; opacity: 0.95;">Comprehensive IPO Research & Investment Analysis</p>
+                </div>
+
+                <div style="margin-top: 40px; font-size: 0.95em; color: #666;">
+                    <p><strong>Report Date:</strong> December 9, 2025</p>
+                    <p><strong>IPO Open Date:</strong> December 10, 2025</p>
+                    <p><strong>Expected Listing:</strong> December 17, 2025</p>
+                </div>
+
+                <div style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #ddd; color: #666; font-size: 0.9em;">
+                    <p><strong>For Educational Purposes Only</strong><br>
+                    Not Investment Advice | Disclaimer Applied</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
